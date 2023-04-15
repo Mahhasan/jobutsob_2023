@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container-fluid">
@@ -17,7 +17,7 @@
                                         <option value="0">Select Department</option>
                                         @foreach($jobseekers as $value)
                                             <option value="{{$value->bachelor_subject}}">
-                                            {{ \App\Jobseeker::find($value->bachelor_subject)}}
+                                            {{ \App\Models\Jobseeker::find($value->bachelor_subject)}}
                                             </option>
                                         @endforeach
                                     </select>

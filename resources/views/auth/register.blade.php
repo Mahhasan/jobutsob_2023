@@ -34,14 +34,14 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group">
-                                <input id="Number" type="number" class="form-control form-control-user @error('number') is-invalid @enderror" name="number" required autocomplete="number" placeholder="Phone Number">
+                            <!-- <div class="form-group">
+                                <input id="Number" type="number" class="form-control form-control-user @error('number') is-invalid @enderror" name="number" autocomplete="number" placeholder="Phone Number">
                                 @error('number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input id="password" type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 
@@ -11,8 +11,8 @@
                     <a class="btn btn-primary btn-sm " href="/login" >Login</a><br>
                     </p>
                 
-                    <b class="text-danger">"Before applying a job, Please register and complete your profile on Futurenation Platform. Use the same email in both places" &nbsp;</b>
-                    <a class="text-success" style="font-weight: normal;" href="https://platform.futurenation.gov.bd"><em>https://platform.futurenation.gov.bd</em></a>
+                    <!-- <b class="text-danger">"Before applying a job, Please register and complete your profile on Futurenation Platform. Use the same email in both places" &nbsp;</b>
+                    <a class="text-success" style="font-weight: normal;" href="https://platform.futurenation.gov.bd"><em>https://platform.futurenation.gov.bd</em></a> -->
                 </div>
                 
 
@@ -149,7 +149,7 @@
                                 <option id = "student"value="Student">Student</option>
                                 <option id ="alumni" value="Alumni">Alumni</option>
                                 </select>
-                                <!--<small> <i>application fee: BDT. <span id="output"></span></i></small><br>-->
+                                <small> <i>application fee: BDT. <span id="output"></span></i></small><br>
 
                             </div>
                         </div>
@@ -402,14 +402,14 @@
                         </div>
 
                         <hr>
-                        <!--<h4><b>Make bKash Payment BDT. <span class="text-danger" id="test_payment"></span> To 01811458885</b></h4>-->
-                        <!--<div class="form-group row">-->
-                        <!--    <label for="trix" class="col-md-4 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}</label>-->
+                        <h4><b>Make bKash Payment BDT. <span class="text-danger" id="test_payment"></span> To 01811458885</b></h4>
+                        <div class="form-group row">
+                           <label for="trix" class="col-md-4 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}</label>
 
-                        <!--    <div class="col-md-6">-->
-                        <!--        <input id="trix" type="text" class="form-control" name="trix" required autocomplete="trix">-->
-                        <!--    </div>-->
-                        <!--</div>-->
+                            <div class="col-md-6">
+                                <input id="trix" type="text" class="form-control" name="trix" required autocomplete="trix">
+                            </div>
+                        </div>
 
 
                         <div class="form-group row mb-0">

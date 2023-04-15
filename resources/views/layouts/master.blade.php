@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- from old app -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
 
     <title>JobUtsob</title>
 
@@ -20,6 +23,23 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Custom styles for this template-->
     <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+
+    <style>
+           body {
+            /* background: url("/image/back2.jpg") no-repeat center center fixed!important; */
+            -webkit-background-size: cover!important;
+            -moz-background-size: cover!important;
+            -o-background-size: cover!important;
+            background-size: cover!important;
+            background: #dfe6e9;
+        }
+
+        .card {
+           
+            opacity: .9;
+            box-shadow: 10px 10px #3498db;
+        }
+    </style>
 
 </head>
 
@@ -112,48 +132,54 @@
 
 
     <script defer>
-        $(document).ready(function() {
-            
-            $(".js-example-basic-multiple").select2();
-
-
-            $(document).on('change', 'input[Id="bachelor_status"]', function (e) {
-            //  alert($(this).val());
-            if($(this).val()=='yes'){
-                // $(".bachelor_result").hide();
-                // $(".bachelor_semester").show();
-                $("#bachelor_result_label").html("Enter Result Till Now ");
-                $("#bachelor_year_label").html("Enter Semester/Year. Ex: 5th Semester/3rd Year ");
-                
-            }
-            else {
-                // $(".bachelor_result").show();
-                // $(".bachelor_semester").hide();
-                $("#bachelor_result_label").html("Enter Result ");
-                $("#bachelor_year_label").html("Enter Passing Year ");
-
-            }
+    $(document).ready(function() {
         
-            });
-            $(document).on('change', 'input[Id="masters_status"]', function (e) {
-            //alert($(this).val());
-            if($(this).val()=='yes'){
-                // $(".masters_result").hide();
-                // $(".masters_semester").show();
-                $("#masters_year_label").html("Enter Semester/Year. Ex: 1st Semester/1st Year ");
-                $("#masters_result_label").html("Enter Result Till Now ");
-                
-            }
-            else {
-                // $(".masters_result").show();
-                // $(".masters_semester").hide();
-                $("#masters_result_label").html("Enter Result ");
-                $("#masters_year_label").html("Enter Passing Year ");
-            }
-            });
+        $(".js-example-basic-multiple").select2();
+
+
+        $(document).on('change', 'input[Id="bachelor_status"]', function (e) {
+        //  alert($(this).val());
+        if($(this).val()=='yes'){
+            // $(".bachelor_result").hide();
+            // $(".bachelor_semester").show();
+            $("#bachelor_result_label").html("Enter Result Till Now ");
+            $("#bachelor_year_label").html("Enter Semester/Year. Ex: 5th Semester/3rd Year ");
+            
+        }
+        else {
+            // $(".bachelor_result").show();
+            // $(".bachelor_semester").hide();
+            $("#bachelor_result_label").html("Enter Result ");
+            $("#bachelor_year_label").html("Enter Passing Year ");
+
+        }
+       
+       
+        
         });
-    </script>
-    <script>
+        $(document).on('change', 'input[Id="masters_status"]', function (e) {
+          //alert($(this).val());
+        if($(this).val()=='yes'){
+            // $(".masters_result").hide();
+            // $(".masters_semester").show();
+            $("#masters_year_label").html("Enter Semester/Year. Ex: 1st Semester/1st Year ");
+            $("#masters_result_label").html("Enter Result Till Now ");
+            
+        }
+        else {
+            // $(".masters_result").show();
+            // $(".masters_semester").hide();
+            $("#masters_result_label").html("Enter Result ");
+            $("#masters_year_label").html("Enter Passing Year ");
+        }
+       
+       
+        
+        });
+
+});
+</script>
+<script>
        function amount() {
             let cpu = document.getElementById("certificate").value;
             var student = document.getElementById("student").value;

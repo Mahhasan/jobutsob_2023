@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('alljob', [App\Http\Controllers\JobController::class, 'all_jobs'])->name('list');
 Route::get('details/{id}', [App\Http\Controllers\JobseekerController::class, 'details'])->name('details');
@@ -34,8 +34,21 @@ Route::get('undp', [App\Http\Controllers\jobseekerController::class, 'undp']);
 Route::resource('jobseeker', App\Http\Controllers\JobseekerController::class);
 
 //Dependent form topic
-Route::get('myform/ajax/{id}', [JobseekerController::class, 'getDepartment'])->name('myform.ajax');
-Route::get('mastersmyform/ajax/{id}', [JobseekerController::class, 'getMastersDepartment'])->name('myform.ajax');
+Route::get('myform/ajax/{id}',array('as'=>'myform.ajax','uses'=>[App\Http\Controllers\JobseekerController::class, 'getDepartment']));
+Route::get('mastersmyform/ajax/{id}',array('as'=>'myform.ajax','uses'=>[App\Http\Controllers\JobseekerController::class, 'getMastersDepartment']));
+
+// Route::get('myform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getDepartment'])
+//     ->name('myform.ajax');
+// Route::get('mastersmyform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getMastersDepartment'])
+//     ->name('myform.ajax');
+
+// Route::get('myform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getDepartment'])
+//     ->name('myform.ajax');
+// Route::get('mastersmyform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getMastersDepartment'])
+//     ->name('mastersmyform.ajax');
+
+// Route::get('myform/ajax/{id}', [JobseekerController::class, 'getDepartment'])->name('myform.ajax');
+// Route::get('mastersmyform/ajax/{id}', [JobseekerController::class, 'getMastersDepartment'])->name('myform.ajax');
 
 Route::resource('jobs', App\Http\Controllers\JobController::class);
 Route::get('jobs/{id}/applied', [App\Http\Controllers\JobController::class, 'applied'])->name('applied');

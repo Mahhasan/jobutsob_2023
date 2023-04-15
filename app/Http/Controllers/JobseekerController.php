@@ -2,16 +2,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Jobseeker;
-// use App\Job;
-// use App\User;
-// use App\Department;
-// use App\Faculty;
-// use App\MastersDepartment;
+use App\Models\Jobseeker;
+use App\Models\Job;
+use App\Models\User;
+use App\Models\Department;
+use App\Models\Faculty;
+use App\Models\MastersDepartment;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Hash;
-use DB;
+use Illuminate\Support\Facades\DB;
 class JobseekerController extends Controller
 {
     /**
@@ -59,6 +59,7 @@ class JobseekerController extends Controller
         $departments = DB::table("departments")->where("faculty_id",$id)->pluck("department_name","id");
         return json_encode($departments);
     }
+    
     public function getMastersDepartment($id){
         $masters_departments = DB::table("masters_departments")->where("faculty_id",$id)->pluck("department_name","id");
         return json_encode($masters_departments);
