@@ -34,18 +34,18 @@ Route::get('undp', [App\Http\Controllers\jobseekerController::class, 'undp']);
 Route::resource('jobseeker', App\Http\Controllers\JobseekerController::class);
 
 //Dependent form topic
-Route::get('myform/ajax/{id}',array('as'=>'myform.ajax','uses'=>[App\Http\Controllers\JobseekerController::class, 'getDepartment']));
-Route::get('mastersmyform/ajax/{id}',array('as'=>'myform.ajax','uses'=>[App\Http\Controllers\JobseekerController::class, 'getMastersDepartment']));
+// Route::get('myform/ajax/{id}',array('as'=>'myform.ajax','uses'=>[App\Http\Controllers\JobseekerController::class, 'getDepartment']));
+// Route::get('mastersmyform/ajax/{id}',array('as'=>'myform.ajax','uses'=>[App\Http\Controllers\JobseekerController::class, 'getMastersDepartment']));
 
 // Route::get('myform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getDepartment'])
 //     ->name('myform.ajax');
 // Route::get('mastersmyform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getMastersDepartment'])
 //     ->name('myform.ajax');
 
-// Route::get('myform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getDepartment'])
-//     ->name('myform.ajax');
-// Route::get('mastersmyform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getMastersDepartment'])
-//     ->name('mastersmyform.ajax');
+Route::get('myform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getDepartment'])
+    ->name('myform.ajax');
+Route::get('mastersmyform/ajax/{id}', [App\Http\Controllers\JobseekerController::class, 'getMastersDepartment'])
+    ->name('mastersmyform.ajax');
 
 // Route::get('myform/ajax/{id}', [JobseekerController::class, 'getDepartment'])->name('myform.ajax');
 // Route::get('mastersmyform/ajax/{id}', [JobseekerController::class, 'getMastersDepartment'])->name('myform.ajax');

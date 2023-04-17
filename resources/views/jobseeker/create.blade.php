@@ -301,7 +301,7 @@
                                 <label for="industry" class="col-md-4 col-form-label text-md-right">Select Prefered Industry</label>
 
                                 <div class="col-md-8">
-                        <select class="js-example-basic-multiple js-states form-control" name="industry[]" multiple="multiple">
+                            <select class="js-example-basic-multiple js-states form-control" name="industry[]" multiple="multiple">
 
 
                             <option value="Accounting/Finance/Banking" >Accounting/Finance/Banking</option>
