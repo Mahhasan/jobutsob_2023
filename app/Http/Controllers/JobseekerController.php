@@ -146,31 +146,29 @@ class JobseekerController extends Controller
      
        // dd($request);
 
-        $client = new Client([
-            'verify' => false
-        ]);
+        // $client = new Client([
+        //     'verify' => false
+        // ]);
       
 
      
 
 
-        $response = $client->request('POST', env('SSO').'/ssologin/register.php', ['form_params' => [
-            'email' => $request->email,
-            'status' => 'user',
-            'password' => $request->password,
-            'first_name' => $request->name,
-            'last_name' => $request->name,
-            'address' => $request->address,
-            'mobile' => $request->cell,
-            'city' => $request->city,
-            'key' => "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUSEVfSVNTVUVSIiwiYXVkIjoiVEhFX0FVRElFTkNFIiwiaWF0IjoxNjIxNDE0MTczLCJuYmYiOjE2MjE0MTQxNzMsImV4cCI6MTYyMTQxNDc3MywiZGF0YSI6eyJqb2JzZWVrZXJfaWQiOiIxMjAxMDUiLCJqb2JzZWVrZXJfc3RhdHVzIjoiWWVzIiwiam9ic2Vla2VyX2VtYWlsX2FkZHJlc3MiOiJ0b3B1YmhhaUBnbWFpbC5jb20iLCJkYXRhIjoieHl6In19.1CFRT12afB4FZwTygv716qbn_wocMRE3o7Q7NPBK2qQ",
-        ],
-        'http_errors' => false
-        ]);
+        // $response = $client->request('POST', env('SSO').'/ssologin/register.php', ['form_params' => [
+        //     'email' => $request->email,
+        //     'status' => 'user',
+        //     'password' => $request->password,
+        //     'first_name' => $request->name,
+        //     'last_name' => $request->name,
+        //     'address' => $request->address,
+        //     'mobile' => $request->cell,
+        //     'city' => $request->city,
+        //     'key' => "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUSEVfSVNTVUVSIiwiYXVkIjoiVEhFX0FVRElFTkNFIiwiaWF0IjoxNjIxNDE0MTczLCJuYmYiOjE2MjE0MTQxNzMsImV4cCI6MTYyMTQxNDc3MywiZGF0YSI6eyJqb2JzZWVrZXJfaWQiOiIxMjAxMDUiLCJqb2JzZWVrZXJfc3RhdHVzIjoiWWVzIiwiam9ic2Vla2VyX2VtYWlsX2FkZHJlc3MiOiJ0b3B1YmhhaUBnbWFpbC5jb20iLCJkYXRhIjoieHl6In19.1CFRT12afB4FZwTygv716qbn_wocMRE3o7Q7NPBK2qQ",
+        // ],
+        // 'http_errors' => false
+        // ]);
 
-        //dd($response->getBody()->getContents());
-
-        if($response->getStatusCode()==200){
+        // if($response->getStatusCode()==200){
             //register
             $user = new User;
             $user->email = $request->email;
@@ -230,74 +228,73 @@ class JobseekerController extends Controller
             Jobseeker::create($form_data);
             
             return redirect('/jobseeker/create')->with('success', 'Registration Successfull.Please login to apply.');
-        }
-        else if ($response->getStatusCode()==400){
+        // }
+        // else if ($response->getStatusCode()==400){
 
-            if(User::where('email',$request->email)->exists()){
-                return redirect('/jobseeker/create')->with('success', 'Already Registered');
-            }
+        //     if(User::where('email',$request->email)->exists()){
+        //         return redirect('/jobseeker/create')->with('success', 'Already Registered');
+        //     }
                
-            $user = new User;
-            $user->email = $request->email;
-            $user->status = 'user';
-            $user->name = $request->name;
-            $user->password = Hash::make($request->password);
-            $user->save();
-            $resume = $request->file('resume');
-            $new_resume = rand() . '.' . $resume->getClientOriginalExtension();
-            $resume->move(public_path('resume'), $new_resume);
+        //     $user = new User;
+        //     $user->email = $request->email;
+        //     $user->status = 'user';
+        //     $user->name = $request->name;
+        //     $user->password = Hash::make($request->password);
+        //     $user->save();
+        //     $resume = $request->file('resume');
+        //     $new_resume = rand() . '.' . $resume->getClientOriginalExtension();
+        //     $resume->move(public_path('resume'), $new_resume);
 
-            $form_data = array(
-                'name'    =>   $request->name,
-                'address'    =>   $request->address,
-                'city'    =>   $request->city,
-                'cell'    =>   $request->cell,
-                'email'   =>   $request->email,
-                'category'=>   "all",
-                'experience'=>   $request->experience,
-                'category'=>   "all",
-                'payment_status'=>   -1,
-                'work_home'=>   $request->work_home,
-                'device'=>   $request->device,
-                'internet'=>   $request->internet,
-                'resume'  =>   $new_resume,
-                'trix'  =>   $request->trix,
-                'university'  =>   $request->university,
-                'major'  =>   $request->major,
-                'last'  =>   $request->last,
-                'video'  =>   $request->video,
-                'club'  =>   $request->club,
+        //     $form_data = array(
+        //         'name'    =>   $request->name,
+        //         'address'    =>   $request->address,
+        //         'city'    =>   $request->city,
+        //         'cell'    =>   $request->cell,
+        //         'email'   =>   $request->email,
+        //         'category'=>   "all",
+        //         'experience'=>   $request->experience,
+        //         'category'=>   "all",
+        //         'payment_status'=>   -1,
+        //         'work_home'=>   $request->work_home,
+        //         'device'=>   $request->device,
+        //         'internet'=>   $request->internet,
+        //         'resume'  =>   $new_resume,
+        //         'trix'  =>   $request->trix,
+        //         'university'  =>   $request->university,
+        //         'major'  =>   $request->major,
+        //         'last'  =>   $request->last,
+        //         'video'  =>   $request->video,
+        //         'club'  =>   $request->club,
                 
-                'bachelor_subject'  =>   $request->bachelor_subject,
-                'bachelor_status'  =>   $request->bachelor_status=='yes'? 'Ongoing':'',
-                'bachelor_year'  =>   $request->bachelor_year,
-                'bachelor_result'  => $request->bachelor_result,
-                'bachelor_institute'  =>   $request->bachelor_institute,
+        //         'bachelor_subject'  =>   $request->bachelor_subject,
+        //         'bachelor_status'  =>   $request->bachelor_status=='yes'? 'Ongoing':'',
+        //         'bachelor_year'  =>   $request->bachelor_year,
+        //         'bachelor_result'  => $request->bachelor_result,
+        //         'bachelor_institute'  =>   $request->bachelor_institute,
                 
-                'masters_subject'  =>   $request->masters_subject,
-                'masters_status'  =>   $request->masters_status=='yes'? 'Ongoing':'',
-                'masters_year'  =>  $request->masters_year,
-                'masters_result'  =>  $request->masters_result,
-                'masters_institute'  =>   $request->masters_institute,
+        //         'masters_subject'  =>   $request->masters_subject,
+        //         'masters_status'  =>   $request->masters_status=='yes'? 'Ongoing':'',
+        //         'masters_year'  =>  $request->masters_year,
+        //         'masters_result'  =>  $request->masters_result,
+        //         'masters_institute'  =>   $request->masters_institute,
 
-                'certificate'  =>   $request->certificate,
-                'masters_faculty_id' => $request->masters_faculty_id,
-                'masters_department_id' => $request->masters_department_id,
-                'bachelor_faculty_id' => $request->bachelor_faculty_id,
-                'bachelor_department_id' => $request->bachelor_department_id,
+        //         'certificate'  =>   $request->certificate,
+        //         'masters_faculty_id' => $request->masters_faculty_id,
+        //         'masters_department_id' => $request->masters_department_id,
+        //         'bachelor_faculty_id' => $request->bachelor_faculty_id,
+        //         'bachelor_department_id' => $request->bachelor_department_id,
 
-                'industry'  =>   implode(',', (array) $request->get('industry')),
+        //         'industry'  =>   implode(',', (array) $request->get('industry')),
 
 
                 
-                'skill' => implode(',', (array) $request->get('skill'))
+        //         'skill' => implode(',', (array) $request->get('skill'))
                 
-            );
-            Jobseeker::create($form_data);
+        //     );
+        //     Jobseeker::create($form_data);
 
-            return redirect('/jobseeker/create')->with('success', 'Registration Successfull.We Will notify  you shorty');
-               // return redirect('/jobseeker/create')->with('error', 'Registration Failed');
-        }
+        //     return redirect('/jobseeker/create')->with('success', 'Registration Successfull.We Will notify  you shorty');
+        // }
 
         
         
