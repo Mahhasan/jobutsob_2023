@@ -14,26 +14,28 @@
                         </div>
                     @endif -->
                     <div class="table-responsive">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="example">
-                        <thead>
-                            <tr>
-                                <th>Sr. No.</th>
-                                <th>Status</th>
-                                <th>Name</th>
-                                <th>Job Title</th>
-                                <th>Company</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($status as $index=>$value)
-                            <tr class="odd gradeX">
-                                <td>{{++$index}}</td>
-                                <td>{{$value->status}}</td>
-                                <td>{{$value->user->name}}</td>
-                                <td>{{$value->job->title}}</td>
-                                <td>{{$value->job->com_name->name}}</td>
-                            @endforeach
-                    </tbody>
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="example">
+                            <thead>
+                                <tr>
+                                    <th>Sr. No.</th>
+                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Job Title</th>
+                                    <th>Company</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($status as $index=>$value)
+                                <tr class="odd gradeX">
+                                    <td>{{++$index}}</td>
+                                    <td>{{$value->status}}</td>
+                                    <td>{{$value->user->name}}</td>
+                                    <td>{{$value->job->title}}</td>
+                                    <td>{{$value->job->com_name->name}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

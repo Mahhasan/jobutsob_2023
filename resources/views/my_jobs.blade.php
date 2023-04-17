@@ -18,7 +18,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($user->applies as $index=>$value)
+                            @foreach($user->applies ?? [] as $index=>$value)
                                 <tr class="odd gradeX" >
                                     <td>{{++$index}}</td>
                                     <td><b>{{App\Models\Job::find($value->job_id)->title}}</b> at <b>{{App\Models\Job::find($value->job_id)->com_name->name}}</b></td>

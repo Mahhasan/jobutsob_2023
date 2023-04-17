@@ -21,11 +21,11 @@
                 <div class="card-header">
                 <a class="btn btn-danger" href="{{ route('alljobs') }}">Back To All Jobs</a>
                 
-                @if(!$undp['data']['is_registered'] || !$undp['data']['is_profile_completed'])
+                <!-- @if(!$undp['data']['is_registered'] || !$undp['data']['is_profile_completed'])
 
                <br><b>"Before applying a job, Please register using</b> &nbsp;<em class="text-success">{{$user = Auth()->user()->email}}</em>&nbsp; <b>and complete your profile on Futurenation Platform"</b> 
                <a href="https://platform.futurenation.gov.bd" target="blank"><em>&nbsp; https://platform.futurenation.gov.bd</em></a>
-                @else 
+                @else  -->
                 
                 @if(!$isapplied)
                 <a class="btn btn-primary" href="{{ route('applynow',$job->id) }}">Apply Now</a>
@@ -34,7 +34,7 @@
                 @endif
             </div>
                 
-                @endif
+                <!-- @endif -->
                 <hr style="border-color: #449fdc;">
                 
 
@@ -51,11 +51,11 @@
                     {!! $job->description !!}
                     <!--<a class="btn btn-danger" href="{{ route('alljobs') }}">Back To All Jobs</a>-->
                     <hr style="border-color: #449fdc;">
-                    @if(!$undp['data']['is_registered'] || !$undp['data']['is_profile_completed'])
+                    <!-- @if(!$undp['data']['is_registered'] || !$undp['data']['is_profile_completed'])
     
                     <br><b>"Before applying a job, Please register using</b> &nbsp;<em class="text-success">{{$user = Auth()->user()->email}}</em>&nbsp; <b>and complete your profile on Futurenation Platform"</b> 
                     <a href="https://platform.futurenation.gov.bd" target="blank"><em>&nbsp; https://platform.futurenation.gov.bd</em></a>
-                    @else 
+                    @else  -->
                    
                     @if(!$isapplied)
                     <a class="btn btn-primary" href="{{ route('applynow',$job->id) }}">Apply Now</a>
@@ -64,7 +64,7 @@
                     @endif
 
                 </div>
-                @endif
+                <!-- @endif -->
             </div>
         </div>
     </div>

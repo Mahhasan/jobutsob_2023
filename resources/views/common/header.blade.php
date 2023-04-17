@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow fixed-top">
         <div class="container">
             <!-- Topbar Search -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('list')}}">
                 <img src="{{asset('/images/logo_2023.png')}}" style="max-height:85px; max-width: 120px;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -13,63 +13,63 @@
                 <ul class="navbar-nav mr-auto">
                     @if(Auth::check() && Auth::user()->status=="admin")
                     <li class="nav-item">
-                        <a class="nav-link" href="#">All Jobs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Create Job</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Create Company</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Jobseekers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Company</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Selected Jobseeker</a>
-                    </li>
+                            <a class="nav-link" href="{{ route('jobs.index') }}">All Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('jobs.create') }}">Create Job</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('create_company') }}">Create Company</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('jobseekers') }}">Jobseekers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('company') }}">Company</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('view-jobseeker-status') }}">Selected Jobseeker</a>
+                        </li>
                     @endif
                     @if(Auth::check() && Auth::user()->status=="company")
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Jobs</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="{{ route('jobseekers') }}">Jobseekers</a>
-                    </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('companywise_jobs') }}">My Jobs</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="{{ route('jobseekers') }}">Jobseekers</a>
+                        </li> -->
                     @endif
                     @if(Auth::check() && Auth::user()->status=="user")
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">All Jobs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Jobs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Profile</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('alljobs') }}">All Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('my-jobs') }}">My Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('services') }}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('profile') }}">My Profile</a>
+                        </li>
 
                     @endif
 
                     @if(!Auth::check())
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">All Jobs</a>
+                            <a class="nav-link" href="{{ route('list') }}">All Jobs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login & Apply For Jobs Here</a>
+                            <a class="nav-link" href="{{ route('login') }}">Login & Apply For Jobs Here</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('jobseeker.create') }}">Register Here</a>
+                            <a class="nav-link" href="{{ route('jobseeker.create') }}">Register Here</a>
                     </li>
                     
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary  text-white" href="/">Visit Website</a>
+                    <a class="nav-link btn btn-primary  text-white" href="/">Visit Website</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">

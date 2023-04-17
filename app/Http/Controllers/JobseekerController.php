@@ -72,26 +72,26 @@ class JobseekerController extends Controller
      * @return \Illuminate\Http\Response
      */
      
-     public function undp(){
-        $client = new Client([
-            'verify' => false
-        ]);
+    //  public function undp(){
+    //     $client = new Client([
+    //         'verify' => false
+    //     ]);
     
-        $data = array(
-            'token' => '5uz$)[1j=3chbr9pz,32f7_1',
-            'email' => 'youth@gmail.com'
-         );
-         $response = $client->post('https://gateway.futurenation.gov.bd/api/public/youth/check-existence', [
-            'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
-            'body'    => json_encode($data)
-        ]); 
-        print_r(json_decode($response->getBody(), true));
+    //     $data = array(
+    //         'token' => '5uz$)[1j=3chbr9pz,32f7_1',
+    //         'email' => 'youth@gmail.com'
+    //      );
+    //      $response = $client->post('https://gateway.futurenation.gov.bd/api/public/youth/check-existence', [
+    //         'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
+    //         'body'    => json_encode($data)
+    //     ]); 
+    //     print_r(json_decode($response->getBody(), true));
     
     
     
         
-        return "a";
-      }
+    //     return "a";
+    //   }
       
       
         public function store(Request $request)

@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <img class="card-img-top mt-3 pr-3" src="/logo/{{\App\Company::find($value->company)->logo}}" alt="{{$value->title}} {{ $value->company }}">
+                        <img class="card-img-top mt-3 pr-3" src="/logo/{{\App\Models\Company::find($value->company)->logo}}" alt="{{$value->title}} {{ $value->company }}">
                     </div>
                 </div>
             </div>

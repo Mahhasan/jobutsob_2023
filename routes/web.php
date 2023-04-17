@@ -28,7 +28,7 @@ Route::get('details/{id}', [App\Http\Controllers\JobseekerController::class, 'de
 Route::get('jobseeker-info/{q?}', [App\Http\Controllers\HomeController::class, 'jobseeker_info'])->name("jobseekers");
 Route::get('company-info', [App\Http\Controllers\HomeController::class, 'company_info'])->name("company");
 Route::get('employer-info', [App\Http\Controllers\HomeController::class, 'employer_info']);
-Route::get('undp', [App\Http\Controllers\jobseekerController::class, 'undp']);
+// Route::get('undp', [App\Http\Controllers\jobseekerController::class, 'undp']);
 
 // For create jobseeker
 Route::resource('jobseeker', App\Http\Controllers\JobseekerController::class);

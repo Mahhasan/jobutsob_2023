@@ -363,7 +363,11 @@ class JobController extends Controller
          $data = DB::table('jobs');
          // $jobs = Job::where('last_date','>=',date('Y-m-d'))->get()->sortBy('company');
          $jobs = Job::where('last_date','>=',date('Y-m-d'))->paginate(50);
-         $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
+        //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
+         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
+                   ->select('id', 'company')
+                   ->groupBy('id', 'company')
+                   ->get();
  
          return view('alljobs',compact('jobs','search_jobs', 'data'));
      }
@@ -386,23 +390,23 @@ class JobController extends Controller
         
          $user = Auth()->user();
          
-         $client = new Client([
-             'verify' => false
-         ]);
+        //  $client = new Client([
+        //      'verify' => false
+        //  ]);
  
-         $data = array(
-             'token' => '5uz$)[1j=3chbr9pz,32f7_1',
-             'email' => $user->email
-          );
-          $response = $client->post(env('UNDP'), [
-             'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
-             'body'    => json_encode($data)
-         ]); 
-         $undp = json_decode($response->getBody(), true);
+        //  $data = array(
+        //      'token' => '5uz$)[1j=3chbr9pz,32f7_1',
+        //      'email' => $user->email
+        //   );
+        //   $response = $client->post(env('UNDP'), [
+        //      'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
+        //      'body'    => json_encode($data)
+        //  ]); 
+        //  $undp = json_decode($response->getBody(), true);
         
-         if(!$undp['data']['is_registered'] || !$undp['data']['is_profile_completed']){
-             return redirect()->back()->with('warning','Please register and complete your profile on Futurenation Platform');
-         }
+        //  if(!$undp['data']['is_registered'] || !$undp['data']['is_profile_completed']){
+        //      return redirect()->back()->with('warning','Please register and complete your profile on Futurenation Platform');
+        //  }
  
          $job = Job::find($id);
  
@@ -530,7 +534,11 @@ class JobController extends Controller
          
          
          $data = $data->paginate(50);
-         $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
+        //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
+        $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
+                   ->select('id', 'company')
+                   ->groupBy('id', 'company')
+                   ->get();
          return view('job_search', compact('data','search_jobs'));
      }
 }
