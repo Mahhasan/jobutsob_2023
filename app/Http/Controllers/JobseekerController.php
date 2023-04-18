@@ -93,37 +93,27 @@ class JobseekerController extends Controller
     //     return "a";
     //   }
       
-      
         public function store(Request $request)
     {
 
-        
         // dd( env('SSO'));
-        
         $request->validate([
             'name'     =>  'required',
             'cell'  =>  'required',
             'email'   =>  'required',
-           
-            'last'   =>  'required',
-          
-        
             'password' => [
                 'required',
                 'string',
                 'min:6',             // must be at least 10 characters in length
-                'confirmed' // must contain a special character
+                'confirmed'          // must contain a special character
             ],
             'resume'    =>  'required|mimetypes:application/pdf|max:10000',
             'address'    =>  'required',
-            'city'    =>  'required',
             'industry'    =>  'required',
-            'certificate'  =>   'required',
+            'jobseeker_type'  =>  'required',
             'bachelor_faculty_id' => 'required',
             'bachelor_department_id' => 'required',
-            
-           
-           // 'trix'    =>  'required',
+           //'trix'    =>  'required',
         ]);
 
         $request->validate([
@@ -150,10 +140,6 @@ class JobseekerController extends Controller
         //     'verify' => false
         // ]);
       
-
-     
-
-
         // $response = $client->request('POST', env('SSO').'/ssologin/register.php', ['form_params' => [
         //     'email' => $request->email,
         //     'status' => 'user',
@@ -183,24 +169,14 @@ class JobseekerController extends Controller
             $form_data = array(
                 'name'    =>   $request->name,
                 'address'    =>   $request->address,
-                'city'    =>   $request->city,
                 'cell'    =>   $request->cell,
                 'email'   =>   $request->email,
-                'category'=>   "all",
                 'experience'=>   $request->experience,
-                'category'=>   "all",
                 'payment_status'=>   -1,
-                'work_home'=>   $request->work_home,
-                'device'=>   $request->device,
-                'internet'=>   $request->internet,
                 'resume'  =>   $new_resume,
                 'trix'  =>   $request->trix,
-                'university'  =>   $request->university,
-                'major'  =>   $request->major,
-                'last'  =>   $request->last,
                 'video'  =>   $request->video,
-                'club'  =>   $request->club,
-                'certificate'  =>   $request->certificate,
+                'jobseeker_type'  =>   $request->jobseeker_type,
 
                 'bachelor_subject'  =>   $request->bachelor_subject,
                 'bachelor_status'  =>   $request->bachelor_status=='yes'? 'Ongoing':'',
@@ -213,8 +189,7 @@ class JobseekerController extends Controller
                 'masters_year'  =>  $request->masters_year,
                 'masters_result'  =>  $request->masters_result,
                 'masters_institute'  =>   $request->masters_institute,
-                
-                'certificate'  =>   $request->certificate,
+
                 'masters_faculty_id' => $request->masters_faculty_id,
                 'masters_department_id' => $request->masters_department_id,
                 'bachelor_faculty_id' => $request->bachelor_faculty_id,
@@ -296,38 +271,21 @@ class JobseekerController extends Controller
         //     return redirect('/jobseeker/create')->with('success', 'Registration Successfull.We Will notify  you shorty');
         // }
 
-        
-        
-
         //dd( $response->getStatusCode().$response->getBody()->getContents());
-        
 
         // //var_dump($form_data);
         // //var_dump($form_data);
         // $data = Jobseeker::create($form_data);
-      
-         
-        
     }
 
-    
     public function update(Request $request){
         // dd($request);
-
         $request->validate([
             'name'     =>  'required',
             'cell'  =>  'required',
-            // 'university'   =>  'required',
-            'last'   =>  'required',
-            // 'major'   =>  'required',
-        
-       
             // 'resume'    =>  'required|mimetypes:application/pdf|max:10000',
             'address'    =>  'required',
-            'city'    =>  'required',
             'industry'    =>  'required',
-           
-           // 'trix'    =>  'required',
         ]);
 
         $user = User::where('email',Auth()->User()->email)->first();
@@ -343,27 +301,14 @@ class JobseekerController extends Controller
         }
         $form_data = array(
             'name'    =>   $request->name,
-            // change by me
-            // 'status' => 'user',
             'address'    =>   $request->address,
-            'city'    =>   $request->city,
             'cell'    =>   $request->cell,
-            
-            'category'=>   "all",
             'experience'=>   $request->experience,
-            'category'=>   "all",
             'payment_status'=>   -1,
-            'work_home'=>   $request->work_home,
-            'device'=>   $request->device,
-            'internet'=>   $request->internet,
             'resume'  =>   $new_resume,
-           
-            'university'  =>   $request->university,
-            'major'  =>   $request->major,
-            'last'  =>   $request->last,
             'video'  =>   $request->video,
-            'club'  =>   $request->club,
             'industry'  =>   implode(',', (array) $request->get('industry')),
+
             'bachelor_subject'  =>   $request->bachelor_subject,
             'bachelor_status'  =>   $request->bachelor_status=='yes'? 'Ongoing':'',
             'bachelor_year'  =>   $request->bachelor_year,
@@ -376,14 +321,13 @@ class JobseekerController extends Controller
             'masters_result'  =>  $request->masters_result,
             'masters_institute'  =>   $request->masters_institute,
             
-            'certificate'  =>   $request->certificate,
+            'jobseeker_type'  =>   $request->jobseeker_type,
             'bachelor_faculty_id' => $request->bachelor_faculty_id,
             'bachelor_department_id' => $request->bachelor_department_id,
             'masters_faculty_id' => $request->masters_faculty_id,
             'masters_department_id' => $request->masters_department_id,
             
-            'skill' => implode(',', (array) $request->get('skill'))
-            
+            'skill' => implode(',', (array) $request->get('skill'))  
         );
         $jobseeker->update($form_data);
 
@@ -393,7 +337,6 @@ class JobseekerController extends Controller
         $user->update($form_data2);
 
         return redirect('profile')->with('success', 'Profile update successfull.');
-
     }
 
     public function profile(){
@@ -451,11 +394,8 @@ class JobseekerController extends Controller
         );
         $selected = explode(",",$data->industry);
 
-        return view('jobseeker.profile',compact('data','user','industries','selected','faculties','departments', 'masters_departments'));
-
-        
+        return view('jobseeker.profile',compact('data','user','industries','selected','faculties','departments', 'masters_departments'));     
     }
-
 
     /**
      * Display the specified resource.
@@ -506,20 +446,15 @@ class JobseekerController extends Controller
      */
     public function approve($id)
     {
-
         if(Auth()->check() && Auth()->user()->status!="admin"){
             return redirect()->to('/alljobs');
         }
         $data = Jobseeker::find($id);
         return view('approve',compact('data'));
-        
     }
 
-
-
     public function payOnline(Request $request)
-    {
-        
+    { 
         $client = new Client([
             'verify' => false
         ]);
@@ -553,14 +488,10 @@ class JobseekerController extends Controller
         else {
             dd("error");
         }
-
-    
     }
-
 
     public function payCheck(Request $request)
     {
-        
         $client = new Client([
             'verify' => false
         ]);
@@ -583,8 +514,6 @@ class JobseekerController extends Controller
         // else {
         //     dd("fail");
         // }
-
-    
     }
     
     public function jobseeker_search(Request $request)
@@ -617,13 +546,10 @@ class JobseekerController extends Controller
         ->orWhere ( 'industry', 'LIKE', '%' . $q . '%' )
         ->orWhere ( 'description', 'LIKE', '%' . $q . '%' )
         ->orWhere ( 'trix', 'LIKE', '%' . $q . '%' )
-        ->orWhere ( 'category', 'LIKE', '%' . $q . '%' )
-        ->orWhere ( 'club', 'LIKE', '%' . $q . '%' )
         ->orWhere ( 'email', 'LIKE', '%' . $q . '%' )
         ->paginate (50)->setPath ('');
         }
        
-
         $count2 = Jobseeker::get()->count();
 
         return view('jobseeker.jobseeker_info',compact('data', 'jobseekers','count2'));

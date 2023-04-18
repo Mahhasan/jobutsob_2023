@@ -42,7 +42,7 @@
                         <label for="company">Company:</label>
                         <input type="text" class="form-control"  disabled value="{{ 
                             
-                            \App\Company::find($job->company)->name
+                            \App\Models\Company::find($job->company)->name
                              }}">
                     </div>
                     <div class="form-group">

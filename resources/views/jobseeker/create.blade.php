@@ -7,12 +7,12 @@
         <div class="col-md-8">
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="card-header text-center">
-                    <p ><b>Job Seeker Registration Form<b>&nbsp;
+                    <p style="font-size: 24px;"><b>Job Seeker Registration Form<b>&nbsp;
                     <a class="btn btn-primary btn-sm " href="/login" >Login</a><br>
                     </p>
                 
-                    <!-- <b class="text-danger">"Before applying a job, Please register and complete your profile on Futurenation Platform. Use the same email in both places" &nbsp;</b>
-                    <a class="text-success" style="font-weight: normal;" href="https://platform.futurenation.gov.bd"><em>https://platform.futurenation.gov.bd</em></a> -->
+                    <!--<b class="text-danger">"Before applying a job, Please register and complete your profile on Futurenation Platform. Use the same email in both places" &nbsp;</b>-->
+                    <!--<a class="text-success" style="font-weight: normal;" href="https://platform.futurenation.gov.bd"><em>https://platform.futurenation.gov.bd</em></a>-->
                 </div>
                 
 
@@ -49,34 +49,34 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="last" class="col-md-4 col-form-label text-md-right">{{ __('Last Academic Qualificaiton') }}</label>
+                        <!--<div class="form-group row">-->
+                        <!--    <label for="last" class="col-md-4 col-form-label text-md-right">{{ __('Last Academic Qualificaiton') }}</label>-->
 
-                            <div class="col-md-6">
-                                <input id="last" type="text" class="form-control @error('last') is-invalid @enderror" name="last" value="{{ old('last') }}" required autocomplete="name" autofocus>
+                        <!--    <div class="col-md-6">-->
+                        <!--        <input id="last" type="text" class="form-control @error('last') is-invalid @enderror" name="last" value="{{ old('last') }}" required autocomplete="name" autofocus>-->
 
-                                @error('last')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                        <!--        @error('last')-->
+                        <!--            <span class="invalid-feedback" role="alert">-->
+                        <!--                <strong>{{ $message }}</strong>-->
+                        <!--            </span>-->
+                        <!--        @enderror-->
+                        <!--    </div>-->
+                        <!--</div>-->
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" required autocomplete="address">
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('City/State') }}</label>
+                        <!--<div class="form-group row">-->
+                        <!--    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('City/State') }}</label>-->
 
-                            <div class="col-md-6">
-                                <input id="city" type="text" class="form-control" name="city" required autocomplete="city">
-                            </div>
-                        </div>
+                        <!--    <div class="col-md-6">-->
+                        <!--        <input id="city" type="text" class="form-control" name="city" required autocomplete="city">-->
+                        <!--    </div>-->
+                        <!--</div>-->
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cell Phone') }}</label>
@@ -144,7 +144,7 @@
 
                             <div class="col-md-6">
 
-                                <select id="certificate" type="text" onclick="amount()" class="form-control @error('certificate') is-invalid @enderror" name="certificate" required autocomplete="certificate" autofocus>
+                                <select id="certificate" type="text" onclick="amount()" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" autofocus>
                                 <option value="" selected>---</option>
                                 <option id = "student"value="Student">Student</option>
                                 <option id ="alumni" value="Alumni">Alumni</option>
@@ -301,7 +301,7 @@
                                 <label for="industry" class="col-md-4 col-form-label text-md-right">Select Prefered Industry</label>
 
                                 <div class="col-md-8">
-                            <select class="js-example-basic-multiple js-states form-control" name="industry[]" multiple="multiple">
+                        <select class="js-example-basic-multiple js-states form-control" name="industry[]" multiple="multiple">
 
 
                             <option value="Accounting/Finance/Banking" >Accounting/Finance/Banking</option>

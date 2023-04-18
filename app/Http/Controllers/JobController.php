@@ -173,26 +173,26 @@ class JobController extends Controller
              ['job_id',$job->id],
              ['user_id',$user->id],
          ])->exists();
-         $client = new Client([
-             'verify' => false
-         ]);
+        //  $client = new Client([
+        //      'verify' => false
+        //  ]);
  
-         $data = array(
-             'token' => '5uz$)[1j=3chbr9pz,32f7_1',
-             'email' => $user->email
-          );
-          $response = $client->post(env('UNDP'), [
-             'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
-             'body'    => json_encode($data)
-         ]); 
-         $undp = json_decode($response->getBody(), true);
+        //  $data = array(
+        //      'token' => '5uz$)[1j=3chbr9pz,32f7_1',
+        //      'email' => $user->email
+        //   );
+        //   $response = $client->post(env('UNDP'), [
+        //      'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'],
+        //      'body'    => json_encode($data)
+        //  ]); 
+        //  $undp = json_decode($response->getBody(), true);
         
  
  
      
  
  
-         return view('apply',compact('job','isapplied', 'undp'));
+         return view('apply',compact('job','isapplied',));
      }
  
      /**
@@ -377,8 +377,9 @@ class JobController extends Controller
              return redirect()->to('/');
          }
          $user = Auth()->user();
- 
-         return view('my_jobs',compact('user'));
+         $my_jobs = Apply::where('user_id',$user->id)->get();
+//  dd($user);
+         return view('my_jobs',compact('user', 'my_jobs'));
      }
  
  
@@ -519,7 +520,11 @@ class JobController extends Controller
          
          
          $data = $data->paginate(20);
-         $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
+        //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
+        $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
+                   ->select('id', 'company')
+                   ->groupBy('id', 'company')
+                   ->get();
          return view('search', compact('data','search_jobs'));
      }
      public function search_job(Request $request)

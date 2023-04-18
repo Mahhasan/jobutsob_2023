@@ -1,5 +1,5 @@
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow fixed-top p-0">
         <div class="container">
             <!-- Topbar Search -->
             <a class="navbar-brand" href="{{route('list')}}">
@@ -92,14 +92,15 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                            <img class="img-profile rounded-circle small"
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                {{ Auth::user()->name }}</span>
+                            <img class="img-profile rounded-circle" style="max-height: 25px; max-width: 25px;"
                                 src="{{asset('admin/img/undraw_profile.svg')}}">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="{{ route('profile') }}">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
                             </a>

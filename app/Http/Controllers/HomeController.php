@@ -97,7 +97,7 @@ class HomeController extends Controller
             //dd("dept_id");
         
             $jobseekers = Jobseeker::where ('bachelor_department_id', $dept_id)
-            ->where ('certificate', $type)
+            ->where ('jobseeker_type', $type)
            
             ->paginate (50)->setPath ( '' );
     
@@ -117,7 +117,7 @@ class HomeController extends Controller
             //dd("dept_id");
         
             $jobseekers = Jobseeker::where ('bachelor_department_id', $dept_id)
-            ->where ('certificate', $type)
+            ->where ('jobseeker_type', $type)
             ->where ( 'skill', 'LIKE', '%' . $keyword . '%' )
            
             ->paginate (50)->setPath ( '' );
@@ -157,7 +157,7 @@ class HomeController extends Controller
         else if(isset($type)){
             //dd("dept_id");
         
-            $jobseekers = Jobseeker::where ('certificate', $type)
+            $jobseekers = Jobseeker::where ('jobseeker_type', $type)
            
             ->paginate (50)->setPath ( '' );
     

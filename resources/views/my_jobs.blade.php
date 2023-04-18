@@ -11,14 +11,14 @@
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>SL</th>
                                     <th>Title</th>
                                     <th>Status</th>
                                     <th>Details</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($user->applies ?? [] as $index=>$value)
+                            @foreach($my_jobs as $index=>$value)
                                 <tr class="odd gradeX" >
                                     <td>{{++$index}}</td>
                                     <td><b>{{App\Models\Job::find($value->job_id)->title}}</b> at <b>{{App\Models\Job::find($value->job_id)->com_name->name}}</b></td>

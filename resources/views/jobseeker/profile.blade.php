@@ -63,7 +63,7 @@
                                 @enderror
                             </div>
                         </div> -->
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="last" class="col-md-4 col-form-label text-md-right">{{ __('Last Academic Qualificaiton') }}</label>
 
                             <div class="col-md-6">
@@ -75,7 +75,7 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
@@ -84,13 +84,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('City/State/Zip') }}</label>
 
                             <div class="col-md-6">
                                 <input id="city" type="text" class="form-control" name="city" required autocomplete="city" value="{{ $data->city }}">
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cell Phone') }}</label>
@@ -103,34 +103,19 @@
 
                         <div class="form-group row">
                             <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('Number of Years of Experience') }}</label>
-
                             <div class="col-md-6">
                                 <input id="experience" type="text" class="form-control @error('experience') is-invalid @enderror" name="experience" value="{{ $data->experience }}" required autocomplete="experience" autofocus>
-
                             </div>
                         </div>
-
-
 
                         <div class="form-group row">
-
-
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('What Skills Do you have?') }}</label>
-
-
                             <div class="col-md-6">
-
-
                                 <textarea class="form-control" rows="5" id="skill" name="skill">{{ $data->skill }}</textarea>
                                 <small> <i>Enter skills as comma separated</i></small>
-
                             </div>
-
                         </div>
                      
-
-                    
-                       
                         <div class="form-group row">
                      
                             <label for="resume" class="col-md-4 col-form-label text-md-right">{{ __('Submit Resume') }}</label>
@@ -146,7 +131,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 Current Resume:
-                                <a href="/resume/{{ $data->resume }}" type="button">View</a>
+                                <a href="/resume/{{ $data->resume }}" type="button" target="blank">View</a>
                             </div>
                             <br>
 
@@ -183,8 +168,8 @@
 
                             <div class="col-md-6">
 
-                                <select id="certificate" type="text" onclick="amount()" class="form-control @error('certificate') is-invalid @enderror" name="certificate" required autocomplete="certificate" autofocus>
-                                <option value="{{ $data->certificate }}">{{ $data->certificate ?? ' '}}</option>
+                                <select id="certificate" type="text" onclick="amount()" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" autofocus>
+                                <option value="{{ $data->jobseeker_type }}">{{ $data->jobseeker_type ?? ' '}}</option>
                                 <option id = "student"value="Student">Student</option>
                                 <option id ="alumni" value="Alumni">Alumni</option>
                                 </select>
