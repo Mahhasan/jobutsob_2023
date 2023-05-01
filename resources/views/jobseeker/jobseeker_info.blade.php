@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -37,8 +38,9 @@
                         </form>
                     </div>
                 </div>
-
+                
                 <div class="card-body">
+                <a href="{{ route('download-resumes') }}" class="btn btn-primary">Download Resumes</a>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -80,7 +82,7 @@
                                     </td>
                                     <td>{{$value->trix}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-danger" href="{{ route('approve',$value->id) }}" type="button" >
+                                        <a class="btn btn-sm btn-warning" href="{{ route('approve',$value->id) }}" type="button" >
                                             <?php 
                                              if($value->payment_status==1){
                                                  echo "Paid";
@@ -115,28 +117,12 @@
     </div>
 </div>
 
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
 
-<script>
-   /* $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });*/
-    $(document).ready(function() {
-    $('#jobseeker').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ],
-        "order": [[ 0, "desc" ]]
-    } );
-} );
-</script>
+<!-- DataTables -->
+
+
+
+
 
 
 @endsection

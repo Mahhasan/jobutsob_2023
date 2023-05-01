@@ -103,3 +103,8 @@ Route::get('speakers',[App\Http\Controllers\FrontendController::class, 'speakers
 Route::get('participants',[App\Http\Controllers\FrontendController::class, 'participants_info'])->name('participants');
 Route::get('about-event',[App\Http\Controllers\FrontendController::class, 'about_event'])->name('about-event');
 Route::get('about-organizer',[App\Http\Controllers\FrontendController::class, 'about_organizer'])->name('about-organizer');
+
+// for multiple cv download
+// Route::get('/download-resumes/{jobId}', [App\Http\Controllers\JobseekerController::class, 'downloadResumes'])->name('download.resumes');
+Route::get('/download-resumes', [App\Http\Controllers\JobseekerController::class, 'downloadResumes'])->name('download-resumes');
+Route::get('/download-job-resumes/{job_id}', [App\Http\Controllers\JobseekerController::class, 'downloadJobResumes'])->name('download.job.resumes');

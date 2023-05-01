@@ -20,7 +20,11 @@
                   <b>Job Description:</b> <br>
                   {!! $job->description !!}
            
+                  <a href="{{ route('download.job.resumes', ['job_id' => $job->id]) }}" class="btn btn-primary">Download Resumes</a>
+
+
                     <hr>
+
                     <div class="table-responsive">
                     <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                         <thead>
