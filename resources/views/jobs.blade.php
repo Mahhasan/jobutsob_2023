@@ -44,13 +44,13 @@
                                     <td>{{$value->last_date}}</td>
                                     <td>
                                         <a class="text-info" href="" data-toggle="modal" data-target="#example{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                        <a class="text-success" href="{{ route('jobs.edit',$value->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                        <a class="text-danger" onclick="return confirm('Are you sure want to delete? ');" href ="destroy_job/{{ $value->id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        &nbsp;<a class="text-success" href="{{ route('jobs.edit',$value->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                        &nbsp;<a class="text-danger" onclick="return confirm('Are you sure want to delete? ');" href ="destroy_job/{{ $value->id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                     </td>
-                                    <td><a href="{{ route('applied',$value->id) }}" class="arrow"><?php
+                                    <td><a href="{{ route('applied',$value->id) }}" class="arrow-button"><?php
                                     $x = App\Models\Apply::where('job_id',$value->id)->count();
                                     ?>
-                                    {{ $x }} applied <i class="fa fa-arrow-right" style="font-size:10px" aria-hidden="true"></i></a>
+                                    {{ $x }} applied</a>
                                     
                                     </td>
                                 </tr>

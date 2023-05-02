@@ -1,48 +1,77 @@
 @extends('layouts.master')
 
 @section('content')
+
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-10">
+            
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header"><b>
-                <img src="/logo/{{  \App\Models\Company::find($job->company)->logo }}"
-                width="300px"
-                alt="a"> <br>
-                Job:</b> {{ $job->title}} @ 
-                {{  \App\Models\Company::find($job->company)->name }}
-
-                <b>Deadline:</b>  {{ $job->last_date }}
-                <a class="btn btn-sm btn-danger" href="{{ route('jobs.index') }}">Back To All Jobs</a>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <small class="text-left"><a style="text-decoration: none;" href="{{ route('jobs.index') }}"><i class="fa fa-arrow-left"></i> Get Back</a></small>
+                            &nbsp; &nbsp;Job ID #{{ $job->id }} 
+                        </div>
+                        <div class="col-7">
+                            {{ $job->title}} 
+                        </div>
+                        <div class="col-1 text-right">
+                            <a class="text-info" href="{{ route('jobs.edit',$job->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="card-body">
-                  <b>Job Description:</b> <br>
-                  {!! $job->description !!}
-           
-                  <a href="{{ route('download.job.resumes', ['job_id' => $job->id]) }}" class="btn btn-primary">Download Resumes</a>
-
-
+                <div class="row">
+            <div class="col-md-4">
+                <img id="blah" src="/logo/{{  \App\Models\Company::find($job->company)->logo }}" height="240" class="rounded" alt="your image" />
+                <div class="mt-3">
+                    <i class="far fa-building" aria-hidden="true"></i>
+                    {{  \App\Models\Company::find($job->company)->name }}
+                </div>
+                <div class="mt-3">
+                    <strong><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Last Date:</strong>  {{ $job->last_date }}
+                </div>
+                <!-- <a href="" class="btn btn-outline-primary btn-sm btn-block">Get Register</a> -->
+            </div>
+            <div class="col-md-8 text-left">
+                <div class="mb-3">
+                    <strong>Short Description:</strong> {!! $job->short_description  !!}
+                </div>
+                <div class="mb-3">
+                    <strong>Description:</strong> {!! $job->description !!}
+                </div>
+                <!-- <a href="" class="btn btn-primary">Edit</a>
+                <form action="" method="POST" style="display: inline-block;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>   -->
+            </div>
+        </div><br>
                     <hr>
 
                     <div class="table-responsive">
+                    <p class="text-right"><abbr title="Download all Resume"><a href="{{ route('download.job.resumes', ['job_id' => $job->id]) }}" class="text-info">
+                        <i class="fa fa-download" aria-hidden="true"></i></a></abbr></p>
                     <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>SL</th>
                                 <th>Name</th>
                                 <th>Eamil</th>
                                 <th>Status</th>
                                 <th>Resume</th>
                                 <th>Video Resume</th>
-                                <th>Action</th>
-                                <th>Bachelor Department</th>
-                                <th>University</th>
-                                <th>Year/Semester</th>
-                                <th>Bachelor Result</th>
-                                <th>Masters Department</th>
-                                <th>University</th>
-                                <th>Year/Semester</th>
-                                <th>Bachelor Result</th>
+                                <th>Bachelor Info</th>
+                                <!-- <th>University</th>
+                                <th>Passing Year/Semester</th>
+                                <th>Bachelor Result</th> -->
+                                <th>Masters Info</th>
+                                <!-- <th>University</th>
+                                <th>Passing Year/Semester</th>
+                                <th>Bachelor Result</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -56,13 +85,13 @@
                                 @if($jobseeker)
                                 <td>{{ $jobseeker->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $value->status }}
+                                <td><a style="text-decoration: none;" href="{{ route('change',$value->id) }}" class="text-info">{{ $value->status }} <i class="fa fa-edit" aria-hidden="true"></i></a>
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     @if(isset($value->resume))
-                                    <a href="/resume/{{$value->resume}}" type="button" >Download</a>
+                                    <a href="/resume/{{$value->resume}}" type="button" class="text-info"><i class="fa fa-download" aria-hidden="true"></i></a>
                                     @else  
-                                    <a href="/resume/{{$jobseeker->resume}}" type="button" >Download.</a>
+                                    <a href="/resume/{{$jobseeker->resume}}" type="button" class="text-info"><i class="fa fa-download" aria-hidden="true"></i></a>
                                     @endif
                                 </td>
                                 <td>
@@ -74,17 +103,33 @@
                                     N/A
                                     @endif
                                 </td>
-                                <td><a href="{{ route('change',$value->id) }}">Click Here</a></td>
                                 </td>
-                                <td>{{$jobseeker->bachelor_subject}} {{ $jobseeker->bachelor_status }}</td>
-                                <td>{{ $jobseeker->bachelor_institute }}</td>
-                                <td>{{ $jobseeker->bachelor_year }}</td>
-                                <td>{{$jobseeker->bachelor_result}}</td>
-                              
-                                <td>{{$jobseeker->masters_subject}} {{ $jobseeker->masters_status }}</td>
-                                <td>{{ $jobseeker->masters_institute }}</td>
-                                <td>{{ $jobseeker->masters_year }}</td>
-                                <td>{{$jobseeker->masters_result}}</td>
+                                <td>
+                                    <button type="button" class="pmd-btn-raised pmd-tooltip" data-toggle="tooltip" data-placement="top" 
+                                    title="
+                                    faculty_name {{$jobseeker->bachelor_faculty->faculty_name ?? ' '}}
+                                    department_name {{$jobseeker->bachelor_department->department_name ?? ' '}}
+                                    bachelor_status {{$jobseeker->bachelor_status}}
+                                    bachelor_result {{$jobseeker->bachelor_result}}
+                                    bachelor_year {{$jobseeker->bachelor_year}}
+                                    bachelor_institute{{$jobseeker->bachelor_institute}}">
+                                        {{$jobseeker->bachelor_department->department_name ?? ' '}}</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="pmd-btn-raised pmd-tooltip" data-toggle="tooltip" data-placement="top" 
+                                    title="
+                                    {{$jobseeker->masters_faculty->faculty_name ?? ' '}} 
+                                    {{$jobseeker->masters_department->department_name ?? ' '}} 
+                                    {{ $jobseeker->masters_status }}
+                                    {{$jobseeker->masters_result}}
+                                    {{ $jobseeker->masters_year }}
+                                    {{ $jobseeker->masters_institute }}">
+                                        {{$jobseeker->masters_department->department_name ?? ' '}}</button>
+                                </td>
+                                
+
+                                
+                                
                                 @endif
                             </tr>
                             @endforeach

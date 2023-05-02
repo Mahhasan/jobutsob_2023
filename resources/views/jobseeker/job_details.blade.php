@@ -6,20 +6,28 @@
         <div class="col-md-8">
 
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header">Job Details #{{ $job->id }} 
-                
-                <a class=" pull-right btn btn-sm btn-success" href="{{ route('jobs.index')}}">Back To All Jobs</a>
-                <form method="POST" action="{{  route('jobs.destroy',$job->id) }}">
-                    @CSRF
-                    {{ method_field('DELETE') }}
-
-                    <div class="form-group">
-                        <input  onclick="return confirm('Are you sure want to delete? ');" type="submit" class="btn btn-danger btn btn-sm " value="Delete Job">
+                 <div class="card-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <a class=" pull-right btn btn-sm btn-success" href="{{ route('jobs.index')}}">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-4 text-center">
+                            Job ID #{{ $job->id }} 
+                        </div>
+                        <div class="col-4 text-right">
+                            <form method="POST" action="{{  route('jobs.destroy',$job->id) }}">
+                                @CSRF
+                                {{ method_field('DELETE') }}
+                                <button onclick="return confirm('Are you sure want to delete? ');" style="border:none; background: none;" type="submit" class="text-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                <!-- <div class="form-group">
+                                    <input   type="submit" class="btn btn-danger btn btn-sm " value="Delete Job">
+                                </div> -->
+                            </form>
+                        </div>
                     </div>
-                </form>
-                
-                 </div>
-                
+                </div>
+
 
                 <div class="card-body">
                     @if (session('success'))

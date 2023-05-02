@@ -1,56 +1,39 @@
 /* Button-arrow CSS: */
-.arrow {
-    cursor: pointer;
-    display: inline-block;
-    height: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
-    position: relative;
-    line-height: 2.5em;
-    padding-left: 1em;
-    padding-right: 2em;
-    background: rgb(13, 86, 146);
-    color: black;
-  }
-  .arrow:after {
-    border-left: 20px solid rgb(13, 86, 146);
-  }
-  
-  .arrow:after {
-    content: "";
-    position: absolute;
-    border-bottom: 20px solid transparent;
-    border-top: 20px solid transparent;
-    height: 0px;
-    width: 0px;
-    margin-right: -20px;
-    right: 0;
-  }
-  
-  .arrow:hover,
-  .arrow:active {
-    background: yellow;
-    color: black;
-  }
-  .arrow:hover:after,
-  .arrow:active:after {
-    border-left: 20px solid yellow;
-  }
-  
-  /* General styles to set a baseline 'look' - not related to the button-arrow CSS above */
-  body,
-  html {
-    font-family: helvetica;
-    background: #333;
-    color: #ccc;
-  }
-  
-  .content {
-    width: 20em;
-    margin: 0 auto;
-  }
-  
-  a:visited,
-  a:link {
-    color: #f93;
-  }
+.arrow-button {
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  /* margin-left: 40px; */
+  /* margin-right: 40px; */
+  position: relative;
+  line-height: 2.5em;
+  padding-left: 1em;
+  padding-right: .5em;
+  background: #4e73df;
+  color: rgb(255, 255, 255);
+}
+.arrow-button:after {
+  border-left: 20px solid #4e73df;
+}
+
+.arrow-button:after {
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  height: 0px;
+  width: 0px;
+  margin-right: -20px;
+  right: 0;
+}
+
+.arrow-button:hover,
+.arrow-button:active {
+  text-decoration: none;
+  background: #1d4fe5;
+  color: rgb(255, 255, 255);
+}
+.arrow-button:hover:after,
+.arrow-button:active:after {
+  border-left: 20px solid #1a4eeb;
+}
