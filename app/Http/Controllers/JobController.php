@@ -275,6 +275,10 @@ class JobController extends Controller
  
          //
      }
+     public function destroy_job($id) {
+        DB::delete('delete from jobs where id = ?',[$id]);
+        return redirect()->back()->with('success', 'job has been removed successfully');
+     }
  
      public function applied($id){
  

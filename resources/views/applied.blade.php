@@ -1,5 +1,4 @@
 @extends('layouts.master')
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
 @section('content')
 <div class="container-fluid">
@@ -107,7 +106,5 @@ tinymce.init({
     toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code'
 });
 </script>
-
-
 
 @endsection

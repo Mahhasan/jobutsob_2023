@@ -83,7 +83,7 @@
 
         @endforeach
     </div>
-    <div class="row p-4">
+    <div class="">
     {{ $jobs->appends(request()->except('page'))->links() }}
     </div>
 </div>

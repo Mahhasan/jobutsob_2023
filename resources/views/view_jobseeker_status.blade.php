@@ -14,7 +14,7 @@
                         </div>
                     @endif -->
                     <div class="table-responsive">
-                        <table width="100%" class="table table-striped table-bordered table-hover" id="example">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
                                     <th>Sr. No.</th>
@@ -42,26 +42,4 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
-
-<script>
-   /* $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });*/
-    $(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ],
-        "order": [[ 0, "desc" ]]
-    } );
-} );
-</script>
 @endsection

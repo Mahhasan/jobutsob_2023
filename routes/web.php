@@ -108,3 +108,5 @@ Route::get('about-organizer',[App\Http\Controllers\FrontendController::class, 'a
 // Route::get('/download-resumes/{jobId}', [App\Http\Controllers\JobseekerController::class, 'downloadResumes'])->name('download.resumes');
 Route::get('/download-resumes', [App\Http\Controllers\JobseekerController::class, 'downloadResumes'])->name('download-resumes');
 Route::get('/download-job-resumes/{job_id}', [App\Http\Controllers\JobseekerController::class, 'downloadJobResumes'])->name('download.job.resumes');
+
+Route::get('/destroy_job/{id}', [App\Http\Controllers\JobController::class, 'destroy_job']);
