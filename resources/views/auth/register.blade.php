@@ -57,6 +57,16 @@
                                     <input id="password-confirm" type="password" class="form-control form-control-user" name="password_confirmation" required autocomplete="new-password" placeholder="Repeat Password">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label for="designation">Designation</label>
+                                    <input type="text" class="form-control" id="designation" name="designation" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="cell">Mobile</label>
+                                    <input type="number" class="form-control" id="cell" name="cell" required>
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block">
                                 {{ __('Register Account') }}
                             </button>

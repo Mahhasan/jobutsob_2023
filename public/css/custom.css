@@ -37,3 +37,10 @@
 .arrow-button:active:after {
   border-left: 20px solid #1a4eeb;
 }
+
+/* for abbr title */
+abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+}

@@ -60,8 +60,10 @@ class JobController extends Controller
          $data_insert = User::create([
              'name' => $request->executive_name,
              'email' => $request->email,
+             'designation' => $request->designation,
+             'cell' => $request->cell,
              'status' => 'company',
-             'password' => Hash::make('jobutsob12345'),
+             'password' => Hash::make('jobutsob2023'),
          ]);
          $obj = new Company;
  
@@ -126,7 +128,6 @@ class JobController extends Controller
              'company'  =>  'required',
              //'logo'    =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
              'last_date'   =>  'required',
-             'job_id'   =>  'required',
              'description'   =>  'required',
              'short_description'   =>  'required',
          
@@ -142,7 +143,7 @@ class JobController extends Controller
          $job->company = $request->company;
          $job->logo = '-';
          $job->last_date = $request->last_date;
-         $job->job_id = $request->job_id;
+         $job->job_link = $request->job_link;
          $job->description = $request->description;
          $job->short_description = $request->short_description;
  
@@ -228,7 +229,6 @@ class JobController extends Controller
             
              'logo'    =>  'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
              'last_date'   =>  'required',
-             'job_id'   =>  'required',
              'description'   =>  'required',
              'short_description'   =>  'required',
              
@@ -249,7 +249,7 @@ class JobController extends Controller
          $job->logo = $imageName;
          }
          $job->last_date = $request->last_date;
-         $job->job_id = $request->job_id;
+         $job->job_link = $request->job_link;
          $job->description = $request->description;
          $job->short_description = $request->short_description;
          $job->save();

@@ -6,8 +6,10 @@
         <div class="col-md-10">
 
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header text-info">[ Total Jobs:  <b class="text-warning">{{ $count }}</b> ]</div>
-                
+                <div class="card-header" style="display: flex; justify-content: space-between;">
+                    <p class="card-title text-info">[ Total Jobs:  <b class="text-warning">{{ $count }}</b> ]</p>
+                    <p class="card-title"><a  href="{{ route('jobs.create') }}" style="text-decoration: none;"><i class="fa fa-plus"></i> Create New</a></p>
+                </div>
 
                 <div class="card-body">
                     <div class="table-responsive">

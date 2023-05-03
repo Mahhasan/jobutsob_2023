@@ -66,8 +66,8 @@
                         
                     </div>
                     <div class="form-group">
-                        <label for="job_id">Main Site Job ID:</label>
-                        <input type="text" name="job_id" class="form-control" id="job_id" required value="{{ $job->job_id }}">
+                        <label for="job_link">Job Link:</label>
+                        <input type="url" name="job_link" class="form-control" id="job_link" value="{{ $job->job_link }}">
                     </div>
                     <div class="form-group">
                         <label for="description">Job Description</label>

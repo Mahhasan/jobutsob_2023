@@ -6,8 +6,10 @@
         <div class="col-md-8">
 
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header">Create A New Job </div>
-                
+                <div class="card-header" style="display: flex; justify-content: space-between;">
+                    <p class="card-title">Create a new job</p>
+                    <p class="card-title"><a  href="{{ route('jobs.index') }}" style="text-decoration: none;"><i class="fa fa-list"></i> See list</a></p>
+                </div>
 
                 <div class="card-body">
                     @if (session('success'))
@@ -25,31 +27,33 @@
                         <label for="title">Job Title:</label>
                         <input type="text" class="form-control" id="title" name="title" required>
                     </div>
-                    <div class="form-group">
-                        <label for="company">Company:</label>
-                        <select class="js-example-basic-multiple js-states form-control" name="company" >
-                        @foreach($companies as $company)   
-                           <option value="{{ $company->id }}" >{{ $company->name }}
-                               
-                           </option>
-                        @endforeach
-                        </select>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="company">Company:</label>
+                            <select class="form-control" name="company" >
+                                @foreach($companies as $company)   
+                                <option value="{{ $company->id }}" >{{ $company->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="company">Last Date:</label>
+                            <input type="date" class="form-control" id="last_date" name="last_date" required value="2021-06-20">
+                        </div>
                     </div>
+
                     <!-- <div class="form-group">
                         <label for="logo">Logo:</label>
               
                         <input id="logo" type="file" class="form-control" name="logo" required >
 
                     </div> -->
-
                     <div class="form-group">
-                        <label for="company">Last Date:</label>
-                        <input type="date" class="form-control" id="last_date" name="last_date" required value="2021-06-20">
-                        
-                    </div>
-                    <div class="form-group">
-                        <label for="job_id">Main Site Job ID:</label>
-                        <input type="text" name="job_id" class="form-control" id="job_id" required>
+                        <label for="job_link">Job Link:</label>
+                        <input type="url" name="job_link" class="form-control" id="job_link">
                     </div>
                     <div class="form-group">
                         <label for="description">Job Description</label>

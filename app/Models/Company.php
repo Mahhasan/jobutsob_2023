@@ -16,6 +16,7 @@ class Company extends Model
         'logo',
         'location',
         'slug', 
+        'executive_name',
     ];
     public function user()
     {

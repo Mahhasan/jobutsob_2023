@@ -22,10 +22,10 @@
                             <a class="nav-link" href="{{ route('create_company') }}">Create Company</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('jobseekers') }}">Jobseekers</a>
+                            <a class="nav-link" href="{{ route('company') }}">Company</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('company') }}">Company</a>
+                            <a class="nav-link" href="{{ route('jobseekers') }}">Jobseekers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('view-jobseeker-status') }}">Selected Jobseeker</a>

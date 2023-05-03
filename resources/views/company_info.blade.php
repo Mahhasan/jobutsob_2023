@@ -5,8 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header">Company Info [ Total Company:  <b class="text-success">{{ $count }}</b> ]</div>
-
+                <div class="card-header" style="display: flex; justify-content: space-between;">
+                    <p class="card-title text-info">Company Info [ Total Company:  <b class="text-warning">{{ $count }}</b> ]</p>
+                    <p class="card-title"><a  href="{{ route('create_company') }}" style="text-decoration: none;"><i class="fa fa-plus"></i> Create New</a></p>
+                </div>
                 <div class="card-body">
                     <!-- @if (session('status'))
                         <div class="alert alert-success" role="alert">
