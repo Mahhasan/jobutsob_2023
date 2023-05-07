@@ -80,9 +80,10 @@
             <div class="modal-body">
                 <h5 class="card-title">Job Title:<b> {{$value->title}}</b></h5>
                 <p class="card-text">Company:<b> {{ \App\Models\Company::find($value->company)->name }}</b></p>
-                <p>Last Date:<b> {{$value->last_date}}</b></p>
                 <p class="card-text">Short Description: {!! $value->short_description !!}</p>
                 <p class="card-text">Description: {!! $value->description !!}</p>
+                <p>Salary:<b> &#2547; {{$value->salary}}</b></p>
+                <p>Last Date:<b> {{$value->last_date}}</b></p>
             </div>
             <div class="modal-footer" style="border-top: 1px solid rgb(52, 144, 220);">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

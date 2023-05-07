@@ -9,8 +9,11 @@
                  <div class="card-header">
                     <div class="row">
                         <div class="col-4">
-                            <a class=" pull-right btn btn-sm btn-success" href="{{ route('jobs.index')}}">
-                                <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                            <small class="text-left">
+                                <abbr title="Go to Previous page">
+                                <a style="text-decoration: none;" href="{{ route('jobs.index') }}">
+                                <i class="fa fa-arrow-left"></i> Get Back</a></abbr>
+                            </small>
                         </div>
                         <div class="col-4 text-center">
                             Job ID #{{ $job->id }} 
@@ -46,24 +49,33 @@
                         <label for="title">Job Title:</label>
                         <input type="text" class="form-control" id="title" name="title" required value="{{ $job->title }}">
                     </div>
-                    <div class="form-group">
-                        <label for="company">Company:</label>
-                        <input type="text" class="form-control"  disabled value="{{ 
-                            
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="company">Company:</label>
+                            <input type="text" class="form-control"  disabled value="{{ 
+                                
                             \App\Models\Company::find($job->company)->name
                              }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="logo">Logo:</label>
-                        <img class="img img-responsive" width="100" height="100" src="/logo/{{$job->logo}}" alt="{{$job->logo}}">
-                        <input id="logo" type="file" class="form-control" name="logo"  >
+                        </div>
 
+                        <div class="col-sm-6">
+                            <label for="logo">Logo:</label>
+                            <img class="img img-responsive" width="100" height="100" src="/logo/{{$job->logo}}" alt="{{$job->logo}}">
+                            <input id="logo" type="file" class="form-control" name="logo"  >
+                        </div>
                     </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="company">Last Date:</label>
+                            <input type="date" class="form-control" id="last_date" name="last_date" required  value="{{ $job->last_date }}">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="company">Last Date:</label>
-                        <input type="date" class="form-control" id="last_date" name="last_date" required  value="{{ $job->last_date }}">
-                        
+                        <div class="col-sm-6">
+                            <label for="salary">Salary:</label>
+                            <input type="text" class="form-control" id="salary" name="salary" required  value="{{ $job->salary }}">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="job_link">Job Link:</label>

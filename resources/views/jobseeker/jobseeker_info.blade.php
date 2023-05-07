@@ -7,8 +7,8 @@
         <div class="col-md-12">
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="row">
-                    <div class=" col-md-6 pt-2"><b>Jobseeker Info.</b>[ Total Jobseekers:  <b class="text-success">{{ $count2 }}</b> ]
-                        [Showing Results for <span style="color:red"><b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} : {{ $jobseekers->total() }} </span></b>]  
+                    <div class=" col-md-6 pt-2 pl-4"><b>Jobseeker Info:</b> Total Jobseekers:  <b class="text-success">{{ $count2 }}</b> |
+                        Showing Results for: <span style="color:red"><b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} {{ $jobseekers->total() }} </span></b>  
                     </div>
                     <div class="col-md-6 pt-2">
                         <form action="" method="GET">
@@ -40,66 +40,73 @@
                 </div>
                 
                 <div class="card-body">
-                <a href="{{ route('download-resumes') }}" class="btn btn-primary">Download Resumes</a>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
                     <div class="table-responsive">
+                        <p class="text-right"><abbr title="Download all Resume"><a href="{{ route('download-resumes') }}" class="text-info">
+                            <i class="fa fa-download" aria-hidden="true"></i></a></abbr></p>
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
-                                    <th>Sl No.</th>
+                                    <th>SL</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Cell</th>
-                                    <th>Bachelor</th>
-                                    <th>Masters</th>
-                                    <th>TRIX</th>
+                                    <th>Mobile No.</th>
+                                    <th>Bachelor Info</th>
+                                    <th>Masters Info</th>
+                                    <th>Transaction ID</th>
                                     <th>Payment Status</th>
                                     <th>Resume</th>
+                                    <th>Details</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($jobseekers as $value)
+                                @foreach($jobseekers as $index=>$value)
                                 <tr class="odd gradeX">
                                     <td>{{++$index}}</td>
                                     <td>{{$value->name}}</td>
                                     <td>{{$value->email}}</td>
                                     <td>{{$value->cell}}</td>
                                     <td>
-                                        <b>Faculty: </b>{{$value->bachelor_faculty->faculty_name ?? ' '}} <br><b>Department: </b>{{$value->bachelor_department->department_name ?? ' '}} | <b>University: </b>{{ $value->bachelor_institute }} |
-                                        <b>Result: </b>{{$value->bachelor_result}} | <b>Year/Semester: </b>{{ $value->bachelor_year }} | 
-                                        <b>Status: </b>{{ $value->bachelor_status }}
-                                        
-                                    </td>
+                                        <abbr title="{{ $value->name }}'s Bachelor information &#013;{{$value->bachelor_faculty->faculty_name ?? ' '}}&#013;{{$value->bachelor_department->department_name ?? ' '}}&#013;Bachelor Status: {{$value->bachelor_status}}&#013;Result: {{$value->bachelor_result}}&#013;Passing Year: {{$value->bachelor_year}}&#013;Institute: {{$value->bachelor_institute}}">
+                                        {{$value->bachelor_department->department_name ?? ' '}}</abbr></td>
                                     <td>
-                                        <b>Faculty: </b> {{$value->master_faculty->faculty_name ?? ' '}} <b>Department: </b> {{$value->master_department->department_name ?? ' '}} | <b>University: </b>{{ $value->masters_institute }} |
-                                        <b>Result: </b>{{$value->masters_result}} | <b>Year/Semester: </b>{{ $value->masters_year }} | 
-                                        <b>Status: </b>{{ $value->masters_status }}
-                                        
-                                    </td>
+                                        <abbr title="{{ $value->name }}'s masters information &#013;{{$value->masters_faculty->faculty_name ?? ' '}}&#013;{{$value->masters_department->department_name ?? ' '}}&#013;Bachelor Status: {{ $value->masters_status }}&#013;Result: {{$value->masters_result}}&#013;Passing Year: {{$value->masters_year }}&#013;Institute: {{$value->masters_institute }}">
+                                        {{$value->masters_department->department_name ?? ' '}}</abbr></td>
+                                    
                                     <td>{{$value->trix}}</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-warning" href="{{ route('approve',$value->id) }}" type="button" >
+                                    <td><abbr title="Update {{ $value->name }}'s payment status">
+                                        <a style="text-decoration: none;" href="{{ route('approve',$value->id) }}" type="button">
                                             <?php 
-                                             if($value->payment_status==1){
-                                                 echo "Paid";
-                                             }
-                                             else if($value->payment_status==2){
-                                                 echo "Pending";
-                                             }
-                                             else {
-                                                 echo "Unpaid";
-                                             }
-                                            
+                                                if($value->payment_status==1){
+                                                    echo "<span class=\"badge badge-success\">Paid</span>";
+                                                }
+                                                else if($value->payment_status==2){
+                                                    echo "<span class=\"badge badge-warning\">Pending</span>";
+                                                }
+                                                else {
+                                                    echo "<span class=\"badge badge-danger\">Unpaid</span>";
+                                                }
                                             ?>
+                                            <span class="text-info"><i class="fa fa-edit" aria-hidden="true"></i></span>
                                         </a>
                                     </td>
-                                    <td> <a 
-                                    class="btn btn-sm btn-success"
-                                    href="/resume/{{$value->resume}}" type="button" target="_blank">Download CV</a>
+                                   
+                                    <td class="text-center"><abbr title="Download {{ $value->name }}'s resume"> 
+                                        <a class="text-info" href="/resume/{{$value->resume}}" target="_blank">
+                                        <i class="fa fa-download" aria-hidden="true"></i></a></abbr>
+                                        &nbsp; &nbsp;
+                                        <abbr title="click to see {{ $value->name }}'s video resume">
+                                        <a href="{{$value->video}}" type="button" target="_blank">
+                                            <i class="fa fa-link" aria-hidden="true"></i></a></abbr>
+                                    </td>
+                                    <td class="text-center">
+                                        <abbr title="click to see {{ $value->name }}'s full information">
+                                        <a class="text-info" href="" data-toggle="modal" data-target="#JobseekersDetails{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                        </abbr>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -107,7 +114,6 @@
                   
                     </table>
 
-                    {{ $jobseekers->links() }}
 
                     </div>
                     
@@ -116,13 +122,66 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+@foreach($jobseekers as $value)
+<div class="modal fade" id="JobseekersDetails{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom: 2px solid #3490dc;">
+                <h5 class="modal-title" style="color: #3490dc;" id="exampleModalLabel"><b>{{ $value->name }}'s Details</b></h5><br>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="card-title">Name:<b> {{ $value->name }}</b></p>
+                <p class="card-text">Email: {{ $value->email }}</p>
+                <p class="card-text">Mobile: {{ $value->cell }}</p>
 
+                <p class="card-text">Bachelor Information: </p>
+                    <p class="pl-5" style="font-size: 14px">
+                    {{$value->bachelor_faculty->faculty_name ?? ' '}}<br>
+                    {{$value->bachelor_department->department_name ?? ' '}} <br>
+                    Bachelor Status: {{$value->bachelor_status}} <br>
+                    Result: {{$value->bachelor_result}} <br>
+                    Passing Year/Semester: {{$value->bachelor_year}} <br>
+                    Institute: {{$value->bachelor_institute}}</p>
 
-<!-- DataTables -->
+                <p class="card-text">Masters Information: </p>
+                    <p class="pl-5" style="font-size: 14px">
+                    {{$value->masters_faculty->faculty_name ?? ' '}}<br>
+                    {{$value->masters_department->department_name ?? ' '}} <br>
+                    Bachelor Status: {{$value->masters_status}} <br>
+                    Result: {{$value->masters_result}} <br>
+                    Passing Year/Semester: {{$value->masters_year}} <br>
+                    Institute: {{$value->masters_institute}}</p>
 
-
-
-
-
-
+                <p class="card-text">Experience: {{ $value->experience }} years</p>
+                <p class="card-text">Video Resume: 
+                    <abbr title="click to see {{ $value->name }}'s video resume">
+                    @if(isset($value->video))
+                    <a href="{{$value->video}}" type="button" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{$value->video}}</a>
+                    @else
+                    <a href="{{$value->video}}" type="button" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{$value->video}}</a>
+                    @endif</abbr>
+                </p>
+                <p class="card-text">Resume: 
+                    <abbr title="Download {{ $value->name }}'s resume">
+                    @if(isset($value->resume))
+                    <a href="/resume/{{$value->resume}}" type="button" class="text-info" target="_blank"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Resume</a>
+                    @else  
+                    <a href="/resume/{{$value->resume}}" type="button" class="text-info" target="_blank"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Resume</a>
+                    @endif</abbr></p>
+                <p class="card-text">Address: {{ $value->address }}</p>
+                <p class="card-text">Skills: {{ $value->skill }}</p>
+                <p class="card-text">Preferred Industry: {{ $value->industry }}</p>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid rgb(52, 144, 220);">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            
+        </div>
+    </div>
+</div>  
+@endforeach
 @endsection

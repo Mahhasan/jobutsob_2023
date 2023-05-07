@@ -129,6 +129,7 @@ class JobController extends Controller
              //'logo'    =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
              'last_date'   =>  'required',
              'description'   =>  'required',
+             'salary'   =>  'required',
              'short_description'   =>  'required',
          
          ]);
@@ -143,6 +144,7 @@ class JobController extends Controller
          $job->company = $request->company;
          $job->logo = '-';
          $job->last_date = $request->last_date;
+         $job->salary = $request->salary;
          $job->job_link = $request->job_link;
          $job->description = $request->description;
          $job->short_description = $request->short_description;
@@ -229,6 +231,7 @@ class JobController extends Controller
             
              'logo'    =>  'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
              'last_date'   =>  'required',
+             'salary'   =>  'required',
              'description'   =>  'required',
              'short_description'   =>  'required',
              
@@ -249,6 +252,7 @@ class JobController extends Controller
          $job->logo = $imageName;
          }
          $job->last_date = $request->last_date;
+         $job->salary = $request->salary;
          $job->job_link = $request->job_link;
          $job->description = $request->description;
          $job->short_description = $request->short_description;

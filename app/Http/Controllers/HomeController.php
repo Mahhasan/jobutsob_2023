@@ -9,6 +9,7 @@ use App\Models\Jobseeker;
 use App\Models\Employer;
 use App\Models\Company;
 use App\Models\Department;
+use App\Models\User;
 use App\Models\Faculty;
 use App\Models\MastersDepartment;
 use Illuminate\Support\Facades\DB;
@@ -89,8 +90,7 @@ class HomeController extends Controller
         $type = $request->type;
 
 
-        $jobseekers = Jobseeker::paginate(50);
-        $index = $jobseekers->perPage() * ($jobseekers->currentPage() - 1);
+        $jobseekers = Jobseeker::all();
 
         // if all not keyword
         if(isset($dept_id) && isset($type) && !isset($keyword)){
@@ -277,7 +277,7 @@ class HomeController extends Controller
         $dept = Department::get();
 
 
-        return view('jobseeker.jobseeker_info',compact('jobseekers','count','count2','fall21','dept', 'index'));
+        return view('jobseeker.jobseeker_info',compact('jobseekers','count','count2','fall21','dept',));
     }
     public function employer_info()
     {
@@ -296,9 +296,9 @@ class HomeController extends Controller
 
         }
          $data = DB::table('companies');
-        $companies = Company::paginate(50);
-        $index = $companies->perPage() * ($companies->currentPage() - 1);
+        $companies = Company::all();
+        // $index = $companies->perPage() * ($companies->currentPage() - 1);
         $count = Company::get()->count();
-        return view('company_info',compact('companies', 'data', 'count', 'index'));
+        return view('company_info',compact('companies', 'data', 'count',));
     }
 }

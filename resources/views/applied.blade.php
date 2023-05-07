@@ -33,7 +33,10 @@
                     <i class="far fa-building" aria-hidden="true"></i>
                     {{  \App\Models\Company::find($job->company)->name }}
                 </div>
-                <div class="mt-3">
+                <div class="mt-2">
+                    <strong><i class="fas fa-money-bill-alt"></i> &nbsp; Salary:</strong> &#2547; {{ $job->salary }}
+                </div>
+                <div class="mt-2">
                     <strong><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Last Date:</strong>  {{ $job->last_date }}
                 </div>
                 <!-- <a href="" class="btn btn-outline-primary btn-sm btn-block">Get Register</a> -->
@@ -64,7 +67,7 @@
                                     <th>SL</th>
                                     <th>Name</th>
                                     <th>Eamil</th>
-                                    <th>Mobile No</th>
+                                    <th>Mobile No.</th>
                                     <th>Bachelor Info</th>
                                     <!-- <th>University</th>
                                     <th>Passing Year/Semester</th>

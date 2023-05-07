@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="card-header" style="display: flex; justify-content: space-between;">
                     <p class="card-title text-info">Company Info [ Total Company:  <b class="text-warning">{{ $count }}</b> ]</p>
@@ -22,6 +22,7 @@
                                 <th>Sl No.</th>
                                 <th>Logo</th>
                                 <th>Company</th>
+                                <th>Contact Info</th>
                                 <th>Location</th>
                                <!--  <th>Address</th>
                                 <th>Email</th>
@@ -29,13 +30,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($companies as $value)
+                        @foreach($companies as $index=>$value)
                             <tr class="odd gradeX">
                                 <td>{{++$index}}</td>
                                 <td ><img class="img img-responsive p-3" width="125" 
                                 src="/logo/{{$value->logo}}" alt="{{$value->logo}}">
                                
                                 <td>{{$value->name}}</td>
+                                <td>{{$value->user->name}}<br>
+                                    {{$value->user->designation}}<br>
+                                    <i class="fa fa-phone" aria-hidden="true"></i>{{$value->user->cell}}<br>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> {{$value->user->email}}
+                                </td>
                                 <td>{{$value->location}}</td>
                                 <!-- <td>{{$value->job_category}}</td>
                                 <td>{{$value->address}}</td>
@@ -46,7 +52,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $companies->links() }}
                 </div>
             </div>
         </div>

@@ -40,8 +40,8 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label for="company">Last Date:</label>
-                            <input type="date" class="form-control" id="last_date" name="last_date" required value="2021-06-20">
+                            <label for="job_link">Job Link:</label>
+                            <input type="url" name="job_link" class="form-control" id="job_link">
                         </div>
                     </div>
 
@@ -51,9 +51,20 @@
                         <input id="logo" type="file" class="form-control" name="logo" required >
 
                     </div> -->
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="company">Last Date:</label>
+                            <input type="date" class="form-control" id="last_date" name="last_date" required value="2021-06-20">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="salary">Salary:</label>
+                            <input type="text" class="form-control" id="salary" name="salary" required>
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
-                        <label for="job_link">Job Link:</label>
-                        <input type="url" name="job_link" class="form-control" id="job_link">
+                        
                     </div>
                     <div class="form-group">
                         <label for="description">Job Description</label>

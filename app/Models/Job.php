@@ -14,6 +14,7 @@ class Job extends Model
         'company',
         'logo',
         'last_date',
+        'salary',
         'job_link',
         'description',
         'short_description',
