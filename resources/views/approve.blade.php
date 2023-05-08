@@ -7,8 +7,12 @@
 
 
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header">Job Seeker ID #   {{ $data->id }}
-                <a class="btn btn-sm btn-danger" href="{{ route('jobseekers') }}">Back</a>
+                <div class="card-header">
+                <small class="text-left">
+                    <abbr title="Go to Previous page">
+                        <a style="text-decoration: none;" href="{{ route('jobseekers') }}">
+                        <i class="fa fa-arrow-left"></i> Get Back</a></abbr></small>    
+                        &nbsp; &nbsp; Job Seeker ID #   {{ $data->id }}
                 </div>
 
                 <div class="card-body">

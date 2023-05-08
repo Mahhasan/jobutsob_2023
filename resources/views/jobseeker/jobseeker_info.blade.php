@@ -6,36 +6,39 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="row">
-                    <div class=" col-md-6 pt-2 pl-4"><b>Jobseeker Info:</b> Total Jobseekers:  <b class="text-success">{{ $count2 }}</b> |
-                        Showing Results for: <span style="color:red"><b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} {{ $jobseekers->total() }} </span></b>  
-                    </div>
-                    <div class="col-md-6 pt-2">
-                        <form action="" method="GET">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <select name="bachelor_department_id" id="input" class="form-control">
-                                        <option value="">Select Department</option>
-                                        @foreach($dept as $d)
-                                        <option value="{{$d->id}}">{{$d->department_name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="type" id="input" class="form-control">
-                                        <option value="">Select Type(Alumni/Student)</option>
-                                        <option value="Student">Student</option>
-                                        <option value="Alumni">Alumni</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" name="keyword" class="form-control" placeholder="Search by keyword">
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-secondary" type="submit">Search</button>
+                <div class="card-header">
+                    <div class="row">
+                        <div class=" col-md-6 pt-2 text-right">
+                            <span class="text-info">Showing Results for:</span> <span class="text-warning">
+                            <b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} {{ $jobseekers->total() }} </span></b>  
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <form action="" method="GET">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <select name="bachelor_department_id" id="input" class="form-control" style="font-size: 14px;">
+                                            <option value="">Select Department</option>
+                                            @foreach($dept as $d)
+                                            <option value="{{$d->id}}">{{$d->department_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="type" id="input" class="form-control" style="font-size: 14px;">
+                                            <option value="">Select (Alumni/Student)</option>
+                                            <option value="Student">Student</option>
+                                            <option value="Alumni">Alumni</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="keyword" class="form-control" placeholder="Search by Skill" style="font-size: 14px;">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-secondary" type="submit" style="font-size: 14px;">Search</button>
+                                    </div>   
                                 </div>   
-                            </div>   
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 
@@ -46,8 +49,12 @@
                     </div>
                     @endif
                     <div class="table-responsive">
-                        <p class="text-right"><abbr title="Download all Resume"><a href="{{ route('download-resumes') }}" class="text-info">
+                        <div style="display: flex; justify-content: space-between;">
+                            <p class="text-info">Total Jobseekers: <b class="text-warning">{{ $count2 }}</b></p>
+                            <p><abbr title="Download all Resume"><a onclick="return confirm('Are you sure you want to start downloading? ');" href="{{ route('download-resumes') }}" class="text-info">
                             <i class="fa fa-download" aria-hidden="true"></i></a></abbr></p>
+                        </div>
+                        
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
@@ -116,7 +123,7 @@
 
 
                     </div>
-                    
+                    {{ $jobseekers->links() }}
                 </div>
             </div>
         </div>

@@ -35,49 +35,6 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    // public function jobseeker_info(Request $request)
-    // {
-    //     if(Auth()->user()->status!="admin"){
-    //         return redirect()->to('/home');
-
-    //     }
-
-    //     $q = $request->q;
-       
-    //     $jobseekers = Jobseeker::paginate(50);
-    //     #$jobseekers = Jobseeker::get();
-
-      
-    //     if($q != ""){
-    //     $jobseekers = Jobseeker::where ( 'skill', 'LIKE', '%' . $q . '%' )
-    //     //->whereYear('created_at', 2021)
-    //     ->orWhere ( 'bachelor_institute', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'masters_institute', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'bachelor_subject', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'masters_subject', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'industry', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'description', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'trix', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'category', 'LIKE', '%' . $q . '%' )
-    //     ->orWhere ( 'club', 'LIKE', '%' . $q . '%' )
-       
-    //     ->orWhere ( 'email', 'LIKE', '%' . $q . '%' )
-        
-    //     // ->latest()
-    //     ->paginate (50)->setPath ( '' );
-    //     $pagination = $jobseekers->appends ( array (
-    //         'q' => $q 
-    //       ) );
-    //     }
-       
-       
-    //     $count = Jobseeker::whereYear('created_at', 2021)->whereDate('created_at', '<=', "2021-08-31")->latest()->count();
-    //     $fall21 = Jobseeker::whereYear('created_at', 2021)->whereDate('created_at', '>', "2021-08-31")->latest()->count();
-
-    //     $count2 = Jobseeker::get()->count();
-
-    //     return view('jobseeker.jobseeker_info',compact('jobseekers','count','count2','fall21'));
-    // }
     public function jobseeker_info(Request $request)
     {
         if(Auth()->user()->status!="admin"){
@@ -89,8 +46,8 @@ class HomeController extends Controller
         $keyword = $request->keyword;
         $type = $request->type;
 
-
-        $jobseekers = Jobseeker::all();
+        $jobseekers = Jobseeker::paginate(50);
+        $index = $jobseekers->perPage() * ($jobseekers->currentPage() - 1);
 
         // if all not keyword
         if(isset($dept_id) && isset($type) && !isset($keyword)){
@@ -172,102 +129,23 @@ class HomeController extends Controller
             
         }
 
-        else if(isset($keyword)){
-            //dd("dept_id");
         
-            $jobseekers = Jobseeker::where ('skill', $keyword)
-           
-            ->paginate (50)->setPath ( '' );
-    
-    
-            $pagination = $jobseekers->appends ( 
-                    array (
-                    'keyword' => $keyword, 
-                   
-                ) 
-            );
-
-            
+        else if(isset($keyword)){
+            $jobseekers = Jobseeker::where('skill', 'LIKE', '%' . $keyword . '%')
+                ->paginate(50)
+                ->setPath('');
+        
+            $pagination = $jobseekers->appends(['keyword' => $keyword]);
         }
 
-
-      
-        //if only type
-
-        //if keyword
-
-        //if all
-
-        
-        
-       
-        
-        #$jobseekers = Jobseeker::get();
-
-      
-        // if(($keyword != "" || $dept_id!='') && $type==''){
-        //     // dd("loop1");
-        //     $jobseekers = Jobseeker::where ( 'skill', 'LIKE', '%' . $keyword . '%' )
-        // ->where ('bachelor_department_id', $dept_id)
-        // //->whereYear('created_at', 2021)
-      
-        // // ->orWhere ( 'masters_institute', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'bachelor_subject', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'masters_subject', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'industry', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'description', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'trix', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'category', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'club', 'LIKE', '%' . $keyword . '%' )
-       
-        // // ->orWhere ( 'email', 'LIKE', '%' . $keyword . '%' )
-        
-        
-        // // ->latest()
-        // ->paginate (50)->setPath ( '' );
-
-
-        // $pagination = $jobseekers->appends ( 
-        //         array (
-        //         'keyword' => $keyword, 
-        //         'bachelor_department_id' => $dept_id 
-        //     ) 
-        // );
-        
+        // else if(isset($keyword)){
+        //     $jobseekers = Jobseeker::where ('skill', $keyword)->paginate (50)->setPath ( '' );
+        //     $pagination = $jobseekers->appends ( 
+        //             array (
+        //             'keyword' => $keyword, 
+        //         ) 
+        //     );
         // }
-
-        // if($keyword != "" || $dept_id!='' && $type!='' ){
-        //     // dd($dept_id);
-        //     // dd( "loop2");
-        // $jobseekers = Jobseeker::where ( 'skill', 'LIKE', '%' . $keyword . '%' )
-        // ->where ('bachelor_department_id', $dept_id)
-        // //->whereYear('created_at', 2021)
-        // ->Where ( 'certificate ', 'LIKE', '%' . $type . '%' )
-        // // ->orWhere ( 'masters_institute', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'bachelor_subject', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'masters_subject', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'industry', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'description', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'trix', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'category', 'LIKE', '%' . $keyword . '%' )
-        // // ->orWhere ( 'club', 'LIKE', '%' . $keyword . '%' )
-       
-        // // ->orWhere ( 'email', 'LIKE', '%' . $keyword . '%' )
-        
-        
-        // // ->latest()
-        // ->paginate (50)->setPath ( '' );
-
-
-        // $pagination = $jobseekers->appends ( 
-        //         array (
-        //         'keyword' => $keyword, 
-        //         'bachelor_department_id' => $dept_id 
-        //     ) 
-        // );
-        
-        // }
-
           
        
         $count = Jobseeker::whereYear('created_at', 2021)->whereDate('created_at', '<=', "2021-08-31")->latest()->count();
@@ -277,7 +155,7 @@ class HomeController extends Controller
         $dept = Department::get();
 
 
-        return view('jobseeker.jobseeker_info',compact('jobseekers','count','count2','fall21','dept',));
+        return view('jobseeker.jobseeker_info',compact('jobseekers','count','count2','fall21','dept', 'index'));
     }
     public function employer_info()
     {

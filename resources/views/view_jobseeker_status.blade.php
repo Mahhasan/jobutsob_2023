@@ -17,7 +17,7 @@
                         <table width="100%" class="table table-striped table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
-                                    <th>Sr. No.</th>
+                                    <th>Sl</th>
                                     <th>Status</th>
                                     <th>Name</th>
                                     <th>Job Title</th>
@@ -25,15 +25,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($status as $index=>$value)
-                                <tr class="odd gradeX">
-                                    <td>{{++$index}}</td>
-                                    <td>{{$value->status}}</td>
-                                    <td>{{$value->user->name}}</td>
-                                    <td>{{$value->job->title}}</td>
-                                    <td>{{$value->job->com_name->name}}</td>
-                                </tr>
-                                @endforeach
+                            @foreach($status as $index=>$value)
+                            <tr class="odd gradeX">
+                                <td>{{++$index}}</td>
+                                <td>{{$value->status}}</td>
+                                <td>{{$value->user->name}}</td>
+                                <td>
+                                    @if ($value->job)
+                                        {{$value->job->title}}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($value->job && $value->job->com_name)
+                                        {{$value->job->com_name->name}}
+                                    @else
+                                        N/A
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
