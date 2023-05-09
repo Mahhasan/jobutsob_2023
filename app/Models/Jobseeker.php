@@ -36,6 +36,15 @@ class Jobseeker extends Model
         'status',
 
    ];
+
+   public function user()
+    {
+        return $this->belongsTo('App\Models\User','user_id');
+    }
+   public function jobseekers_status()
+   {
+       return $this->belongsTo('App\Models\Apply', 'user_id');
+   }
    public function bachelor_faculty()
    {
        return $this->belongsTo('App\Models\Faculty', 'bachelor_faculty_id');

@@ -8,7 +8,7 @@
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="card-header" style="display: flex; justify-content: space-between;">
                     <p class="card-title text-info">[ Total Jobs:  <b class="text-warning">{{ $count }}</b> ]</p>
-                    <p class="card-title"><a  href="{{ route('jobs.create') }}" style="text-decoration: none;"><i class="fa fa-plus"></i> Create New</a></p>
+                    <p class="card-title"><abbr title="Click to create a new job"><a  href="{{ route('jobs.create') }}" style="text-decoration: none;"><i class="fa fa-plus"></i> Create New</a></abbr></p>
                 </div>
 
                 <div class="card-body">
@@ -45,14 +45,14 @@
                                     
                                     <td>{{$value->last_date}}</td>
                                     <td>
-                                        <a class="text-info" href="" data-toggle="modal" data-target="#example{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                        &nbsp;<a class="text-success" href="{{ route('jobs.edit',$value->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                        &nbsp;<a class="text-danger" onclick="return confirm('Are you sure want to delete? ');" href ="destroy_job/{{ $value->id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                        <abbr title="Click to see job details"><a class="text-info" href="" data-toggle="modal" data-target="#example{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a></abbr>
+                                        &nbsp; <abbr title="Click to Update this job"><a class="text-success" href="{{ route('jobs.edit',$value->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a></abbr>
+                                        &nbsp; <abbr title="Click to delete this job"><a class="text-danger" onclick="return confirm('Are you sure want to delete? ');" href ="destroy_job/{{ $value->id }}"><i class="fa fa-trash" aria-hidden="true"></i></a></abbr>
                                     </td>
-                                    <td><a href="{{ route('applied',$value->id) }}" class="arrow-button"><?php
+                                    <td><abbr title="Click to see applied jobseekers"><a href="{{ route('applied',$value->id) }}" class="arrow-button"><?php
                                     $x = App\Models\Apply::where('job_id',$value->id)->count();
                                     ?>
-                                    {{ $x }} applied</a>
+                                    {{ $x }} applied</a></abbr>
                                     
                                     </td>
                                 </tr>

@@ -30,6 +30,15 @@
                                             <option value="Alumni">Alumni</option>
                                         </select>
                                     </div>
+                                    <!-- <div class="col-md-4">
+                                        <select name="status" id="input" class="form-control" style="font-size: 14px;">
+                                            <option value="">Jobseekers Status</option>
+                                            <option value="Initial">Initial</option>
+                                            <option value="Written">Written</option>
+                                            <option value="Interview">Interview</option>
+                                            <option value="Selected">Selected</option>
+                                        </select>
+                                    </div> -->
                                     <div class="col-md-3">
                                         <input type="text" name="keyword" class="form-control" placeholder="Search by Skill" style="font-size: 14px;">
                                     </div>

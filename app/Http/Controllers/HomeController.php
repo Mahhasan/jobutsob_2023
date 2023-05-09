@@ -9,6 +9,7 @@ use App\Models\Jobseeker;
 use App\Models\Employer;
 use App\Models\Company;
 use App\Models\Department;
+use App\Models\Apply;
 use App\Models\User;
 use App\Models\Faculty;
 use App\Models\MastersDepartment;
@@ -138,6 +139,11 @@ class HomeController extends Controller
             $pagination = $jobseekers->appends(['keyword' => $keyword]);
         }
 
+
+
+     
+        
+
         // else if(isset($keyword)){
         //     $jobseekers = Jobseeker::where ('skill', $keyword)->paginate (50)->setPath ( '' );
         //     $pagination = $jobseekers->appends ( 
@@ -146,7 +152,6 @@ class HomeController extends Controller
         //         ) 
         //     );
         // }
-          
        
         $count = Jobseeker::whereYear('created_at', 2021)->whereDate('created_at', '<=', "2021-08-31")->latest()->count();
         $fall21 = Jobseeker::whereYear('created_at', 2021)->whereDate('created_at', '>', "2021-08-31")->latest()->count();

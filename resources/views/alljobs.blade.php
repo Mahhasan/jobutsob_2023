@@ -61,9 +61,9 @@
                                         }}  
                                         </td>
                                         <td>{{$value->last_date}}</td>
-                                        <td class="text-center"><a 
-                                        class="btn  btn-primary"
-                                        href="{{ route('jobs.show',$value->id) }}">View & Apply Jobs</a></td>
+                                        <td class="text-center">
+                                            <a class="btn  btn-primary" href="{{ route('jobs.show',$value->id) }}">View & Apply Jobs</a>
+                                    </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

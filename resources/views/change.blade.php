@@ -30,10 +30,9 @@
                         <label for="status">Update Status:</label>
                         <select class="form-control" id="status" name="status">
                             <option>Initial</option>
-                            <option>Interview</option>
                             <option>Written</option>
-                            <option>Viva</option>
-                            <option>Final</option>
+                            <option>Interview</option>
+                            <option>Selected</option>
                             
                         </select>
                         </div>
