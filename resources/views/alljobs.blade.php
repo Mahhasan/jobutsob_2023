@@ -8,20 +8,21 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <h5 class="card-title">All Jobs</h5>
+                        <p class="card-title text-info">[ Total Job:  <b class="text-warning">{{ $count }}</b> ]</p>
                         </div>
                         <div class="col-md-6 mb-4">
                             <form action="{{ route('job_search') }}" method="GET">
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <select name="company" id="input" class="form-control">
-                                            <option value="0">Select Company</option>
-                                            @foreach($search_jobs as $value)
-                                                <option value="{{$value->company}}">
-                                                {{ \App\Models\Company::find($value->company)->name}}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                    <select name="company" id="input" class="form-control">
+                                        <option value="0">Select Company</option>
+                                        @foreach($search_jobs as $job)
+                                            <option value="{{$job->company}}">
+                                                {{ \App\Models\Company::find($job->company)->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
                                     </div>
                                     <div class="col-md-5">
                                         <input type="text" name="title" class="form-control" placeholder="Search your favorite job">
@@ -38,7 +39,7 @@
                             <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>SL</th>
                                         <th>Title</th>
                                         <th>Company Logo</th>
                                         <th>Company Name</th>
@@ -62,7 +63,7 @@
                                         </td>
                                         <td>{{$value->last_date}}</td>
                                         <td class="text-center">
-                                            <a class="btn  btn-primary" href="{{ route('jobs.show',$value->id) }}">View & Apply Jobs</a>
+                                            <a class="btn  btn-primary" href="{{ route('jobs.show',$value->id) }}">View & Apply</a>
                                     </td>
                                     </tr>
                                     @endforeach

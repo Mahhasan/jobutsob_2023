@@ -5,7 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="card-header">Jobs</div>
 
@@ -15,8 +14,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-           
-
                     <hr>
                     <div class="table-responsive">
                     <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">

@@ -5,16 +5,19 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header">All Jobs </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        <div class="card-header" style="display: flex; justify-content: space-between;">
+                            <p class="text-info">Total Job: <b class="text-warning">{{$count}}</b></p>
+                            <p class="text-info">Job list of <b class="text-warning">{{$company->name}}</b></p>
+                        </div>
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>SL</th>
                                     <!-- <th>Job ID</th> -->
                                     <th>Job Title</th>
-                                    <th>Job Details</th>
+                                    <th>Salary</th>
                                     <th>Last Date</th>
                                     <th>Applied</th>
                                 </tr>
@@ -25,7 +28,7 @@
                                     <td>{{++$index}}</td>
                                     <!-- <td>{{$value->id}}</td> -->
                                     <td>{{$value->title}}</td>
-                                    <td>{!!$value->short_description!!}</td>
+                                    <td>{{$value->salary}}</td>
                                     <td>{{$value->last_date}}</td>
                                     <td><a href="{{ route('jobwise-applide',$value->id) }}">Click Here</a>
                                 

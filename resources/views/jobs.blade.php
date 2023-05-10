@@ -66,6 +66,7 @@
         </div>
     </div>
 </div>
+
 <!-- Modal -->
 @foreach($jobs as $value)
 <div class="modal fade" id="example{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -90,7 +91,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div>
 @endforeach
 <script src="https://cdn.tiny.cloud/1/knybwr594mznrv6uagt4lxrf191ll7had91pnu370cyt11gg/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 

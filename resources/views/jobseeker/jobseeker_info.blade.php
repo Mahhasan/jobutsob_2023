@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class=" col-md-6 pt-2 text-right">
                             <span class="text-info">Showing Results for:</span> <span class="text-warning">
-                            <b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} {{ $jobseekers->total() }} </span></b>  
+                            <b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} {{ $jobseekers->total() }} </b></span>  
                         </div>
                         <div class="col-md-6 text-right">
                             <form action="" method="GET">

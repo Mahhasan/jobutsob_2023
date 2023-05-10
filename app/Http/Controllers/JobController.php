@@ -372,12 +372,13 @@ class JobController extends Controller
          // $jobs = Job::where('last_date','>=',date('Y-m-d'))->get()->sortBy('company');
          $jobs = Job::where('last_date','>=',date('Y-m-d'))->paginate(50);
         //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
-         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
-                   ->select('id', 'company')
-                   ->groupBy('id', 'company')
-                   ->get();
- 
-         return view('alljobs',compact('jobs','search_jobs', 'data'));
+        $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
+        ->select('company')
+        ->distinct()
+        ->get();
+        
+         $count = Job::get()->count();
+         return view('alljobs',compact('jobs','search_jobs', 'data', 'count'));
      }
  
      public function my_jobs(){
@@ -386,8 +387,8 @@ class JobController extends Controller
          }
          $user = Auth()->user();
          $my_jobs = Apply::where('user_id',$user->id)->get();
-//  dd($user);
-         return view('my_jobs',compact('user', 'my_jobs'));
+         $count = Apply::where('user_id',$user->id)->count();
+         return view('my_jobs',compact('user', 'my_jobs', 'count'));
      }
  
  
@@ -501,9 +502,9 @@ class JobController extends Controller
          }
          $company = Company::where('user_id', Auth::user()->id)->first();
          $jobs = Job::where('company', $company->id)->get();
-         
+         $count = Job::where('company', $company->id)->count();
          //dd($jobs);
-         return view('companywise_job',compact('company','jobs'));
+         return view('companywise_job',compact('company','jobs', 'count'));
          
      }
      public function view_jobseeker_status()
@@ -549,9 +550,9 @@ class JobController extends Controller
          $data = $data->paginate(50);
         //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
-                   ->select('id', 'company')
-                   ->groupBy('id', 'company')
-                   ->get();
+        ->select('company')
+        ->distinct()
+        ->get();
          return view('job_search', compact('data','search_jobs'));
      }
 }

@@ -19,26 +19,25 @@
                     @endif
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="card-header">
-                <a class="btn btn-danger" href="{{ route('alljobs') }}">Back To All Jobs</a>
+                    <small class="text-left">
+                        <abbr title="Go to Previous page">
+                            <a style="text-decoration: none;" href="{{ URL::previous() }}">
+                            <i class="fa fa-arrow-left"></i> Get Back</a></abbr></small>
                 
             
-                @if(!$isapplied)
-                <a class="btn btn-primary" href="{{ route('applynow',$job->id) }}">Apply Now</a>
-                @else 
-                <button class="btn btn-success" href="#" disabled> Already Applied</button>
-                @endif
+                
             </div>
                 
-                <hr style="border-color: #449fdc;">
+                <!-- <hr style="border-color: #449fdc;"> -->
                 
 
                 <div class="card-body">
                    
                  
 
-                    <p><b>Job Title: </b><h5 style="color:#2980b9"><b>{{ $job->title }}</b></h5> 
+                    <p><b>Job Title: </b><span style="color:#2980b9; font-size: 18px;"><b>{{ $job->title }}</b></span> </p>
                     <p><b>Deadline: {{ $job->last_date }}</b></p>
-                    </p>
+                    <p><b>Salary: {{ $job->salary }}</b></p>
                     <p><b>Company: </b>{{ \App\Models\Company::find($job->company)->name }}</p>
                     <p><img src="/logo/{{ $job->logo}}" alt="" class="img img-responsive" width="150px"></p>
                     <p><b>Job Description: </b></p>
