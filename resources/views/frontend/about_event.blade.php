@@ -73,9 +73,8 @@
 		<div class="section-padding"></div>
 		<div class="container">
 			<div class="section-header">
-				<h3>ABOUT THE FLAGSHIP EVENT OF ‘DIU JOB UTSOB-2022’</h3>
-				<span>With a tremendously successful track record of ‘On-Campus Spot Recruitment’ events, 
-					it is our privilege hosting ‘DIU job Utsob’ for the year 2022.</span>
+				<h3>ABOUT THE FLAGSHIP EVENT OF ‘DIU JOB UTSOB-2023’</h3>
+				<span>With a tremendously successful track record of ‘On-Campus Spot Recruitment’ events, it is our privilege hosting ‘DIU job Utsob’ for the year 2023.</span>
 			</div>
 			<!-- <div class="">
 				<P style="font-family: 'Lora'; font-size: 20px;">
@@ -87,25 +86,11 @@
 				<div class="col-lg-6 col-sm-6 ">
 					<div class="">
 						<p>
-							DIU Job Utsob-2022 is the annual ‘Big bang career event’ held by the Career Development 
-							Center (CDC) of Daffodil International University. The program aims to provide a platform 
-							for DIU graduates to connect with the leading and constantly expanding companies of their 
-							preferences, and for the corporate sector- an opportunity to recruit interns and employees 
-							possessing a suitable career profile.
-						</P>
-						<p>This event shall showcase how combined efforts of the corporate and academic worlds 
-							can optimize the process of building bona fide future leaders for the ever-changing 
-							landscape of the Bangladeshi economy, where our future leaders are inspired through 
-							“Transition in Career”.This year, the event shall be organized under the tagline- 
-							‘Connecting Talents: Unlock the Border of Opportunities’.
-						</p>
-						<p>About 200+ reputed companies from 35 industries are expected to take part in this 
-							auspicious event. Moreover, this event will effectively open the gateway for 
-							companies to meet not only DIU graduates but also its experienced alumni network 
-							that is looking forward to making job transitions. We also believe that DIU Job 
-							Utsob-2022 will be the perfect platform to find the most suitable candidates for 
-							the organizations. 
-						</p>
+                            DIU Job Utsob-2023 is the annual ‘Big bang career event’ held by the Career Development Center (CDC) of Daffodil International University. The program aims to provide a platform for DIU graduates to connect with the leading and constantly expanding companies of their preferences, and for the corporate sector- an opportunity to recruit interns and employees possessing a suitable career profile.						</P>
+						<p>
+                            This event shall showcase how combined efforts of the corporate and academic worlds can optimize the process of building bona fide future leaders for the ever-changing landscape of the Bangladesh economy, where our future leaders are inspired through “Transition in Career”.This year, the event shall be organized under the tagline- ‘Connecting Talents: Unlock the Border of Opportunities’.						</p>
+						<p>
+                            About 250+ reputed companies from 35 industries are expected to take part in this auspicious event. Moreover, this event will effectively open the gateway for companies to meet not only DIU graduates but also its experienced alumni network that is looking forward to making job transitions. We also believe that DIU Job Utsob-2023 will be the perfect platform to find the most suitable candidates for the organizations. 						</p>
 					</div>
 				</div>
 				<div class="col-lg-6 col-sm-6 ">
@@ -168,7 +153,7 @@
 	<!--			<div class="row">-->
 	<!--				<div class="col-lg-6 col-sm-6  section-body">-->
 	<!--					<div class="section-header">-->
-	<!--						<h3>HIGHLIGHTS OF ‘DIU JOB UTSOB-2022’</h3>-->
+	<!--						<h3>HIGHLIGHTS OF ‘DIU JOB UTSOB-2023’</h3>-->
 	<!--						<span>The fair will witness participation of highly acclaimed -->
 	<!--							DIU graduates seeking internship and job opportunities.-->
 	<!--							</span>-->
@@ -180,7 +165,7 @@
 	<!--				<div class="col-lg-6 col-sm-6 ">-->
 	<!--					<div class="section-header">-->
 	<!--						<h3>PARTICIPATION PROCEDURE</h3>-->
-	<!--						<span>The procedures of DIU Job Utsob-2022  follow the following standard pattern -->
+	<!--						<span>The procedures of DIU Job Utsob-2023  follow the following standard pattern -->
 	<!--							and are designed to maximize the payoffs as an outcome of the event.</span>-->
 	<!--					</div>-->
 	<!--					<div class="text-center">-->
@@ -204,7 +189,7 @@
 	<!--							</span>-->
 	<!--					</div>-->
 	<!--					<div class="section-body">-->
-	<!--						<p>DIU Job Utsob-2022 will be graced by the active participation of more than 4000 -->
+	<!--						<p>DIU Job Utsob-2023 will be graced by the active participation of more than 4000 -->
 	<!--							graduates from batches: 182,183 & 191 of Daffodil International University’s  -->
 	<!--							diversified 24 Disciplines and 44 programs under 05 faculties and also- skillful -->
 	<!--							and technology enthusiast alumni seeking potential employment and placement -->
@@ -255,7 +240,7 @@
 				</div>
 				<div class="section-body">
 					<p>
-						Because- DIU Job Utsob-2022 provides a unique opportunity for all stakeholders and it 
+						Because- DIU Job Utsob-2023 provides a unique opportunity for all stakeholders and it 
 					will be the handshaking point of the industry & the academia to assist our graduates 
 					to make the transition from campus to corporate. 
 					</p> 

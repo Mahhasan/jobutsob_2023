@@ -1,4 +1,6 @@
+
 @extends('frontend.layouts.app')
+
 @section('content')
 @include('frontend.layouts.slider')
 <!-- Register & Countdown Section Start -->
@@ -6,7 +8,7 @@
 	<div class="meeta-register-countdown-wrapper">
 		<div class="row gy-5 align-items-center">
 			<div class="col-md-12">
-				<div class="meeta-countdown countdown" data-countdown="2022/12/1" data-format="short">
+				<div class="meeta-countdown countdown" data-countdown="2023/11/23" data-format="short">
 					<div class="single-countdown">
 						<span class="count countdown__time daysLeft"></span>
 						<span class="value countdown__time daysText"></span>
@@ -34,22 +36,20 @@
 		<div class="container section-padding" id="about">
 		    <div class="row">
     			<div class="section-header">
-    				<h3>DIU Job Utsob 2022</h3>
+    				<h3>DIU Job Utsob 2023</h3>
     				<!-- <span>Recent Updates</span> -->
     			</div>
     			<div class="section-body">
-    				<P>DIU JOB UTSOB -2022 is set to be the 'Big Bang Central Career Event' of Daffodil 
-    					International University and will act as a platform for corporate stalwarts to 
-    					interact with a quality future workforce under the Daffodil family's constant 
-    					intent to encourage, facilitate and sustain industry-academia collaborations.
+    				<P>
+    				    DIU JOB UTSOB -2023 is set to be the ‘Big Bang Central Career Event’ of Daffodil International University and will act as a platform for corporate stalwarts to interact with a quality future workforce under the Daffodil family’s constant intent to encourage, facilitate and sustain industry-academia collaborations.
     				</p>
     				<p>
-    					The program, with its motivation as the tagline- 'Connecting Talents: Unlock 
-    					the Border of Opportunities', looks forward to having a sustainable impact with 
-    					the presence of freshers, highly skilled job seekers, interns/learners & 
-    					experienced alumni network interested to make job transitions, recruiters and 
-    					corporate Leaders, employers, and institutions,
+    					The program, with its motivation as the tagline- ‘Connecting Talents: Unlock the Border of Opportunities’, looks forward to having a sustainable impact with the presence of freshers, highly skilled job seekers, interns/learners & experienced alumni network interested to make job transitions, recruiters and corporate Leaders, employers, and institutions, ’.
     				</P>
+    				<!--<p>-->
+    				<!--    For further details of the event, please visit the official page of DIU Job Utsob-2023   http: //jobutsob.daffodilvarsity.edu.bd -->
+
+    				<!--</p>-->
     			</div>
 			</div>
 		</div>
@@ -63,15 +63,25 @@
 					<h3 class="block-title">Event highlights</h3>
 					<!-- <span class="icon icon-ChartUp"></span> -->
 					<p style="font-size: 16px; line-height: 25px;">
-						♦	200+ booths of different companies<br>
-						♦	2000+ actual job openings<br>
-						♦	1000 internships<br>
-						♦	150+ actual recruiters. <br>
-						♦	50 National HR leaders' session<br>
-						♦	On campus interview<br>
-						♦	Grooming session<br>
-						♦	CV & video resume update<br>
-						♦	Employability skill test assessment
+						<!--♦	200+ booths of different companies<br>-->
+						<!--♦	2000+ actual job openings<br>-->
+						<!--♦	1000 internships<br>-->
+						<!--♦	150+ actual recruiters. <br>-->
+						<!--♦	50 National HR leaders' session<br>-->
+						<!--♦	On campus interview<br>-->
+						<!--♦	Grooming session<br>-->
+						<!--♦	CV & video resume update<br>-->
+						<!--♦	Employability skill test assessment-->
+						
+						♦ 250+ booths of different companies<br>
+                        ♦ 5000+ actual job openings<br>
+                        ♦ 1000 internships<br>
+                        ♦ 250+ actual recruiters. <br>
+                        ♦ 50 National HR leaders’ session<br>
+                        ♦ On campus interview<br>
+                        ♦ Grooming session<br>
+                        ♦ CV & video resume update<br>
+                        ♦ Employability skill test assessment
 					</p>
 				</div>
 			</div>
@@ -80,10 +90,14 @@
 					<h3 class="block-title">Who can join ♦</h3>
 				    <!-- <span class="icon icon-Heart"></span> -->
 					<p style="font-size: 16px; line-height: 25px;">
-						♦	Graduates from 182, 183 & 191 batches of all disciplines of Daffodil 
-						International University.<br>
-						♦	Current students of 9th-11th semesters, for internship opportunities <br>
-						♦	Passed out DIU alumni for job placement & job changing opportunities<br>
+						<!--♦	Graduates from 182, 183 & 191 batches of all disciplines of Daffodil -->
+						<!--International University.<br>-->
+						<!--♦	Current students of 9th-11th semesters, for internship opportunities <br>-->
+						<!--♦	Passed out DIU alumni for job placement & job changing opportunities<br>-->
+						
+					    ♦ Graduates from 192, 193 & 201 batches of all disciplines of Daffodil International University.<br>
+                        ♦ Current students of 9th-11th semesters, for internship opportunities <br>
+                        ♦ Passed out DIU alumni for job placement & job changing opportunities<br>
 					</p>
 					
 				</div>
@@ -115,27 +129,14 @@
     				<!-- <span>Recent Updates</span> -->
 			    </div>
     			<div class="section-body">
-    				<P>With a tremendously successful track record of 'On-Campus Spot Recruitment' events, 
-    					'DIU job Utsob' shall continue to be a regular yearly event with an aim to develop 
-    					an understanding of the internship and employment needs largely in the area of 
-    					corporate and the academia. 
+    				<P>
+    				    With a tremendously successful track record  of ‘On-Campus Spot Recruitment’ events, ‘DIU job Utsob’ shall continue to be a regular yearly event with an aim to develop an understanding of the internship and employment needs largely in the area of corporate and academia. 
     				</p>
     				<p>
-    					DIU Job Utsob-2022 can be considered as the 'meet-up point' for addressing all that 
-    					is needed and all that could be achieved through a shared lane of vision between the 
-    					employers and the bodies involved with creating employees, changemakers, and future 
-    					industry leaders. The event shall ensure the presence of talents & employers under a 
-    					roof where the 'Transition in career' is always heavily inspired.
+    					DIU Job Utsob-2023 can be considered as the “meet-up point” for addressing all that is needed and all that could be achieved through a shared lane of vision between the employers and the bodies involved with creating employees, changemakers, and future industry leaders. The event shall ensure the presence of talents & employers under a roof where the “Transition in career” is always heavily inspired.
     				</P>
     				<p>
-    					We believe in a strong spirit of collaboration between academia and industry and we 
-    					will always cherish the relationship as being fundamental to our coexistence and 
-    					collective success. To further strengthen and forge this symbiotic relationship, 
-    					Daffodil International University (DIU) has envisioned a common platform - 
-    					DIU Job Utsob. This shall be an interesting opportunity where the respective industry 
-    					representatives get to interact closely with our students and graduates with an intent 
-    					to hire their potential employees, changemakers, and future leaders of respective 
-    					departments. We look forward to your active participation and support as always. '
+    					We believe in a strong spirit of collaboration between academia and industry and we will always cherish the relationship as being fundamental to our coexistence and collective success. To further strengthen and forge this symbiotic relationship, Daffodil International University (DIU) has envisioned a common platform - DIU Job Utsob. This shall be an interesting opportunity where the respective industry representatives get to interact closely with our students and graduates with an intent to hire their potential employees, changemakers, and future leaders of respective departments. We look forward to your active participation and support as always. ”
     				</p>
     			</div>
 			</div>
@@ -172,12 +173,12 @@
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
 								<div class="timer-box">
-									<h3>DIU JOB UTSOB-2022 </h3>
+									<h3>DIU JOB UTSOB-2023 </h3>
 									<div class="content-center">
-										<p><b>Date: December 01-03, 2022 (Thursday-Friday-Saturday).</b></p>
+										<p><b>Date: November 23-25, 2023 (Thursday-Friday-Saturday).</b></p>
 									</div>
 									<div class="content-center">
-										<p><b>Venue: Daffodil Smart City (DSC) Ashulia, Savar, Dhaka-1341, Bangladesh.</b></p>
+										<p><b>Venue: Daffodil Smart City, Birulia, Savar, Dhaka – 1216</b></p>
 									</div>
 									<p>Don't miss the opportunity</p>
 									<a href="{{'alljob'}}"><button type="submit" class="btn" style="color: white; background-color: #29363e; margin-top: -7px; border-radius: 0px;">Discover Job</button></a>

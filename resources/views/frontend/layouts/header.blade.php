@@ -9,7 +9,7 @@
 			<div class="container">
 				<!-- User -->
 				<a href="/" class="user" title="Logo">
-				<img src="{{asset('frontend/assets/images/updated_logo.png')}}" alt="logo" width="130" height="63"/>
+				<img src="{{asset('frontend/assets/images/logo_2023.png')}}" alt="logo" style="max-height:80px; max-width: 120px; margin-top: 5px;"/>
 					<!-- <i class="fa fa-user"></i> -->
 				</a><!-- User /- -->
 				<!-- <a href="#" class="user-sticky " title="User">
@@ -36,12 +36,12 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a title="Logo" href="#" class="navbar-brand"><img src="{{asset('frontend/assets/images/updated_logo.png')}}" alt="logo"/><span>Job Utsob</span></a>
+							<a title="Logo" href="#" class="navbar-brand"><img src="{{asset('frontend/assets/images/logo_2023.png')}}" alt="logo"/><span>Job Utsob</span></a>
 						</div>
 						<div class="navbar-collapse collapse" id="navbar">
 							<ul class="nav navbar-nav menubar">
-								<li class=""><a title="Home" href="/">Home</a></li>
-								<li class="dropdown">
+								<li style="margin: 0 1px;"><a title="Home" href="/">Home</a></li>
+								<li style="margin: 0 1px;" class="dropdown">
 									<a aria-expanded="true" aria-haspopup="true" role="button"
 									 class="dropdown-toggle" title="About" href="#">About </a>
 									 <i class="ddl-switch fa fa-angle-down"></i>
@@ -50,11 +50,19 @@
 										<li><a style="font-size: 11px; " title="About Organizer" href="{{route('about-organizer')}}">About Organizer</a></li>
 									</ul>
 								</li>
-								<li><a title="Schedule" href="{{route('schedule')}}">Schedule</a></li>
-								<li><a title="Speakers" href="{{route('speakers')}}">Speakers</a></li>
-								<li><a title="Participants" href="{{route('participants')}}">Participants</a></li>
-								<li><a title="Contact" href="{{route('contact')}}">Contact Us</a></li>
-								<li><a title="Discover Job" href="/alljob" 
+								<li style="margin: 0 1px;"><a title="Schedule" href="{{route('schedule')}}">Schedule</a></li>
+								<li style="margin: 0 1px;"><a title="Speakers" href="{{route('speakers')}}">Speakers</a></li>
+								<li style="margin: 0 1px;"><a title="Participants" href="{{route('participants')}}">Participants</a></li>
+								<li style="margin: 0 1px;" class="dropdown">
+									<a aria-expanded="true" aria-haspopup="true" role="button"
+									 class="dropdown-toggle" title="About" href="#">Archive </a>
+									 <i class="ddl-switch fa fa-angle-down"></i>
+									<ul class="dropdown-menu">
+										<li><a style="font-size: 11px; " title="Job Utsob-2022" href="{{route('job-utsob-2022')}}">Job Utsob 2022</a></li>
+									</ul>
+								</li>
+								<li style="margin: 0 1px;"><a title="Contact" href="{{route('contact')}}">Contact Us</a></li>
+								<li style="margin: 0 1px;"><a title="Discover Job" href="/alljob" 
 								style="background-color: #BA1F1C ;color: #fff;display: inline-block;font-family: 'Myriad Pro Regular';text-align:center; padding: 10px; margin-top: 20px; border-radius: 10px;"
 								>Discover Job</a></li>
 							</ul>

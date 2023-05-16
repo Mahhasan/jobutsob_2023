@@ -4,12 +4,12 @@
 			<!-- Footer About -->
 			<div class="footer-about">
 				<div class="logo-block">
-					<a href="/"><img src="{{asset('frontend/assets/images/updated_logo.png')}}" alt="logo" width="130" height="63"/></a>
+					<a href="/"><img src="{{asset('frontend/assets/images/logo_2023.png')}}" alt="logo" style="margin-top:20px; max-height:75px; max-width: 120px;"/></a>
 					
 				</div>	
 				<div class="footer-about-content">
 					
-					<p>First half of December for 3 days:  December 01 to 03, 2022 (Thursday to Saturday)
+					<p>Second half of November for 3 days:  November 23 to 25, 2023 (Thursday to Saturday)
 						Multi-dimensional Human Resource &  Recruitment Initiative
 						</p>
 				</div>
@@ -50,8 +50,8 @@
 					<h3 class="block-title">Contact Us</h3>
 					<div class="contactinfo-box">
 						<i class="fa fa-map-marker"></i>
-						<!-- <p>DIU Job Utshob-2022</p> -->
-							<a title="DIU, Ashulia, Dhaka" href="https://goo.gl/maps/uoEkBMHkUkAcPAqy7" target="blank"><p>DIU, Ashulia, Dhaka</p></a>
+						<!-- <p>DIU Job Utshob-2023</p> -->
+							<a title="DIU, Ashulia, Dhaka" href="https://goo.gl/maps/uoEkBMHkUkAcPAqy7" target="blank"><p>Daffodil Smart City, Savar, Dhaka-1216</p></a>
 					</div>
 					<div class="contactinfo-box">
 						<i class="fa fa-phone"></i>
@@ -61,7 +61,7 @@
 						</p>
 						<i class="fa fa-phone"></i>
 						<p>
-							<a title="01713493162" href="tel:01713493162">01713493162</a>
+							<a title="01713493162" href="tel:01713493162">01847334706</a>
 						</p>
 					</div>
 					<div class="contactinfo-box">
@@ -90,7 +90,7 @@
 					</div>
 					
 					<ul>
-						<li><a title="Facebook" data-toggle="tooltip" href="https://facebook.com/events/s/diu-job-utsob-2022/3397614500467801/" target="blank"><i class="fa fa-facebook"></i></a></li>
+						<li><a title="Facebook" data-toggle="tooltip" href="https://facebook.com/events/s/diu-job-utsob-2023/3397614500467801/" target="blank"><i class="fa fa-facebook"></i></a></li>
 						<!-- <li><a title="Twitter" data-toggle="tooltip" href="#"><i class="fa fa-twitter"></i></a></li> -->
 						<!-- <li><a title="Google Plus" data-toggle="tooltip" href="#"><i class="fa fa-google-plus"></i></a></li> -->
 						<li><a title="Linkedin" data-toggle="tooltip" href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -106,7 +106,7 @@
 			<div class="footer-menu">
 				<!-- Copyrights -->
 				<div class="copyrights ow-pull-left">
-					<p>&copy; 2022 | All rights reserved</p>
+					<p>&copy; Job Utsob 2023 | All rights reserved</p>
 				</div><!-- Copyrights /- -->
 				<!-- Navigation -->
 				<nav class="navbar ow-navigation ow-pull-right">

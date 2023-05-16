@@ -2,17 +2,17 @@
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="{{asset('/frontend/assets/images/slider111(2).jpg')}}" alt="slide1" width="1920" height="770"/>
+					<img src="{{asset('/frontend/assets/images/slider1_2023.jpg')}}" alt="slide1" width="1920" height="770"/>
 				</div>
 				<div class="item">
 					<img src="{{asset('/frontend/assets/images/slider117.jpg')}}" alt="slide2" width="1920" height="770"/>
 				</div>
-				<div class="item">
+				<!-- <div class="item">
 					<img src="{{asset('/frontend/assets/images/slider115.jpg')}}" alt="slide3" width="1920" height="770"/>
-				</div>
-				<div class="item">
+				</div> -->
+				<!-- <div class="item">
 					<img src="{{asset('/frontend/assets/images/slider112.jpg')}}" alt="slide3" width="1920" height="770"/>
-				</div>
+				</div> -->
 			</div>
 			<!-- Controls -->
 			<div class="container">

@@ -33,19 +33,19 @@
 						<li role="presentation" class="active">
 							<a href="#schedule_1" aria-controls="schedule_1" role="tab" data-toggle="tab">
 								<h3>Thursday</h3>
-								<span>01-Dec-2022</span>
+								<span>23-NOV-2023</span>
 							</a>
 						</li>
 						<li role="presentation">
 							<a href="#schedule_2" aria-controls="schedule_2" role="tab" data-toggle="tab">
 								<h3>Friday</h3>
-								<span>02-Dec-2022</span>
+								<span>24-NOV-2023</span>
 							</a>
 						</li>
 						<li role="presentation">
 							<a href="#schedule_3" aria-controls="schedule_3" role="tab" data-toggle="tab">
 								<h3>Saturday</h3>
-								<span>03-Dec-2022</span>
+								<span>25-NOV-2023</span>
 							</a>
 						</li>
 					</ul>  

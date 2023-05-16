@@ -39,7 +39,7 @@
         			<div class="text-center">
         				<p>
         					Career Development Center, DIU<br>
-        					Daffodil Smart City (DSC), Ashulia, Dhaka<br>
+        					Daffodil Smart City, Birulia, Savar, Dhaka – 1216<br>
         					Email: cdc@daffodilvarsity.edu.bd<br>
         					Cell: 01847334705, 01847334706, 01847334707
         				</p>

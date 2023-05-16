@@ -34,7 +34,7 @@
 		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header">
-					<h3>SELECTED JOB INDUSTRY DIU JOB UTSOB-2022</h3>
+					<h3>SELECTED JOB INDUSTRY DIU JOB UTSOB-2023</h3>
 				</div>
 				<div class="row">
 					<div class="col-lg-4 col-sm-6 ">

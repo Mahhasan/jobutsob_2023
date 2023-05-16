@@ -103,6 +103,8 @@ Route::get('speakers',[App\Http\Controllers\FrontendController::class, 'speakers
 Route::get('participants',[App\Http\Controllers\FrontendController::class, 'participants_info'])->name('participants');
 Route::get('about-event',[App\Http\Controllers\FrontendController::class, 'about_event'])->name('about-event');
 Route::get('about-organizer',[App\Http\Controllers\FrontendController::class, 'about_organizer'])->name('about-organizer');
+// Archive
+Route::get('job-utsob-2022',[App\Http\Controllers\FrontendController::class, 'job_utsob_2022'])->name('job-utsob-2022');
 
 // for multiple cv download
 // Route::get('/download-resumes/{jobId}', [App\Http\Controllers\JobseekerController::class, 'downloadResumes'])->name('download.resumes');

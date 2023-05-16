@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<title>Job Utsob 2022</title>
+	<title>Job Utsob 2023</title>
 
 	<!-- Standard Favicon -->
 	<link rel="icon" type="image/x-icon" href="{{asset('frontend/assets/images/favicon.ico')}}" />

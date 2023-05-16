@@ -31,4 +31,8 @@ class FrontendController extends Controller
     {
         return view('frontend.participants_info');
     }
+    public function job_utsob_2022()
+    {
+        return view('frontend.archive.job_utsob_2022');
+    }
 }
