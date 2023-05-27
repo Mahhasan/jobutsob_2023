@@ -56,7 +56,7 @@
                                     @endif
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="{{ route('register') }}">Create an Account</a>
+                                    <a class="small" href="{{ route('jobseeker.create') }}">Register Here</a>
                                 </div>
                             </div>
                         </div>

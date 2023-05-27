@@ -1,8 +1,192 @@
+
 @extends('layouts.master')
 
 @section('content')
 
-<div class="container">
+
+<div class="container mt-5" style="background: #dfe6e9;">
+    <div class="registration-form">
+        <h2 class="text-center mb-4">Job Seeker Registration Form</h2>
+        
+        @if(session()->get('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div><br/>
+        @endif
+        @if($errors->any())
+        {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+        @endif
+        
+        <form method="POST" action="{{ route('jobseeker.store') }}" enctype="multipart/form-data">
+            @csrf
+            <h4>Personal Information</h4>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Cell Phone</label>
+                    <input id="cell" type="tel" class="form-control @error('cell') is-invalid @enderror" name="cell" value="{{ old('cell') }}" required autocomplete="cell" autofocus>
+                    @error('cell')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Number of Years of Experience</label>
+                    <input id="experience" type="text" class="form-control @error('experience') is-invalid @enderror" name="experience" value="{{ old('experience') }}" required autocomplete="experience" autofocus>
+                    @error('experience')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label for="name">Email</label>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="col-md-8">
+                    <label for="name">Address</label>
+                    <input id="address" type="text" class="form-control" name="address" required autocomplete="address">
+                    @error('address')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="col-md-4">
+                    <label for="password">Password Confirmation</label>
+                    <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="{{ old('password_confirmation') }}" required autocomplete="password_confirmation">
+                    @error('password_confirmation')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Jobseeker Type</label>
+                    <select id="certificate" type="text" onclick="amount()" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" autofocus>
+                        <option value="" selected>---</option>
+                        <option id = "student"value="Student">Student</option>
+                        <option id ="alumni" value="Alumni">Alumni</option>
+                    </select>
+                    <small> <i>application fee: BDT. <span id="output"></span></i></small><br>
+                    @error('jobseeker_type')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+            <hr>
+            <!-- Bachelor Section -->
+            <h4>Bachelor's Degree Information</h4>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="bachelor_faculty_id">Faculty Name</label>
+                    <select id="bachelor_faculty_id" type="text" class="form-control @error('bachelor_faculty_id') is-invalid @enderror" name="bachelor_faculty_id" required autocomplete="bachelor_faculty_id" autofocus>
+                        <option value="">--- Select Faculty ---</option>
+                        @foreach ($faculties as $key=>$value)
+                            <option value="{{$key}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <label for="bachelor_department_id">Department</label>
+                    <select id="bachelor_department_id" type="text" class="form-control @error('bachelor_department_id') is-invalid @enderror" name="bachelor_department_id" required>
+                        <option value="" selected>------</option>
+                    </select>
+                </div>
+            </div>
+
+
+            
+
+
+            <div class="bachelor_result form-group row">
+                <label id="bachelor_year_label" for="bachelor_year" class="col-md-4 col-form-label text-md-right">Passing Year</label>
+
+                <div class="col-md-6">
+                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}"  autocomplete="bachelor_year" novalidate>
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label for="bachelor_status" class="col-md-4 col-form-label text-md-right">Currently Studying ?</label>
+
+                <div class="col-md-6">
+                    <div class="checkbox">
+                    <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="yes">&nbsp;&nbsp;Yes</label>
+                    <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="no" checked>&nbsp;&nbsp;No</label>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" form-group row">
+                <label id="bachelor_result_label" for="bachelor_result" class="col-md-4 col-form-label text-md-right">Enter Result</label>
+
+                <div class="col-md-6">
+                    <input id="bachelor_result" type="text" class="form-control @error('bachelor_result') is-invalid @enderror" name="bachelor_result" value="{{ old('bachelor_result') }}"  autocomplete="bachelor_result" novalidate>
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="bachelor_institute" class="col-md-4 col-form-label text-md-right">University/Institute</label>
+
+                <div class="col-md-6">
+
+                    <select id="bachelor_institute" type="text" class="form-control @error('bachelor_institute') is-invalid @enderror" name="bachelor_institute" required autocomplete="bachelor_institute" autofocus>
+                        <option value="" selected>-----</option>
+                        <option id = "diu"value="Daffodil International University">Daffodil International University</option>
+                        <option id ="diit" value="Daffodil Institute of IT">Daffodil Institute of IT</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<div class="form-group row">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-6">
+    </div>
+</div>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="box-shadow: 0px 2px #3498db;">
@@ -11,150 +195,12 @@
                     <a class="btn btn-primary btn-sm " href="/login" >Login</a><br>
                     </p>
                 
-                    <!--<b class="text-danger">"Before applying a job, Please register and complete your profile on Futurenation Platform. Use the same email in both places" &nbsp;</b>-->
-                    <!--<a class="text-success" style="font-weight: normal;" href="https://platform.futurenation.gov.bd"><em>https://platform.futurenation.gov.bd</em></a>-->
-                </div>
-                
+                     
 
-                <div class="card-body">
-                <!-- <h4>By openning a new acocunt here you can access <a href="https://skill.jobs">skill.jobs</a>
-                and <a href="https://resume.skill.jobs">resume.skill.jobs</a> using the same account's email and password.
-
-                </h4> -->
-                <h4>
-                Personal Information</h4>
-
-                @if(session()->get('success'))
-                        <div class="alert alert-success">
-                        {{ session()->get('success') }}
-                        </div><br />
-                    @endif
-
-                    @if($errors->any())
-                      {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
-                    @endif
-                    <form method="POST" action="{{ route('jobseeker.store') }}" enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Full Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <!--<div class="form-group row">-->
-                        <!--    <label for="last" class="col-md-4 col-form-label text-md-right">{{ __('Last Academic Qualificaiton') }}</label>-->
-
-                        <!--    <div class="col-md-6">-->
-                        <!--        <input id="last" type="text" class="form-control @error('last') is-invalid @enderror" name="last" value="{{ old('last') }}" required autocomplete="name" autofocus>-->
-
-                        <!--        @error('last')-->
-                        <!--            <span class="invalid-feedback" role="alert">-->
-                        <!--                <strong>{{ $message }}</strong>-->
-                        <!--            </span>-->
-                        <!--        @enderror-->
-                        <!--    </div>-->
-                        <!--</div>-->
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" required autocomplete="address">
-                            </div>
-                        </div>
-
-                        <!--<div class="form-group row">-->
-                        <!--    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('City/State') }}</label>-->
-
-                        <!--    <div class="col-md-6">-->
-                        <!--        <input id="city" type="text" class="form-control" name="city" required autocomplete="city">-->
-                        <!--    </div>-->
-                        <!--</div>-->
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Cell Phone') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="cell" type="tel" class="form-control @error('cell') is-invalid @enderror" name="cell" value="{{ old('cell') }}" required autocomplete="cell" autofocus>
-
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password Confirmation') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="{{ old('password_confirmation') }}" required autocomplete="password_confirmation">
-
-                                @error('password_confirmation')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
                         
 
-                        <div class="form-group row">
-                            <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('Number of Years of Experience') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="experience" type="text" class="form-control @error('experience') is-invalid @enderror" name="experience" value="{{ old('experience') }}" required autocomplete="experience" autofocus>
-
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="certificate" class="col-md-4 col-form-label text-md-right">{{ __('Jobseeker Type') }}</label>
-
-                            <div class="col-md-6">
-
-                                <select id="certificate" type="text" onclick="amount()" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" autofocus>
-                                <option value="" selected>---</option>
-                                <option id = "student"value="Student">Student</option>
-                                <option id ="alumni" value="Alumni">Alumni</option>
-                                </select>
-                                <small> <i>application fee: BDT. <span id="output"></span></i></small><br>
-
-                            </div>
-                        </div>
-
-                        <hr>
+                      
+                        
                         <div class="alert alert-primary">
                             <h4>Bachelor's Degree Information</h4>
 
@@ -424,7 +470,7 @@
             </div>
         </div>
     </div>
-</div>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $('select[name="bachelor_faculty_id"]').on('change', function() {
