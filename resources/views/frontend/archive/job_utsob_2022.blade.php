@@ -27,99 +27,84 @@
 				<div class="section-header" style="margin-bottom: 0px;">
 					<h3>Summary about DIU Job Utsob-2022</h3>
 				</div>
+				<table>
+
+				</table>
 				<div class="text-center">	
 					<div class="row">
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+							<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=1831400872" style="text-decoration: none;">
-										<p class="card-text">The total number of recruiters who participated:</p>
-										<p class="card-text">145</p>
-									</a>
+									<p class="card-text">The total number of recruiters who participated:</p>
+									<p class="card-text">145</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=1235885443" style="text-decoration: none;">
-										<p class="card-title">The total number of recruiters who have conducted interviews during Job Utsob:</p>
-										<p class="card-text">62</p>
-									</a>
+									<p class="card-title">The total number of recruiters who have conducted interviews during Job Utsob:</p>
+									<p class="card-text">62</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=1446262207" style="text-decoration: none;">
-										<p class="card-title">Number of total CV’s dropped during Job Utosob:</p>
-										<p class="card-text">14308</p>
-									</a>
+									<p class="card-title">Number of total CV’s dropped during Job Utosob:</p>
+									<p class="card-text">14308</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=1468323652" style="text-decoration: none;">
-										<p class="card-title">The total number of jobs offered (Position) during Job Utshob:</p>
-										<p class="card-text">792</p>
-									</a>
+									<p class="card-title">The total number of jobs offered (Position) during Job Utshob:</p>
+									<p class="card-text">792</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=1468323652" style="text-decoration: none;">
-										<p class="card-title">The total number of jobs offered (Vacancies) during Job Utshob:</p>
-										<p class="card-text">2585</p>
-									</a>
+									<p class="card-title">The total number of jobs offered (Vacancies) during Job Utshob:</p>
+									<p class="card-text">2585</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=690489467" style="text-decoration: none;">
-										<p class="card-title">The total number of Internships (Position) offered during Job Utsob:</p>
-										<p class="card-text">47</p>
-									</a>
+									<p class="card-title">The total number of Internships (Position) offered during Job Utsob:</p>
+									<p class="card-text">47</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=690489467" style="text-decoration: none;">
-										<p class="card-title">The total number of Internships offered (Vacancies) during Job Utsob:</p>
-										<p class="card-text">218</p>
-									</a>
+									<p class="card-title">The total number of Internships offered (Vacancies) during Job Utsob:</p>
+									<p class="card-text">218</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=1428076088" style="text-decoration: none;">
-										<p class="card-title">The total number of candidates selected during Job Utshob for the next round of interviews after Job Utsob:</p>
-										<p class="card-text">367</p>
-									</a>
+									<p class="card-title">The total number of candidates selected during Job Utshob for the next round of interviews:</p>
+									<p class="card-text">367</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-3">
-							<div class="card" style="border: #55a479 1px solid; border-radius: 5px; margin-bottom: 20px; height: 134px;">
+						<div class="card archive-summary">
 								<div class="card-body">
-									<a href="https://docs.google.com/spreadsheets/d/1SP3WgL3Ves4nzSyzJLVfu4HSlVGODteu5XpNh0j2qv4/edit#gid=854943840" style="text-decoration: none;">
-										<p class="card-title">The total number of placed students during Job Utsob:</p>
-										<p class="card-text">114</p>
-									</a>
+									<p class="card-title">The total number of placed students during Job Utsob:</p>
+									<p class="card-text">114</p>
 								</div>
 							</div>
 						</div>
@@ -135,6 +120,8 @@
     <!-- --------------Photo------------------ -->
     <div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
 		<div class="section-padding"></div>
+		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header">
 					<h3>Photo gallery  of Job Utsob-2022</h3>
@@ -142,7 +129,7 @@
 				<div class="row">
 					<div class="col-lg-4 col-sm-6 ">
 						<div class="text-center">
-							<a href="https://photos.google.com/share/AF1QipNj9vcDI57fCV1WUiqGD-kGqrxiHDLKeATLlPHzYFaMFz_PXZUDd0vaS-MvH0arvg?key=dFVYQ2hoX0VZZk9pYWVRS0J4dWQzS0paa0NTUzJ3" class="btn btn-info">
+							<a href="https://photos.google.com/share/AF1QipNj9vcDI57fCV1WUiqGD-kGqrxiHDLKeATLlPHzYFaMFz_PXZUDd0vaS-MvH0arvg?key=dFVYQ2hoX0VZZk9pYWVRS0J4dWQzS0paa0NTUzJ3" class="btn btn-light">
 								<img src="/frontend/assets/images/imageday1.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
 								<p>Day 1</p>
 							</a>
@@ -150,7 +137,7 @@
 					</div>
 					<div class="col-lg-4 col-sm-6 ">
 						<div class="text-center">
-							<a href="https://photos.google.com/share/AF1QipMrSi-UEe3lM6v6S7QJNlqR2FMBj4eAKaTvdvkhoi2ubx0h7hnqHAPZuzH5rGMgZw?key=cU12Z2pwU2hhM2NuUjJPNTktbEp5blpKSkRKTjRB" class="btn btn-info">
+							<a href="https://photos.google.com/share/AF1QipMrSi-UEe3lM6v6S7QJNlqR2FMBj4eAKaTvdvkhoi2ubx0h7hnqHAPZuzH5rGMgZw?key=cU12Z2pwU2hhM2NuUjJPNTktbEp5blpKSkRKTjRB" class="btn btn-light">
 								<img src="/frontend/assets/images/imageday2.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
 								<p>Day 2</p>
 							</a>
@@ -158,7 +145,7 @@
 					</div>
 					<div class="col-lg-4 col-sm-6 ">
 						<div class="text-center">
-							<a href="https://photos.google.com/share/AF1QipOKrklRNmKwZgJkRTJEnxbfjndBg0hiwj3NZ9ostM85jX1h_xwWI1BySpEXGNEQow?key=VjdjTEQ2aHNDcVpvV0pJY0h3czQtQkc2cWdKY0pR" class="btn btn-info">
+							<a href="https://photos.google.com/share/AF1QipOKrklRNmKwZgJkRTJEnxbfjndBg0hiwj3NZ9ostM85jX1h_xwWI1BySpEXGNEQow?key=VjdjTEQ2aHNDcVpvV0pJY0h3czQtQkc2cWdKY0pR" class="btn btn-light">
 								<img src="/frontend/assets/images/imageday3.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
 								<p>Day 3</p>
 							</a>
@@ -168,12 +155,13 @@
 			</div>
 			<div class="section-padding"></div>
 			<div class="section-padding"></div>
-			<div class="section-padding"></div>
 		</div>
 	</div>
 
 	<!-- -------------video------------------- -->
-    <div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
+    <div class="container-fluid testimonial-section no-padding">
+		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header">
@@ -237,15 +225,14 @@
 				<div class="text-center"><a class="btn btn-info" href="https://docs.google.com/spreadsheets/d/1mUvd7NZAi4VuF-zD21if7ZDsr-Dn90evasBpgkHwOek/edit#gid=854943840">More list of successfull joseekeer</a></div>
 			</div>
 			<div class="section-padding"></div>
+			<div class="section-padding"></div>
 		</div>
 	</div>
-	<div class="section-padding"></div>
 	<div class="section-padding"></div>
 
 
 	<!-- --------------PDF------------------ -->
-    <div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
-		<div class="section-padding"></div>
+    <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 			<div class="container">
@@ -272,12 +259,15 @@
 			<div class="section-padding"></div>
 			<div class="section-padding"></div>
 			<div class="section-padding"></div>
+			<div class="section-padding"></div>
 		</div>
 	</div>
 
 
 	<!-- /////////////////////// -->
-	<div class="container-fluid testimonial-section no-padding">
+	<div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
+		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header" style="margin-bottom: 0px;">
@@ -286,12 +276,17 @@
 				<div class="text-center">
 					<img src="/frontend/assets/images/employer.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
 				</div>
+				<div class="section-padding"></div>
+				<div class="section-padding"></div>
+				<div class="section-padding"></div>
 			</div>
 		</div>
 	</div>
 	
+	
+	
 	<!-- --------------PDF------------------ -->
-    <div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
+    <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>

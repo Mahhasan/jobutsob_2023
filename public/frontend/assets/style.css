@@ -1686,3 +1686,15 @@ a {
     }
   }
 
+  /* Custom css for archive */
+
+  .archive-summary{
+	padding: 10px; 
+	border: #55a479 1px solid; 
+	border-radius: 5px; 
+	margin-bottom: 20px; 
+	height: 134px; color: white; 
+	background-color: #006eb5;
+	font-family: inherit;
+  }
+
