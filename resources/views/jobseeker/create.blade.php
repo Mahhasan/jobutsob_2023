@@ -3,10 +3,9 @@
 
 @section('content')
 
-
 <div class="container mt-5" style="background: #dfe6e9;">
     <div class="registration-form">
-        <h2 class="text-center mb-4">Job Seeker Registration Form</h2>
+        <h2 class="text-center pt-5 mb-5">Job Seeker Registration Form</h2>
         
         @if(session()->get('success'))
         <div class="alert alert-success">
@@ -106,9 +105,9 @@
             </div>
             <hr>
             <!-- Bachelor Section -->
-            <h4>Bachelor's Degree Information</h4>
+            <h4 class="mt-4">Bachelor's Degree Information</h4>
             <div class="form-group row">
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <label for="bachelor_faculty_id">Faculty Name</label>
                     <select id="bachelor_faculty_id" type="text" class="form-control @error('bachelor_faculty_id') is-invalid @enderror" name="bachelor_faculty_id" required autocomplete="bachelor_faculty_id" autofocus>
                         <option value="">--- Select Faculty ---</option>
@@ -117,55 +116,37 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <label for="bachelor_department_id">Department</label>
                     <select id="bachelor_department_id" type="text" class="form-control @error('bachelor_department_id') is-invalid @enderror" name="bachelor_department_id" required>
                         <option value="" selected>------</option>
                     </select>
                 </div>
             </div>
-
-
-            
-
-
-            <div class="bachelor_result form-group row">
-                <label id="bachelor_year_label" for="bachelor_year" class="col-md-4 col-form-label text-md-right">Passing Year</label>
-
-                <div class="col-md-6">
-                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}"  autocomplete="bachelor_year" novalidate>
-
-                </div>
-            </div>
-
-
-
             <div class="form-group row">
-                <label for="bachelor_status" class="col-md-4 col-form-label text-md-right">Currently Studying ?</label>
-
                 <div class="col-md-6">
-                    <div class="checkbox">
-                    <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="yes">&nbsp;&nbsp;Yes</label>
-                    <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="no" checked>&nbsp;&nbsp;No</label>
+                    <div class="form-group row">
+                        <label for="bachelor_status" class="col-md-4 col-form-label text-md-right">Currently Studying ?</label>
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="yes">&nbsp;&nbsp;Yes</label>
+                                <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="no" checked>&nbsp;&nbsp;No</label>
+                            </div>
+                        </div>
                     </div>
-
+                </div>
+                <div class="col-md-6">
+                    <label id="bachelor_year_label" for="bachelor_year">Passing Year</label>
+                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}"  autocomplete="bachelor_year" novalidate>
                 </div>
             </div>
-            <div class=" form-group row">
-                <label id="bachelor_result_label" for="bachelor_result" class="col-md-4 col-form-label text-md-right">Enter Result</label>
-
+            <div class="form-group row mb-5">
                 <div class="col-md-6">
+                    <label id="bachelor_result_label" for="bachelor_result">Enter Result</label>
                     <input id="bachelor_result" type="text" class="form-control @error('bachelor_result') is-invalid @enderror" name="bachelor_result" value="{{ old('bachelor_result') }}"  autocomplete="bachelor_result" novalidate>
-
                 </div>
-            </div>
-
-
-            <div class="form-group row">
-                <label for="bachelor_institute" class="col-md-4 col-form-label text-md-right">University/Institute</label>
-
                 <div class="col-md-6">
-
+                    <label for="bachelor_institute">University/Institute</label>
                     <select id="bachelor_institute" type="text" class="form-control @error('bachelor_institute') is-invalid @enderror" name="bachelor_institute" required autocomplete="bachelor_institute" autofocus>
                         <option value="" selected>-----</option>
                         <option id = "diu"value="Daffodil International University">Daffodil International University</option>
@@ -173,183 +154,87 @@
                     </select>
                 </div>
             </div>
-        </form>
-    </div>
-</div>
-
-<!-- --------------------------------------------------------------------------------------------------- -->
-
-<div class="form-group row">
-    <div class="col-sm-6">
-    </div>
-    <div class="col-sm-6">
-    </div>
-</div>
-
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card" style="box-shadow: 0px 2px #3498db;">
-                <div class="card-header text-center">
-                    <p style="font-size: 24px;"><b>Job Seeker Registration Form<b>&nbsp;
-                    <a class="btn btn-primary btn-sm " href="/login" >Login</a><br>
-                    </p>
-                
-                     
-
-                        
-
-                      
-                        
-                        <div class="alert alert-primary">
-                            <h4>Bachelor's Degree Information</h4>
-
-                            <div class="form-group row">
-                                <label for="bachelor_faculty_id" class="col-md-4 col-form-label text-md-right">Faculty Name</label>
-                                <div class="col-md-6">
-                                    <select id="bachelor_faculty_id" type="text" class="form-control @error('bachelor_faculty_id') is-invalid @enderror" name="bachelor_faculty_id" required autocomplete="bachelor_faculty_id" autofocus>
-                                    <option value="">--- Select Faculty ---</option>
-                                    @foreach ($faculties as $key=>$value)
-                                        <option value="{{$key}}">{{$value}}</option>
-                                    @endforeach
-                                    </select>
-                                </div> 
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="bachelor_department_id" class="col-md-4 col-form-label text-md-right">Department</label>
-                                <div class="col-md-6">
-                                    <select id="bachelor_department_id" type="text" class="form-control @error('bachelor_department_id') is-invalid @enderror" name="bachelor_department_id" required>
-                                    <option value="" selected>------</option>
-                               
-                                    </select>
-                                </div> 
-                            </div>
-
-
-                            <div class="bachelor_result form-group row">
-                                <label id="bachelor_year_label" for="bachelor_year" class="col-md-4 col-form-label text-md-right">Passing Year</label>
-
-                                <div class="col-md-6">
-                                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}"  autocomplete="bachelor_year" novalidate>
-
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-group row">
-                                <label for="bachelor_status" class="col-md-4 col-form-label text-md-right">Currently Studying ?</label>
-
-                                <div class="col-md-6">
-                                    <div class="checkbox">
-                                    <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="yes">&nbsp;&nbsp;Yes</label>
-                                    <label class="checkbox-inline"><input id="bachelor_status" type="radio" name="bachelor_status" value="no" checked>&nbsp;&nbsp;No</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class=" form-group row">
-                                <label id="bachelor_result_label" for="bachelor_result" class="col-md-4 col-form-label text-md-right">Enter Result</label>
-
-                                <div class="col-md-6">
-                                    <input id="bachelor_result" type="text" class="form-control @error('bachelor_result') is-invalid @enderror" name="bachelor_result" value="{{ old('bachelor_result') }}"  autocomplete="bachelor_result" novalidate>
-
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label for="bachelor_institute" class="col-md-4 col-form-label text-md-right">University/Institute</label>
-
-                                <div class="col-md-6">
-
-                                    <select id="bachelor_institute" type="text" class="form-control @error('bachelor_institute') is-invalid @enderror" name="bachelor_institute" required autocomplete="bachelor_institute" autofocus>
-                                        <option value="" selected>-----</option>
-                                        <option id = "diu"value="Daffodil International University">Daffodil International University</option>
-                                        <option id ="diit" value="Daffodil Institute of IT">Daffodil Institute of IT</option>
-                                    </select>
-                                </div>
+            <hr>
+            <!-- Masters Section -->
+            <h4 class="mt-4">Master's Degree Information (If Any)</h4>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="masters_faculty_id">Faculty Name</label>
+                    <select id="masters_faculty_id" type="text" class="form-control @error('masters_faculty_id') is-invalid @enderror" name="masters_faculty_id" autocomplete="masters_faculty_id" autofocus>
+                        <option value="">--- Select Faculty ---</option>
+                        @foreach ($faculties as $key=>$value)
+                        <option value="{{$key}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="masters_department_id">Department</label>
+                    <select id="masters_department_id" type="text" class="form-control @error('masters_department_id') is-invalid @enderror" name="masters_department_id" autocomplete="masters_department_id" autofocus>
+                        <option value="" selected>------</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label for="masters_status" class="col-md-4 col-form-label text-md-right">Currently Studying ?</label>
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <label class="checkbox-inline"><input type="radio" id="masters_status" name="masters_status" value="yes">&nbsp;&nbsp;Yes</label>
+                                <label class="checkbox-inline"><input type="radio" id="masters_status" name="masters_status" value="no" checked>&nbsp;&nbsp;No</label>
                             </div>
                         </div>
-                        <hr>
-
-                        <div class="alert alert-success">
-                            <h4>Master's Degree Information (If Any)</h4>
-                            <div class="form-group row">
-                                <label for="masters_faculty_id" class="col-md-4 col-form-label text-md-right">Faculty Name</label>
-                                <div class="col-md-6">
-
-                                    <select id="masters_faculty_id" type="text" class="form-control @error('masters_faculty_id') is-invalid @enderror" name="masters_faculty_id" autocomplete="masters_faculty_id" autofocus>
-                                    <option value="">--- Select Faculty ---</option>
-                                    @foreach ($faculties as $key=>$value)
-                                        <option value="{{$key}}">{{$value}}</option>
-                                    @endforeach
-                                    </select>
-                                </div> 
-                            </div>
-                            <div class="form-group row">
-                                <label for="masters_department_id" class="col-md-4 col-form-label text-md-right">Department</label>
-
-                                <div class="col-md-6">
-
-                                    <select id="masters_department_id" type="text" class="form-control @error('masters_department_id') is-invalid @enderror" name="masters_department_id" autocomplete="masters_department_id" autofocus>
-                                    <option value="" selected>------</option>
-                                    </select>
-                                </div> 
-                            </div>
-
-
-                            <div class="masters_result form-group row">
-                                <label  id="masters_year_label" for="masters_year" class="col-md-4 col-form-label text-md-right">Passing Year</label>
-
-                                <div class="col-md-6">
-                                    <input id="masters_year" type="text" class="form-control @error('masters_year') is-invalid @enderror" name="masters_year" value="{{ old('masters_year') }}"  autocomplete="bachelor_year" novalidate>
-
-                                </div>
-                            </div>
-
-
-
-                            <div class="form-group row">
-                                <label for="masters_status" class="col-md-4 col-form-label text-md-right">Currently Studying ?</label>
-
-                                <div class="col-md-6">
-                                    <div class="checkbox">
-
-                                    <label class="checkbox-inline"><input type="radio" id="masters_status" name="masters_status" value="yes">&nbsp;&nbsp;Yes</label>
-                                    <label class="checkbox-inline"><input type="radio" id="masters_status" name="masters_status" value="no" checked>&nbsp;&nbsp;No</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class=" form-group row">
-                                <label id="masters_result_label" for="masters_result" class="col-md-4 col-form-label text-md-right">Enter Result</label>
-
-                                <div class="col-md-6">
-                                    <input id="masters_result" type="text" class="form-control @error('masters_result') is-invalid @enderror" name="masters_result" value="{{ old('masters_result') }}"  autocomplete="masters_result" novalidate>
-
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label for="masters_institute" class="col-md-4 col-form-label text-md-right">University/Institute</label>
-
-                                <div class="col-md-6">
-                                    <input id="masters_institute" type="text" class="form-control @error('masters_institute') is-invalid @enderror" name="masters_institute" value="{{ old('masters_institute') }}"  autocomplete="bachelor_institute" autofocus>
-
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label  id="masters_year_label" for="masters_year">Passing Year</label>
+                    <input id="masters_year" type="text" class="form-control @error('masters_year') is-invalid @enderror" name="masters_year" value="{{ old('masters_year') }}"  autocomplete="bachelor_year" novalidate>
+                </div>
+            </div>
+            <div class="form-group row mb-5">
+                <div class="col-md-6">
+                    <label id="masters_result_label" for="masters_result">Enter Result</label>
+                    <input id="masters_result" type="text" class="form-control @error('masters_result') is-invalid @enderror" name="masters_result" value="{{ old('masters_result') }}"  autocomplete="masters_result" novalidate>
+                </div>
+                <div class="col-md-6">
+                    <label for="masters_institute">University/Institute</label>
+                    <input id="masters_institute" type="text" class="form-control @error('masters_institute') is-invalid @enderror" name="masters_institute" value="{{ old('masters_institute') }}"  autocomplete="bachelor_institute" autofocus>
+                </div>
+            </div>
+            <hr>
+            <!--  General field-->
+            <div class="form-group row mt-4">
+                <div class="col-md-6">
+                    <label for="skill">What Skills Do you have?</label>
+                    <div class="form-group row" style="padding-left: 20px;">
+                        <div class="col-md-6">
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="MS Office">MS Office<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Adobe Photoshop">Adobe Photoshop<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Adobe Illustrator">Adobe Illustrator<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="SEO">SEO<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Social Media Optimization">Social Media Optimization<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Website Development">Website Development<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Web Programing">Web Programing<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Report Writing">Report Writing<br>
                         </div>
-                        <hr>
-                        <div class="form-group row">
-                                <label for="industry" class="col-md-4 col-form-label text-md-right">Select Prefered Industry</label>
-
-                                <div class="col-md-8">
+                        <div class="col-md-6">
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Data Entry (English/Bangla)">Data Entry (English/Bangla)<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Translator (English to Bangla or Bangla to English">Translator (English to Bangla or Bangla to English<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Adobe Premier for Video Editing">Adobe Premier for Video Editing<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Content Development">Content Development<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Accounting">Accounting<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Online Surveying">Online Surveying <br>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="checkbox" class="form-check-input">Others <input type="text" class="form-control" name="skill[]">
+                            <small> <i>Enter skills as comma separated</i></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="industry">Select Prefered Industry</label>
                         <select class="js-example-basic-multiple js-states form-control" name="industry[]" multiple="multiple">
-
-
                             <option value="Accounting/Finance/Banking" >Accounting/Finance/Banking</option>
                             <option value="Administration/HR/Legal">Administration/HR/Legal</option>
                             <option value="Advertising/Marketing/PR" >Advertising/Marketing/PR</option>
@@ -395,81 +280,38 @@
                             <option value="Transportation/Warehousing" >Transportation/Warehousing</option>
                             <option value="Travel/ Airlines" >Travel/ Airlines</option>
                         </select>
-
-                                </div>
-                            </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('What Skills Do you have?') }}</label>
-
-                            <div class="col-md-3">
-
-
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="MS Office">MS Office<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Adobe Photoshop">Adobe Photoshop<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Adobe Illustrator">Adobe Illustrator<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="SEO">SEO<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Social Media Optimization">Social Media Optimization<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Website Development">Website Development<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Web Programing">Web Programing<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Report Writing">Report Writing<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Data Entry (English/Bangla)">Data Entry (English/Bangla)<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Translator (English to Bangla or Bangla to English">Translator (English to Bangla or Bangla to English<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Adobe Premier for Video Editing">Adobe Premier for Video Editing<br>
-
-                              </div>
-                              <div class="col-md-3">
-                              <input type="checkbox" class="form-check-input" name="skill[]" value="Content Development">Content Development<br>
-
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Accounting">Accounting<br>
-                                <input type="checkbox" class="form-check-input" name="skill[]" value="Online Surveying">Online Surveying <br>
-                                <input type="checkbox" class="form-check-input">Others <input type="text" class="form-control" name="skill[]"><br>
-                                <small> <i>Enter skills as comma separated</i></small>
-                              </div>
-
-
-                        </div>
-                        <div class="form-group row">
-                            <label for="resume" class="col-md-4 col-form-label text-md-right">{{ __('Submit Resume') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="resume" type="file" class="form-control" name="resume" required autocomplete="resume">
-                                <small> <i>Must be in PDF format</i></small>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="video" class="col-md-4 col-form-label text-md-right">{{ __('Enter video resume link') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="video" type="text" class="form-control @error('video') is-invalid @enderror" name="video" value="{{ old('video') }}" autocomplete="video" autofocus>
-                                <small> <i> Example: https://youtube.com/ABCD or https://drive.google.com/ABCD</i></small>
-                            </div>
-                        </div>
-
-                        <hr>
-                        <h4><b>Make bKash Payment BDT. <span class="text-danger" id="test_payment"></span> To 01811458885</b></h4>
-                        <div class="form-group row">
-                           <label for="trix" class="col-md-4 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="trix" type="text" class="form-control" name="trix" required autocomplete="trix">
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Submit') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="form-group">
+                        <label for="resume" >Submit Resume</label>
+                        <input id="resume" type="file" class="form-control" name="resume" required autocomplete="resume">
+                        <small> <i>Must be in PDF format</i></small>
+                    </div>
+                    <div class="form-group mb-5">
+                        <label for="video">Enter video resume link</label>
+                        <input id="video" type="text" class="form-control @error('video') is-invalid @enderror" name="video" value="{{ old('video') }}" autocomplete="video" autofocus>
+                        <small> <i> Example: https://youtube.com/ABCD or https://drive.google.com/ABCD</i></small>
+                    </div>
                 </div>
             </div>
-        </div>
+            <hr>
+            <h4 class="text-center mt-5">Make bKash Payment BDT. <span class="text-danger" id="test_payment"></span> To 01811458885</h4>
+            <div class="form-group row mb-5">
+                <label for="trix" class="col-md-3 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}</label>
+                <div class="col-md-6">
+                    <input id="trix" type="text" class="form-control" name="trix" required autocomplete="trix">
+                </div>
+            </div>
+            <hr>
+            <div class="form-group row">
+                <div class="col-md-6 offset-md-3 mb-3">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        {{ __('Submit') }}
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
+</div>
 
 <script type="text/javascript">
     $(document).ready(function() {
