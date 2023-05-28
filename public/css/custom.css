@@ -44,3 +44,23 @@ abbr[title] {
   cursor: inherit !important;
   text-decoration: none !important;
 }
+
+/* CSS for Register page */
+.gender-container {
+  display: flex;
+  gap: 10px;
+}
+.gender-container button {
+  padding: 6px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  color:#6e707e;
+}
+.gender-container button.selected {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  color: #fff;
+}

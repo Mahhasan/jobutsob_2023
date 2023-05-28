@@ -13,6 +13,7 @@ class Jobseeker extends Model
         'name',
         'email',
         'cell',
+        'gender',
         'bachelor_faculty_id',
         'bachelor_department_id',
         'bachelor_status',

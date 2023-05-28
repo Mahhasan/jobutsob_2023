@@ -194,7 +194,7 @@
             // $(".bachelor_result").hide();
             // $(".bachelor_semester").show();
             $("#bachelor_result_label").html("Enter Result Till Now ");
-            $("#bachelor_year_label").html("Enter Semester/Year. Ex: 5th Semester/3rd Year ");
+            $("#bachelor_year_label").html("Semester (Ex: 5th Semester)");
             
         }
         else {

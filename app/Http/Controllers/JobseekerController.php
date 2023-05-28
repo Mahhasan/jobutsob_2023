@@ -175,6 +175,7 @@ class JobseekerController extends Controller
                 'address'    =>   $request->address,
                 'cell'    =>   $request->cell,
                 'email'   =>   $request->email,
+                'gender'   =>   $request->gender,
                 'experience'=>   $request->experience,
                 'payment_status'=>   -1,
                 'resume'  =>   $new_resume,
