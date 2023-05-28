@@ -17,6 +17,7 @@
         
         <form method="POST" action="{{ route('jobseeker.store') }}" enctype="multipart/form-data">
             @csrf
+            <hr>
             <h5 class="text-primary">Personal Information</h5>
             <div class="form-group row">
                 <div class="col-md-4">
@@ -138,7 +139,7 @@
             </div>
             <div class="form-group row">
                 <div class="col-md-6">
-                    <div class="form-group row mt-1">
+                    <div class="form-group row mt-4">
                         <label for="bachelor_status" class="col-md-4 col-form-label">Currently Studying ?<span class="text-danger"> *</span></label>
                         <div class="col-md-6">
                             <div class="checkbox mt-2">
@@ -189,7 +190,7 @@
             </div>
             <div class="form-group row">
                 <div class="col-md-6">
-                    <div class="form-group row mt-1">
+                    <div class="form-group row mt-4">
                         <label for="masters_status" class="col-md-4 col-form-label">Currently Studying ?</label>
                         <div class="col-md-6">
                             <div class="checkbox mt-2">
@@ -225,24 +226,20 @@
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Communication Skills">Communication Skills<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Problem-Solving and Critical Thinking">Problem-Solving and Critical Thinking<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Teamwork and Collaboration">Teamwork and Collaboration<br>
-                            <input type="checkbox" class="form-check-input" name="skill[]" value="Adaptability and Flexibility">Adaptability and Flexibility<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Technical and Digital Literacy">Technical and Digital Literacy<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Time Management and Organizational Skills">Time Management and Organizational Skills<br>
-                            <input type="checkbox" class="form-check-input" name="skill[]" value="Analytical Skills">Analytical Skills<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Initiative and Self-Motivation">Initiative and Self-Motivation<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Professionalism and Work Ethic">Professionalism and Work Ethic<br>
-                            <input type="checkbox" class="form-check-input" name="skill[]" value="Positive attitude">Positive attitude<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Industry-Specific Knowledge">Industry-Specific Knowledge<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="IT Skills">IT Skills<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Web Design">Web Design<br>
+                            <input type="checkbox" class="form-check-input" name="skill[]" value="Web Development">Web Development<br>
                         </div>
                         <div class="col-md-6">
-                            <input type="checkbox" class="form-check-input" name="skill[]" value="Web Development">Web Development<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Database Managemen">Database Managemen<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Software Development Lifecycle (SDLC)">Software Development Lifecycle (SDLC)<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Networking and Security">Networking and Security<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Data Analysis and Visualization">Data Analysis and Visualization<br>
-                            <input type="checkbox" class="form-check-input" name="skill[]" value="Cloud Computing">Cloud Computing<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Cybe Security ">Cybe Security <br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Soft Skills">Soft Skills<br>
                             <input type="checkbox" class="form-check-input" name="skill[]" value="Graphic Design">Graphic Design<br>
