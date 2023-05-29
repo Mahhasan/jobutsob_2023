@@ -39,6 +39,17 @@
 .carousel-next {
   right: 10px;
 }
+/* Custom css for archive */
+
+.archive-summary{
+	padding: 10px; 
+	border: #55a479 1px solid; 
+	border-radius: 5px; 
+	margin-bottom: 20px; 
+	height: 134px; color: white; 
+	background-color: #006eb5;
+	font-family: inherit;
+  }
 
 </style>
 <!-- PageBanner -->
@@ -80,7 +91,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">The total number of recruiters who have conducted interviews during Job Utsob:</p>
 									<p class="card-text">62</p>
@@ -88,7 +99,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">Number of total CV’s dropped during Job Utosob:</p>
 									<p class="card-text">14308</p>
@@ -96,7 +107,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">The total number of jobs offered (Position) during Job Utshob:</p>
 									<p class="card-text">792</p>
@@ -106,7 +117,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">The total number of jobs offered (Vacancies) during Job Utshob:</p>
 									<p class="card-text">2585</p>
@@ -114,7 +125,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">The total number of Internships (Position) offered during Job Utsob:</p>
 									<p class="card-text">47</p>
@@ -122,7 +133,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">The total number of Internships offered (Vacancies) during Job Utsob:</p>
 									<p class="card-text">218</p>
@@ -130,7 +141,7 @@
 							</div>
 						</div>
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">The total number of candidates selected during Job Utshob for the next round of interviews:</p>
 									<p class="card-text">367</p>
@@ -140,7 +151,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-3">
-						<div class="card archive-summary">
+							<div class="card archive-summary">
 								<div class="card-body">
 									<p class="card-title">The total number of placed students during Job Utsob:</p>
 									<p class="card-text">114</p>

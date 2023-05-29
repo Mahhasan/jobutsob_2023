@@ -430,9 +430,9 @@ class JobController extends Controller
              return redirect()->back()->with('warning','Job has been expired');
          }
  
-         // if($jobseeker->payment_status!=1){
-         //     return redirect()->back()->with('warning','Admin approval is required');
-         // }
+         if($jobseeker->payment_status!=1){
+             return redirect()->back()->with('warning','Admin approval is required');
+         }
          
  
          if($isapplied){
@@ -483,8 +483,6 @@ class JobController extends Controller
          $jobseeker->save();
  
          return redirect()->back()->with('success','Submitted Succesfully. Admin approval is pending');
- 
-         
  
      }
      // public function companywise_jo(){

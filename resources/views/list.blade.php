@@ -44,11 +44,11 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Job Title:<b> {{$value->title}}</b></h5>
-                            <p class="card-text">Company:<b> {{ \App\Models\Company::find($value->company)->name }}</b></p>
-                            <p>Last Date:<b> {{$value->last_date}}</b></p>
-                            <a style="text-align: right; color: white;" class="btn btn-primary " data-toggle="modal" data-target="#example{{$value->id}}">Job Details</a>
-                            <a href="{{ route('details',$value->id) }}" class="btn btn-primary">Apply</a>
+                            <p class="card-text"><b> Job Title: {{$value->title}}</b></p>
+                            <p class="card-text">Company: {{ \App\Models\Company::find($value->company)->name }}</p>
+                            <p>Last Date:{{$value->last_date}}</p>
+                            <a style="text-align: right; color: white;" class="btn btn-sm btn-primary " data-toggle="modal" data-target="#example{{$value->id}}">Job Details</a>
+                            <a href="{{ route('details',$value->id) }}" class="btn btn-sm btn-primary">Apply</a>
                         </div>
                     </div>
                     <div class="col-md-4">

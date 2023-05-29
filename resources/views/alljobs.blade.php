@@ -51,7 +51,7 @@
                                     @foreach($jobs as $index=>$value)
                                     <tr class="odd gradeX" >
                                         <td>{{++$index}}</td>
-                                        <td><h5 style="color:#2980b9"><b>{{ $value->title }}</b></h5> </td>
+                                        <td style="color:#2980b9"><b>{{ $value->title }}</b></td>
                                         <td ><img class="img img-responsive" width="100" 
                                         src="/logo/{{\App\Models\Company::find($value->company)->logo}}" alt="{{$value->logo}}">
                                         </td>
@@ -63,7 +63,7 @@
                                         </td>
                                         <td>{{$value->last_date}}</td>
                                         <td class="text-center">
-                                            <a class="btn  btn-primary" href="{{ route('jobs.show',$value->id) }}">View & Apply</a>
+                                            <a class="btn btn-sm btn-primary" href="{{ route('jobs.show',$value->id) }}">View & Apply</a>
                                     </td>
                                     </tr>
                                     @endforeach

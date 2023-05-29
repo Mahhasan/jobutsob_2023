@@ -22,7 +22,7 @@
                                 <tr class="odd gradeX" >
                                     <td>{{++$index}}</td>
                                     @if($job = App\Models\Job::find($value->job_id))
-                                        <td><b>{{ $job->title }}</b> at <b>{{ $job->com_name->name }}</b></td>
+                                        <td>{{ $job->title }} at {{ $job->com_name->name }}</td>
                                     @else
                                         <td class="text-danger">This Job expired or deleted</td>
                                     @endif

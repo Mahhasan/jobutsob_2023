@@ -213,7 +213,7 @@
         if($(this).val()=='yes'){
             // $(".masters_result").hide();
             // $(".masters_semester").show();
-            $("#masters_year_label").html("Enter Semester/Year. Ex: 1st Semester/1st Year ");
+            $("#masters_year_label").html("Semester (Ex: 1st Semester) ");
             $("#masters_result_label").html("Enter Result Till Now ");
             
         }

@@ -61,7 +61,7 @@
                             <a class="nav-link" href="{{ route('list') }}">All Jobs</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login & Apply For Jobs Here</a>
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-link" href="{{ route('jobseeker.create') }}">Register Here</a>
@@ -69,7 +69,7 @@
                     
                     @endif
                     <li class="nav-item">
-                    <a class="nav-link btn btn-primary  text-white" href="/">Visit Website</a>
+                    <a class="nav-link border border-info rounded" href="/">Visit Website</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">

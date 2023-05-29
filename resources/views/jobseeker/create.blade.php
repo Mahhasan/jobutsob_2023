@@ -1,11 +1,39 @@
-
 @extends('layouts.master')
-
 @section('content')
+<style>
+    /* CSS for Register page */
+.gender-container {
+  display: flex;
+  gap: 10px;
+}
+.gender-container button {
+  padding: 6px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  color:#6e707e;
+}
+.gender-container .gender1.selected {
+  background-color: DodgerBlue;
+  border-color: DodgerBlue;
+  color: #fff;
+}
+.gender-container .gender2.selected {
+  background-color: #FF647F;
+  border-color: #FF647F;
+  color: #fff;
+}
+.gender-container .gender3.selected {
+  background-color: SlateBlue;
+  border-color: SlateBlue;
+  color: #fff;
+}
+</style>
 <div class="container mt-5" style="background: #dfe6e9;">
     <div class="registration-form" style="color: #505155;">
-        <h3 class="text-center pt-5 mb-5 text-primary">Job Seeker Registration Form</h3>
-        
+        <h3 class="text-center pt-5 mb-4 text-primary">Job Seeker Registration Form</h3>
         @if(session()->get('success'))
         <div class="alert alert-success">
             {{ session()->get('success') }}
@@ -14,7 +42,6 @@
         @if($errors->any())
         {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
         @endif
-        
         <form method="POST" action="{{ route('jobseeker.store') }}" enctype="multipart/form-data">
             @csrf
             <hr>
@@ -32,9 +59,9 @@
                 <div class="col-md-4">
                     <label for="gender">Gender Information<span class="text-danger"> *</span></label>
                     <div class="gender-container">
-                        <button type="button" class="gender" value="Male"><i class="fa fa-male" aria-hidden="true"></i> Male</button>
-                        <button type="button" class="gender" value="Female"><i class="fa fa-female" aria-hidden="true"></i> Female</button>
-                        <button type="button" class="gender" value="Other">Other</button>
+                        <button type="button" class="gender gender1" value="Male"><i class="fa fa-male" aria-hidden="true"></i> Male</button>
+                        <button type="button" class="gender gender2" value="Female"><i class="fa fa-female" aria-hidden="true"></i> Female</button>
+                        <button type="button" class="gender gender3" value="Other">Other</button>
                     </div>
                     <input type="hidden" name="gender" id="gender-input">
                     @error('gender')
@@ -255,55 +282,113 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <label for="industry">Select Prefered Industry<span class="text-danger"> *</span></label>
                         <select class="js-example-basic-multiple js-states form-control" name="industry[]" multiple="multiple">
-                            <option value="Accounting/Finance/Banking" >Accounting/Finance/Banking</option>
-                            <option value="Administration/HR/Legal">Administration/HR/Legal</option>
-                            <option value="Advertising/Marketing/PR" >Advertising/Marketing/PR</option>
-                            <option value="Arts & Design" >Arts &amp; Design</option>
-                            <option value="Automotive" >Automotive</option>
-                            <option value="Aviation/Airlines" >Aviation/Airlines</option>
-                            <option value="Call Centre/BPO" >Call Centre/BPO</option>
-                            <option value="Construction/Architecture" >Construction/Architecture</option>
-                            <option value="Consulting Services" >Consulting Services</option>
-                            <option value="Courier/Distribution/Logistics" >Courier/Distribution/Logistics</option>
-                            <option value="CustomerSupport/Telemarketing" >CustomerSupport/Telemarketing</option>
-                            <option value="Digital Marketing" >Digital Marketing</option>
-                            <option value="Education/Training" >Education/Training</option>
-                            <option value="Engineering/Manufacturing" >Engineering/Manufacturing</option>
-                            <option value="Entertainment/Media" >Entertainment/Media</option>
+                            <option value="Accounting/Finance" >Accounting/Finance</option>
+                            <option value="Audit/Tax Services" >Audit/Tax Services</option>
+                            <option value="Arts/Design/Fashion" >Arts/Design/Fashion</option>
+                            <option value="Admin / HR" >Admin / HR</option>
+                            <option value="Architect/Interior Designing" >Architect/Interior Designing</option>
+                            <option value="Armed Forces" >Armed Forces</option>
+                            <option value="Actuarial/Statistics" >Actuarial/Statistics</option>
+                            <option value="Admin/HR/Management" >Admin/HR/Management</option>
+                            <option value="Arts & Creative / Graphics /Creative Design" >Arts & Creative / Graphics /Creative Design</option>
+                            <option value="Animation Jobs" >Animation Jobs</option>
+                            <option value="Aeronautics jobs" >Aeronautics jobs</option>
+                            <option value="Agriculture and Fishing jobs" >Agriculture and Fishing jobs</option>
+                            <option value="Business jobs" >Business jobs</option>
+                            <option value="Blue Collar Jobs" >Blue Collar Jobs</option>
+                            <option value="Bank Jobs BPO Jobs" >Bank Jobs BPO Jobs</option>
+                            <option value="BPO / Data Entry / Operator" >BPO / Data Entry / Operator</option>
+                            <option value="Brewery Jobs" >Brewery Jobs</option>
+                            <option value="Biotech jobs,Biotechnology" >Biotech jobs,Biotechnology</option>
+                            <option value="Commercial/Supply Chain" >Commercial/Supply Chain</option>
+                            <option value="Customer Support/Call Centre /Customer Service" >Customer Support/Call Centre /Customer Service</option>
+                            <option value="Clerical/Admin" >Clerical/Admin</option>
+                            <option value="Commercial/SupplyChain" >Commercial/SupplyChain</option>
+                            <option value="Courier Jobs" >Courier Jobs</option>
+                            <option value="Consumer Durables Jobs" >Consumer Durables Jobs</option>
+                            <option value="Corporate Planning Jobs" >Corporate Planning Jobs</option>
+                            <option value="Design/Creative" >Design/Creative</option>
+                            <option value="Doctor/Diagnosis" >Doctor/Diagnosis</option>
+                            <option value="Defence Jobs" >Defence Jobs</option>
+                            <option value="Engineers / Architect" >Engineers / Architect</option>
+                            <option value="Entertainment Jobs" >Entertainment Jobs</option>
+                            <option value="Export Import Jobs" >Export Import Jobs</option>
                             <option value="Environmental" >Environmental</option>
-                            <option value="Export/Import" >Export/Import</option>
-                            <option value="Fashion/Garments" >Fashion/Garments</option>
-                            <option value="Food Industry" >Food Industry</option>
-                            <option value="Government Services" >Government Services</option>
-                            <option value="HealthCare/Pharma" >HealthCare/Pharma</option>
-                            <option value="Hospitality/Travel/Tourism" >Hospitality/Travel/Tourism</option>
-                            <option value="Insurance" >Insurance</option>
-                            <option value="Internet/E-Commerc" >Internet/E-Commerce</option>
-                            <option value="IT/Hardware" >IT/Hardware</option>
-                            <option value="IT/Software" >IT/Software</option>
-                            <option value="Legal/Company Secretarial" >Legal/Company Secretarial</option>
-                            <option value="Maintenance/Repair" >Maintenance/Repair</option>
-                            <option value="Media/Publishing" >Media/Publishing</option>
-                            <option value="oil,gas &amp; power" >oil,gas &amp; power</option>
-                            <option value="Oil/Gas/Utilities" >Oil/Gas/Utilities</option>
-                            <option value="Others" >Others</option>
-                            <option value="Production/Operations" >Production/Operations</option>
-                            <option value="Purchase/ Supply Chain" >Purchase/ Supply Chain</option>
-                            <option value="Recruitment/HR" >Recruitment/HR</option>
-                            <option value="Retail/Wholesale" >Retail/Wholesale</option>
-                            <option value="Sales/Business Development" >Sales/Business Development</option>
-                            <option value="Science/Research/Development" >Science/Research/Development</option>
+                            <option value="Engineering / Diploma" >Engineering / Diploma</option>
+                            <option value="Engineer/Architect" >Engineer/Architect</option>
+                            <option value="Electrical" >Electrical</option>
+                            <option value="Engineering" >Engineering</option>
+                            <option value="Environment/Health/Safet" >Environment/Health/Safet</option>
+                            <option value="Engineer/Architects" >Engineer/Architects</option>
+                            <option value="Engineering Jobs" >Engineering Jobs</option>
+                            <option value="Food Tech/Nutritionist" >Food Tech/Nutritionist</option>
+                            <option value="Front Desk / Reception" >Front Desk / Reception</option>
+                            <option value="Fertilizers Jobs" >Fertilizers Jobs</option>
+                            <option value="Food Processing Jobs" >Food Processing Jobs</option>
+                            <option value="Food Services jobs" >Food Services jobs</option>
+                            <option value="Film Jobs" >Film Jobs</option>
+                            <option value="Facility Management Jobs" >Facility Management Jobs</option>
+                            <option value="FMCG Jobs" >FMCG Jobs</option>
+                            <option value="Finance jobs" >Finance jobs</option>
+                            <option value="Graphic Designer Jobs" >Graphic Designer Jobs</option>
+                            <option value="General/Cost Acct" >General/Cost Acct</option>
+                            <option value="Glass Jobs Air Conditioning Jobs" >Glass Jobs Air Conditioning Jobs</option>
+                            <option value="General Work" >General Work</option>
+                            <option value="Geology" >Geology</option>
+                            <option value="Human Resources jobs" >Human Resources jobs</option>
+                            <option value="HR/Org Dev" >HR/Org Dev</option>
+                            <option value="IT Management Jobs" >IT Management Jobs</option>
+                            <option value="Insurance Jobs" >Insurance Jobs</option>
+                            <option value="Journalist/Editors" >Journalist/Editors</option>
+                            <option value="Jobs Media Jobs" >Jobs Media Jobs</option>
+                            <option value="Logistics jobs" >Logistics jobs</option>
+                            <option value="Logistics/Supply Chain" >Logistics/Supply Chain</option>
+                            <option value="Marketing/Sales" >Marketing/Sales</option>
+                            <option value="Marketing Jobs" >Marketing Jobs</option>
+                            <option value="Media Jobs" >Media Jobs</option>
+                            <option value="Mining" >Mining</option>
+                            <option value="Mechanical/Automotive" >Mechanical/Automotive</option>
+                            <option value="Merchandiser Jobs" >Merchandiser Jobs</option>
+                            <option value="Management Jobs" >Management Jobs</option>
+                            <option value="Network/Sys/DB" >Network/Sys/DB</option>
+                            <option value="Nurse/Medical Support" >Nurse/Medical Support</option>
+                            <option value="Other Eng" >Other Eng</option>
+                            <option value="Purchasing" >Purchasing</option>
+                            <option value="Project Management jobs" >Project Management jobs</option>
+                            <option value="Paper Jobs" >Paper Jobs</option>
+                            <option value="Personal Care" >Personal Care</option>
+                            <option value="Packaging Jobs" >Packaging Jobs</option>
+                            <option value="Purchase Jobs" >Purchase Jobs</option>
+                            <option value="Personal Services jobs" >Personal Services jobs</option>
+                            <option value="Quality Assurance jobs" >Quality Assurance jobs</option>
+                            <option value="Quality Control" >Quality Control</option>
+                            <option value="Quantity Survey" >Quantity Survey</option>
+                            <option value="Retail/Merchandise" >Retail/Merchandise</option>
+                            <option value="Repair & Maintenance" >Repair & Maintenance</option>
+                            <option value="Recruitment Jobs" >Recruitment Jobs</option>
+                            <option value="Site Engineering Jobs" >Software Engineering Jobs</option>
                             <option value="Software Development" >Software Development</option>
-                            <option value="Sports and Recreation" >Sports and Recreation</option>
-                            <option value="Supply Chain/Logistics" >Supply Chain/Logistics</option>
-                            <option value="Telecom/ ISP" >Telecom/ ISP</option>
-                            <option value="Transportation/Warehousing" >Transportation/Warehousing</option>
-                            <option value="Travel/ Airlines" >Travel/ Airlines</option>
-                        </select>
+                            <option value="Sanitary Jobs" >Sanitary Jobs</option>
+                            <option value="Secretary/Recept./DataEntry" >Secretary/Recept./DataEntry</option>
+                            <option value="Sales-Corporate" >Sales-Corporate</option>
+                            <option value="Sales-Retail/General" >Sales-Retail/General</option>
+                            <option value="Sales-Eng/Tech/IT" >Sales-Eng/Tech/IT</option>
+                            <option value="Sales-Financial Services" >Sales-Financial Services</option>
+                            <option value="Sales / Marketing" >Sales / Marketing</option>
+                            <option value="Security jobs" >Security jobs</option>
+                            <option value="Security/Law Enforcement" >Security/Law Enforcement</option>
+                            <option value="Secretarial" >Secretarial</option>
+                            <option value="Semiconductor/Wafer" >Semiconductor/Wafer</option>
+                            <option value="Telesales/Telemarketing" >Telesales/Telemarketing</option>
+                            <option value="Top Management" >Top Management</option>
+                            <option value="Tech & Helpdesk Support" >Tech & Helpdesk Support</option>
+                            <option value="Teacher" >Teacher</option>
+                            <option value="Travel Jobs" >Travel Jobs</option>
+                        </select>                
                     </div>
                     <div class="form-group">
                         <label for="resume" >Submit Resume<span class="text-danger"> *</span></label>
@@ -318,7 +403,8 @@
                 </div>
             </div>
             <hr>
-            <h5 class="text-center mt-5" style="color: #FF647F">Make bKash Payment BDT. <span class="text-danger" id="test_payment"></span> To 01811458885</h5>
+            <h5 class="text-center mt-4" style="color: DodgerBlue;">Your Registration Fee BDT. <span id="test_payment"></span></h5>
+            <h5 class="text-center" style="color: #FF647F">Make bKash Payment To 01811458885</h5>
             <div class="form-group row mb-5">
                 <label for="trix" class="col-md-3 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}<span class="text-danger"> *</span></label>
                 <div class="col-md-6">
