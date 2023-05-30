@@ -426,6 +426,8 @@
 			<div class="section-padding"></div>
 		</div>
 	</div>
+
+	<!-- Script for job winer slider -->
 <script>
 	var slideIndex = 0;
 var slides = document.getElementsByClassName("carousel-slide")[0].getElementsByTagName("img");

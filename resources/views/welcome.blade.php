@@ -44,7 +44,7 @@
     				    DIU JOB UTSOB -2023 is set to be the ‘Big Bang Central Career Event’ of Daffodil International University and will act as a platform for corporate stalwarts to interact with a quality future workforce under the Daffodil family’s constant intent to encourage, facilitate and sustain industry-academia collaborations.
     				</p>
     				<p>
-    					The program, with its motivation as the tagline- ‘Connecting Talents: Unlock the Border of Opportunities’, looks forward to having a sustainable impact with the presence of freshers, highly skilled job seekers, interns/learners & experienced alumni network interested to make job transitions, recruiters and corporate Leaders, employers, and institutions, ’.
+    					The program, with its motivation as the tagline- ‘Connecting Talents: Unlock the Border of Opportunities’, looks forward to having a sustainable impact with the presence of freshers, highly skilled job seekers, interns/learners & experienced alumni network interested to make job transitions, recruiters and corporate Leaders, employers, and institutions.
     				</P>
     				<!--<p>-->
     				<!--    For further details of the event, please visit the official page of DIU Job Utsob-2023   http: //jobutsob.daffodilvarsity.edu.bd -->
@@ -77,7 +77,7 @@
                         ♦ 5000+ actual job openings<br>
                         ♦ 1000 internships<br>
                         ♦ 250+ actual recruiters. <br>
-                        ♦ 50 National HR leaders’ session<br>
+                        ♦ 50 National HR leaders session<br>
                         ♦ On campus interview<br>
                         ♦ Grooming session<br>
                         ♦ CV & video resume update<br>
@@ -114,7 +114,6 @@
 						♦	Personal and professional branding opportunities<br>
 						♦	Chance of HR networking and creating long term professional
 						relationships with corporate leaders/speakers groups. <br>
-						Before registration, please update your CV with following format Link
 					</p>
 		        </div>
 		    </div>
