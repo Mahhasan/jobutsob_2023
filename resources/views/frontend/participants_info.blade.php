@@ -19,6 +19,7 @@
 	</div><!-- PageBanner /- -->
     <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header" style="margin-bottom: 0px;">
 					<h3>OUR VALUED EMPLOYERS</h3>
@@ -31,6 +32,7 @@
 	</div>
     <!-- -------------------------------- -->
     <div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
+		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header">
@@ -92,6 +94,7 @@
 					</div>
 				</div>
 			</div>
+			<div class="section-padding"></div>
 			<div class="section-padding"></div>
 		</div>
 	</div>

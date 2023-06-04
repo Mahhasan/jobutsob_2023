@@ -553,7 +553,7 @@
 	color: rgb(0, 0, 0);
 	position: relative;
 	z-index: 2;
-	font-family: 'Arial', sans-serif;
+	/* font-family: 'Arial', sans-serif; */
 }
 .introduction-block ul li {
 	font-size: 15px;
@@ -562,7 +562,7 @@
 	color: rgb(0, 0, 0);
 	position: relative;
 	z-index: 2;
-	font-family: 'Arial', sans-serif;
+	/* font-family: 'Arial', sans-serif; */
   }
 .introduction-block a {
 	background-color: transparent;
@@ -1203,7 +1203,7 @@
 .hurryup-block .timer-box p {
       font-size: 18px;
       color: #fff;
-      font-family: 'Arial', sans-serif;
+      /* font-family: 'Arial', sans-serif; */
       letter-spacing: 0.20px;
       line-height: 28px;
 	  padding: 0 60px;

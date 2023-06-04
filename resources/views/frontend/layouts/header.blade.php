@@ -62,7 +62,7 @@
 									</ul>
 								</li>
 								<li style="margin: 0 1px;"><a title="Contact" href="{{route('contact')}}">Contact Us</a></li>
-								<li style="margin: 0 1px;"><a title="Speakers" href="{{ route('jobseeker.create') }}">Register</a></li>
+								<li style="margin: 0 1px;"><a title="Register" href="{{ route('jobseeker.create') }}">Register</a></li>
 								<li style="margin: 0 1px;"><a title="Discover Job" href="/alljob" 
 								style="background-color: #BA1F1C ;color: #fff;display: inline-block;font-family: 'Myriad Pro Regular';text-align:center; padding: 10px; margin-top: 20px; border-radius: 10px;"
 								>Discover Job</a></li>

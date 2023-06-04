@@ -17,59 +17,10 @@
 			</div>
 		<div class="section-padding"></div>
 	</div>
-<!-- PageBanner /- -->
-<!--<div class="container-fluid no-padding introduction-section">-->
-<!--		<div class="introduction-carousel">-->
-<!--			<div style="min-height: 559px;" class="col-md-12 no-padding">-->
-<!--				<div style="min-height: 559px;" class="introduction-block">-->
-<!--					<h3 class="block-title">Event highlights</h3>-->
-					<!-- <span class="icon icon-ChartUp"></span> -->
-<!--					<p style="font-size: 16px; line-height: 25px;">-->
-<!--						➔	200+ booths of different companies<br>-->
-<!--						➔	2000+ actual job openings<br>-->
-<!--						➔	1000 internships<br>-->
-<!--						➔	150+ actual recruiters. <br>-->
-<!--						➔	50 National HR leaders’ session<br>-->
-<!--						➔	On campus interview<br>-->
-<!--						➔	Grooming session<br>-->
-<!--						➔	CV & video resume update<br>-->
-<!--						➔	Employability skill test assessment-->
-<!--					</p>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div style="min-height: 559px;" class="col-md-12 no-padding">-->
-<!--				<div style="min-height: 559px;" class="introduction-block">-->
-<!--					<h3 class="block-title">Who can join ?</h3>-->
-					<!-- <span class="icon icon-Heart"></span> -->
-<!--						<p style="font-size: 16px; line-height: 25px;">-->
-<!--							➔	Graduates from 182, 183 & 191 batches of all disciplines of Daffodil -->
-<!--							International University.<br>-->
-<!--							➔	Current students of 9th-11th semesters, for internship opportunities <br>-->
-<!--							➔	Passed out DIU alumni for job placement & job changing opportunities<br>-->
-<!--						</p>-->
-						
-<!--				</div>-->
-<!--			</div>-->
-<!--			<div style="min-height: 434px;" class="col-md-12 no-padding">-->
-<!--				<div style="min-height: 434px;" class="introduction-block">-->
-<!--					<h3 class="block-title">Benefits to join</h3>-->
-					<!-- <span class="icon icon-Heart"></span> -->
-<!--						<p style="font-size: 16px; line-height: 25px;">-->
-<!--							➔	Job placement, internship placement & job changing opportunities in -->
-<!--							various renowned organizations<br>-->
-<!--							➔	Empower and accelerate your movement in career readiness with knowledge +  -->
-<!--							Skills + attitudes imparted by the corporate leaders, trainers & career coaches<br>-->
-<!--							➔	Personal and professional branding opportunities<br>-->
-<!--							➔	Chance of HR networking and creating long term professional-->
-<!--							relationships with corporate leaders/speakers groups. <br>-->
-<!--							Before registration, please update your CV with following format Link-->
-<!--						</p>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
     <!-- about the flagship -->
 	<div class="container-fluid latest-blog latest-blog-section no-padding">
+		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 		<div class="container">
 			<div class="section-header">
@@ -100,7 +51,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="section-padding"></div> -->
+		<div class="section-padding"></div>
 	</div>
     <!-- Introduction Section -->
 	<div class="container-fluid no-padding introduction-section">
@@ -124,115 +75,24 @@
 			<div style="min-height: 434px;" class="col-md-12 no-padding">
 				<div style="min-height: 434px;" class="introduction-block">
 					<h3 class="block-title">200 BOOTHS ACROSS  THE CAMPUS</h3>
-					<!-- <span class="icon icon-Heart"></span> -->
-						
-							<p style="font-size: 16px; line-height: 25px;">Youths to talk to the companies representatives about their companies  briefly, the entry level needs, and  share insights, flyers<br><br>
-							200 companies and large NGOs and  government enterprises. Brand Series.</p>
-						
-					<!--<a href="#" title="Learn more">Learn more</a>-->
+						<p style="font-size: 16px; line-height: 25px;">Youths to talk to the companies representatives about their companies  briefly, the entry level needs, and  share insights, flyers<br><br>
+						200 companies and large NGOs and  government enterprises. Brand Series.</p>
 				</div>
 			</div>
 			<div style="min-height: 434px;" class="col-md-12 no-padding">
 				<div style="min-height: 434px;" class="introduction-block">
 					<h3 class="block-title">INTERVIEWS</h3>
-					<!-- <span class="icon icon-Heart"></span> -->
-						<p style="font-size: 16px; line-height: 25px;">Some 150 companies to conduct interviews in 150+ rooms<br>
-    						Entry to mid-level recruitment<br>
-    						Those passing out this year or upto five  years of experience<br>
-    						The last 10 to 12 batches of last 5 years<br>
-						    This will be ideally based on earlier  shortlisting of CVs Recruitment Series.</p>
-					<!--<a href="#" title="Learn more">Learn more</a>-->
+					<p style="font-size: 16px; line-height: 25px;">Some 150 companies to conduct interviews in 150+ rooms<br>
+						Entry to mid-level recruitment<br>
+						Those passing out this year or upto five  years of experience<br>
+						The last 10 to 12 batches of last 5 years<br>
+						This will be ideally based on earlier  shortlisting of CVs Recruitment Series.</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- Introduction Section /- -->
- <!--   <div class="container-fluid testimonial-section no-padding">-->
-	<!--	<div class="section-padding"></div>-->
-	<!--		<div class="container">-->
-	<!--			<div class="row">-->
-	<!--				<div class="col-lg-6 col-sm-6  section-body">-->
-	<!--					<div class="section-header">-->
-	<!--						<h3>HIGHLIGHTS OF ‘DIU JOB UTSOB-2023’</h3>-->
-	<!--						<span>The fair will witness participation of highly acclaimed -->
-	<!--							DIU graduates seeking internship and job opportunities.-->
-	<!--							</span>-->
-	<!--					</div>-->
-	<!--					<div class="text-center">-->
-	<!--						<img src="/frontend/assets/images/highlight.png" style="height: 100%; width: 100%;" alt="">-->
-	<!--					</div>-->
-	<!--				</div>-->
-	<!--				<div class="col-lg-6 col-sm-6 ">-->
-	<!--					<div class="section-header">-->
-	<!--						<h3>PARTICIPATION PROCEDURE</h3>-->
-	<!--						<span>The procedures of DIU Job Utsob-2023  follow the following standard pattern -->
-	<!--							and are designed to maximize the payoffs as an outcome of the event.</span>-->
-	<!--					</div>-->
-	<!--					<div class="text-center">-->
-	<!--						<img src="/frontend/assets/images/step.png" style="height: 100%; width: 100%;" alt="">-->
-	<!--					</div>-->
-	<!--				</div>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--	</div>-->
-	<!--</div>-->
-	<!-- ----------------------------------------------------- -->
-	<!--<div class="container-fluid testimonial-section no-padding">-->
-	<!--	<div class="section-padding"></div>-->
-	<!--		<div class="container">-->
-	<!--			<div class="row ">-->
-	<!--				<div class="col-lg-6 col-sm-6 ">-->
-	<!--					<div class="section-header">-->
-	<!--						<h3>PARTICIPANTS’ & PARTICIPATIONS DETAILS</h3>-->
-	<!--						<span>The Fair will witness the participation of highly acclaimed DIU Graduates -->
-	<!--							seeking internship and Job opportunities.-->
-	<!--							</span>-->
-	<!--					</div>-->
-	<!--					<div class="section-body">-->
-	<!--						<p>DIU Job Utsob-2023 will be graced by the active participation of more than 4000 -->
-	<!--							graduates from batches: 182,183 & 191 of Daffodil International University’s  -->
-	<!--							diversified 24 Disciplines and 44 programs under 05 faculties and also- skillful -->
-	<!--							and technology enthusiast alumni seeking potential employment and placement -->
-	<!--							opportunities, whereas the current students of the 9th-11th semester will -->
-	<!--							participate in the event seeking internship opportunities. -->
-	<!--						</p>-->
-	<!--						<p>Approximately 2500 graduating students  and 1500 graduates would be showcasing -->
-	<!--							their industry-ready 21st-century employability skills and competencies through -->
-	<!--							the event.-->
-	<!--						</p>-->
-	<!--					</div>-->
-						
-	<!--				</div>-->
-	<!--				<div class="col-lg-6 col-sm-6 ">-->
-	<!--					<div class="section-header">-->
-	<!--						<h3>VISITORS SEGMENTS:</h3>-->
-	<!--					</div>-->
-	<!--					<div class="text-left">-->
-	<!--						<ul>-->
-	<!--							<li>Candidates - employed, under-employed or unemployed - with professional -->
-	<!--								qualifications looking for a job</li>-->
-	<!--							<li>Candidates with experience and technical skills</li>-->
-	<!--							<li>New graduates from  24 diversified disciplines and 44 programs under 05 -->
-	<!--								faculties</li>-->
-	<!--							<li>current students of the 9th-11th semester will participate in the event -->
-	<!--								seeking internship opportunities </li>-->
-	<!--							<li>Candidates looking for a second career</li>-->
-	<!--							<li>Candidates in career transition</li>-->
-	<!--							<li>Candidates looking to return to work</li>-->
-	<!--							<li>Candidates attracted to self-employment and entrepreneurship</li>-->
-	<!--						</ul>-->
-	<!--					</div>-->
-						
-	<!--				</div>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--	</div>-->
-	<!--</div>-->
-	<!-- ------------------------------- -->
-
-	
-	<!-- ------------------------------------------------------ -->
 	<div class="container-fluid testimonial-section no-padding">
+		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header">
@@ -274,7 +134,7 @@
 									professional ethics, quality client service, and friendly approach.</li>
 							</ul>
 						</div>
-						<div class="col-lg-5 col-sm-6" style="border: 2px solid #19AAF8;">
+						<div class="col-lg-5 col-sm-6">
 							<div class="text-center">
 								<img src="/frontend/assets/images/img111.png" style="height: 100%; width: 75%; margin: 20px 0px 10px 0px;" alt="">
 							</div>
@@ -284,10 +144,11 @@
 			</div>
 		</div>
 	</div>
-	
+	<div class="section-padding"></div>
 
 	<!-- showcase -->
 	<div class="container-fluid latest-blog latest-blog-section no-padding" style="background-color: #19AAF8;">
+		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 		<div class="container">
 			<div class="row section-body">
@@ -319,12 +180,13 @@
 	</div>
     <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 			<div class="container">
 				<div class="section-header">
 					<h3>PROGRAM AND ACTIVITIES:</h3>
 				</div>
-				<div class="row" style="border: 2px solid #19AAF8;">
-					<div class="col-lg-6 col-sm-6 " style="background-color: #D7D7D7; padding: 30px; border-right: 1px solid #19AAF8;">
+				<div class="row">
+					<div class="col-lg-6 col-sm-6 " style="padding: 25px;">
 						<ul>
 							<li>Event Kick-off through Press Conference</li>
 							<li>Grand Inaugural & Closing Ceremony</li>
@@ -358,6 +220,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="section-padding"></div>
     <!-- ------------------------------------------------------- -->
 	<!--<div class="container-fluid testimonial-section no-padding">-->
 	<!--	<div class="section-padding"></div>-->

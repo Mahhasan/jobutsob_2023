@@ -23,10 +23,10 @@
 						<!-- <li><a title="Online Earning" href="#">Online Earning</a></li>
 						<li><a title="Materials" href="#">Materials</a></li> -->
 						<li><a title="Presentation" href="#">Presentation</a></li>
-						<li><a title="Printed materials" href="#">Printed materials</a></li>
-						<li><a title="Curriculum" href="#">curriculum</a></li>
-						<li><a title="Literature" href="#">literature</a></li>
-						<li><a title="Help & Faq" href="#">Help & Faq</a></li>
+						<li><a title="Printed materials" href="#">Printed Materials</a></li>
+						<li><a title="Curriculum" href="#">Curriculum</a></li>
+						<li><a title="Literature" href="#">Literature</a></li>
+						<li><a title="Help" href="#">Help</a></li>
 					</ul>
 				</aside><!-- Customer Service Widget /- -->
 				
@@ -34,11 +34,11 @@
 				<aside class="col-md-2 col-sm-6 col-xs-6 widget widget_quick_links">
 					<h3 class="block-title">Quick links</h3>
 					<ul>
-						<li><a title="Faq" href="#">Faq</a></li>
+						<li><a title="Faq" href="#">FAQ</a></li>
 						<!-- <li><a title="Support" href="#">Support</a></li> -->
 						<!--<li><a title="Sitemap" href="#">Sitemap</a></li>-->
 						<!-- <li><a title="Community" href="#">Community</a></li> -->
-						<li><a title="membership" href="#">membership</a></li>
+						<li><a title="membership" href="#">Membership</a></li>
 						<li><a title="About Event" href="{{route('about-event')}}">About Event </a></li>
 						<li><a title="About Organizer" href="{{route('about-organizer')}}">About Organizer </a></li>
 						<li><a title="Contact us" href="{{route('contact')}}">Contact us</a></li>
@@ -105,11 +105,11 @@
 		<div class="container">
 			<div class="footer-menu">
 				<!-- Copyrights -->
-				<div class="copyrights ow-pull-left">
+				<div class="copyrights text-center">
 					<p>&copy; Job Utsob 2023 | All rights reserved</p>
 				</div><!-- Copyrights /- -->
 				<!-- Navigation -->
-				<nav class="navbar ow-navigation ow-pull-right">
+				<!-- <nav class="navbar ow-navigation ow-pull-right">
 					<div class="navbar-header">
 						<button aria-controls="navbar" aria-expanded="true" data-target="#navbar2" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
 							<span class="sr-only">Toggle navigation</span>
@@ -130,7 +130,7 @@
 							
 						</ul>
 					</div>
-				</nav><!-- Navigation /- -->
+				</nav> -->
 			</div><!-- Footer Menu /- -->
 		</div><!-- Container /- -->
 	</footer>
