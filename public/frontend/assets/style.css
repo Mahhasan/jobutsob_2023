@@ -64,9 +64,10 @@
 body {
 	/* font-family: 'Work Sans', sans-serif; */
 	font-family: Söhne,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-	font-size: 17px;
+	font-size: 18px;
 	color: #000;
 	overflow-x: hidden;
+	font-weight: 500;
 }
 img {
     max-width: 100%;
@@ -931,8 +932,8 @@ a {
 .footer-main .widget_contactus .contactinfo-box  p{
 	margin-left: 20px;
 	color: #f2f2f2;
-	font-size: 15px;
-	font-family: 'Arimo', sans-serif;
+	font-size: 17px;
+	/* font-family: 'Arimo', sans-serif; */
 	padding-right: 40px;
 	line-height: 20px;
 }

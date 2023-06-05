@@ -58,21 +58,11 @@
 	<!-- ------------------------------------------------- -->
 	<div class="container-fluid no-padding introduction-section">
 		<div class="introduction-carousel">
-			<div style="min-height: 445px;" class="col-md-12 no-padding">
-				<div style="min-height: 445px;" class="introduction-block">
+			<div style="min-height: 534px;" class="col-md-12 no-padding">
+				<div style="min-height: 534px; padding-top: 25px" class="introduction-block">
 					<h3 class="block-title">Event highlights</h3>
 					<!-- <span class="icon icon-ChartUp"></span> -->
-					<p style="font-size: 16px; line-height: 25px;">
-						<!--♦	200+ booths of different companies<br>-->
-						<!--♦	2000+ actual job openings<br>-->
-						<!--♦	1000 internships<br>-->
-						<!--♦	150+ actual recruiters. <br>-->
-						<!--♦	50 National HR leaders' session<br>-->
-						<!--♦	On campus interview<br>-->
-						<!--♦	Grooming session<br>-->
-						<!--♦	CV & video resume update<br>-->
-						<!--♦	Employability skill test assessment-->
-						
+					<p style="font-size: 18px; line-height: 25px;">
 						♦ 250+ booths of different companies<br>
                         ♦ 5000+ actual job openings<br>
                         ♦ 1000 internships<br>
@@ -85,16 +75,11 @@
 					</p>
 				</div>
 			</div>
-			<div style="min-height: 445px;;" class="col-md-12 no-padding">
-				<div style="min-height: 445px;;" class="introduction-block">
+			<div style="min-height: 534px;" class="col-md-12 no-padding">
+				<div style="min-height: 534px; padding-top: 25px" class="introduction-block">
 					<h3 class="block-title">Who can join ♦</h3>
 				    <!-- <span class="icon icon-Heart"></span> -->
-					<p style="font-size: 16px; line-height: 25px;">
-						<!--♦	Graduates from 182, 183 & 191 batches of all disciplines of Daffodil -->
-						<!--International University.<br>-->
-						<!--♦	Current students of 9th-11th semesters, for internship opportunities <br>-->
-						<!--♦	Passed out DIU alumni for job placement & job changing opportunities<br>-->
-						
+					<p style="font-size: 18px; line-height: 25px;">
 					    ♦ Graduates from 192, 193 & 201 batches of all disciplines of Daffodil International University.<br>
                         ♦ Current students of 9th-11th semesters, for internship opportunities <br>
                         ♦ Passed out DIU alumni for job placement & job changing opportunities<br>
@@ -102,11 +87,11 @@
 					
 				</div>
 			</div>
-			<div style="min-height: 445px;" class="col-md-12 no-padding">
-				<div style="min-height: 445px;" class="introduction-block">
+			<div style="min-height: 534px;" class="col-md-12 no-padding">
+				<div style="min-height: 534px; padding-top: 25px" class="introduction-block">
 					<h3 class="block-title">Benefits to join</h3>
 				    <!-- <span class="icon icon-Heart"></span> -->
-					<p style="font-size: 16px; line-height: 25px;">
+					<p style="font-size: 18px; line-height: 25px;">
 						♦	Job placement, internship placement & job changing opportunities in 
 						various renowned organizations<br>
 						♦	Empower and accelerate your movement in career readiness with knowledge +  
