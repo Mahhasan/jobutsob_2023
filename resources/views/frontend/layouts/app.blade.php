@@ -88,5 +88,34 @@
 	<script src="{{asset('frontend/assets/js/functions.js')}}"></script>
 	<script src="{{asset('frontend/assets/js/main_one.js')}}"></script>
 	<script src="{{asset('frontend/assets/js/jquery.counterup.min.js')}}"></script>
+	<!-- Script for job winer slider -->
+	<script>
+		var slideIndex = 0;
+	var slides = document.getElementsByClassName("carousel-slide")[0].getElementsByTagName("img");
+
+	function showSlide() {
+	if (slideIndex < 0) {
+		slideIndex = 0;
+	} else if (slideIndex >= slides.length - 3) {
+		slideIndex = slides.length - 3;
+	}
+
+	var slideWidth = slides[0].width;
+	document.getElementsByClassName("carousel-slide")[0].style.transform = "translateX(-" + slideIndex * slideWidth + "px)";
+	}
+
+	function prevSlide() {
+	slideIndex--;
+	showSlide();
+	}
+
+	function nextSlide() {
+	slideIndex++;
+	showSlide();
+	}
+
+	showSlide();
+
+	</script>
 </body>
 </html>

@@ -5,16 +5,16 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="card-header">
                     <div class="row">
                         <div class="col-4">
                             <small class="text-left">
                                 <abbr title="Go to Previous page">
-                                    <a style="text-decoration: none;" href="{{ route('jobs.index') }}">
-                                    <i class="fa fa-arrow-left"></i> Get Back</a></abbr></small>
-                                    &nbsp; &nbsp;Job ID #{{ $job->id }} 
+                                    <a style="text-decoration: none;" href="{{ route('jobs.index') }}"><i class="fa fa-arrow-left"></i>Get Back</a>
+                                </abbr>
+                            </small>
+                            &nbsp; &nbsp;Job ID #{{ $job->id }} 
                         </div>
                         <div class="col-7">
                             {{ $job->title}} 
@@ -24,43 +24,43 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="card-body">
-                <div class="row">
-            <div class="col-md-4">
-                <img id="blah" src="/logo/{{  \App\Models\Company::find($job->company)->logo }}" width= 80%; class="rounded" alt="your image" />
-                <div class="mt-3">
-                    <i class="far fa-building" aria-hidden="true"></i>
-                    {{  \App\Models\Company::find($job->company)->name }}
-                </div>
-                <div class="mt-2">
-                    <strong><i class="fas fa-money-bill-alt"></i> &nbsp; Salary:</strong> &#2547; {{ $job->salary }}
-                </div>
-                <div class="mt-2">
-                    <strong><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Last Date:</strong>  {{ $job->last_date }}
-                </div>
-                <!-- <a href="" class="btn btn-outline-primary btn-sm btn-block">Get Register</a> -->
-            </div>
-            <div class="col-md-8 text-left">
-                <div class="mb-3">
-                    <strong>Short Description:</strong> {!! $job->short_description  !!}
-                </div>
-                <div class="mb-3">
-                    <strong>Description:</strong> {!! $job->description !!}
-                </div>
-                <!-- <a href="" class="btn btn-primary">Edit</a>
-                <form action="" method="POST" style="display: inline-block;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>   -->
-            </div>
-        </div><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="blah" src="/logo/{{  \App\Models\Company::find($job->company)->logo }}" width= 80%; class="rounded" alt="your image" />
+                            <div class="mt-3">
+                                <i class="far fa-building" aria-hidden="true"></i>
+                                {{  \App\Models\Company::find($job->company)->name }}
+                            </div>
+                            <div class="mt-2">
+                                <strong><i class="fas fa-money-bill-alt"></i> &nbsp; Salary:</strong> &#2547; {{ $job->salary }}
+                            </div>
+                            <div class="mt-2">
+                                <strong><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Last Date:</strong>  {{ $job->last_date }}
+                            </div>
+                            <!-- <a href="" class="btn btn-outline-primary btn-sm btn-block">Get Register</a> -->
+                        </div>
+                        <div class="col-md-8 text-left">
+                            <div class="mb-3">
+                                <strong>Short Description:</strong> {!! $job->short_description  !!}
+                            </div>
+                            <div class="mb-3">
+                                <strong>Description:</strong> {!! $job->description !!}
+                            </div>
+                            <!-- <a href="" class="btn btn-primary">Edit</a>
+                            <form action="" method="POST" style="display: inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>   -->
+                        </div>
+                    </div><br>
                     <hr>
-
                     <div class="table-responsive">
-                        <p class="text-right"><abbr title="Download all Resume"><a href="{{ route('download.job.resumes', ['job_id' => $job->id]) }}" class="text-info">
-                            <i class="fa fa-download" aria-hidden="true"></i></a></abbr></p>
+                        <p class="text-right"><abbr title="Download all Resume">
+                            <a href="{{ route('download.job.resumes', ['job_id' => $job->id]) }}" class="text-info">
+                            <i class="fa fa-download" aria-hidden="true"></i></a></abbr>
+                        </p>
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr class="text-center">
@@ -122,7 +122,8 @@
                                     <td class="text-center">
                                         <abbr title="click to see {{ $jobseeker->name }}'s full information">
                                         <a class="text-info" href="" data-toggle="modal" data-target="#JobseekerDetails{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                        </abbr></td>
+                                        </abbr>
+                                    </td>
                                     @endif
                                 </tr>
                                 @endforeach
