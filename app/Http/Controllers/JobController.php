@@ -300,14 +300,13 @@ class JobController extends Controller
              return redirect()->to('/home');
          }
          $applide_data = DB::table('companies');
-         $data = Apply::where('job_id',$id)->paginate(50);
-         $i = $data->perPage() * ($data->currentPage() - 1);
+         $data = Apply::where('job_id',$id)->get();
          $job = Job::find($id);
          if(Auth()->user()->id != $job->com_name['user_id']){
              return redirect()->to('/home');
          }
          
-         return view('jobwise_applide',compact('data','job', 'applide_data', 'i'));
+         return view('jobwise_applide',compact('data','job', 'applide_data',));
      }
  
  

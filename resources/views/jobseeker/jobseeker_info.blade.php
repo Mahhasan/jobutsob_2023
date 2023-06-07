@@ -127,10 +127,7 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                  
-                    </table>
-
-
+                        </table>
                     </div>
                     {{ $jobseekers->links() }}
                 </div>

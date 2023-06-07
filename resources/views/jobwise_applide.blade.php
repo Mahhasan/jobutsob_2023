@@ -10,7 +10,7 @@
                         <div class="col-4">
                             <small class="text-left">
                                 <abbr title="Go to Previous page">
-                                    <a style="text-decoration: none;" href="{{ route('jobs.index') }}"><i class="fa fa-arrow-left"></i>Get Back</a>
+                                    <a style="text-decoration: none;" href="{{ route('companywise_jobs') }}"><i class="fa fa-arrow-left"></i>Get Back</a>
                                 </abbr>
                             </small>
                             &nbsp; &nbsp;Job ID #{{ $job->id }} 
@@ -85,7 +85,7 @@
                                     
                                     <td>
                                         <abbr title="Update {{ $jobseeker->name }}'s status">
-                                        <a style="text-decoration: none;" href="{{ route('change',$value->id) }}" class="text-info">{{ $value->status }} 
+                                        <a style="text-decoration: none;" href="{{ route('jobseeker-status',$value->id) }}" class="text-info">{{ $value->status }} 
                                         <i class="fa fa-edit" aria-hidden="true"></i></a></abbr>
                                     </td>
                                     <td class="text-center"><abbr title="Download {{ $jobseeker->name }}'s resume">
@@ -112,7 +112,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $data->links() }}
                     </div>
                 </div>
             </div>

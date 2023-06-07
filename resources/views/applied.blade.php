@@ -20,7 +20,7 @@
                             {{ $job->title}} 
                         </div>
                         <div class="col-1 text-right">
-                        <abbr title="Edit this job"><a class="text-info" href="{{ route('jobs.edit',$job->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a></abbr>
+                            <abbr title="Edit this job"><a class="text-info" href="{{ route('jobs.edit',$job->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a></abbr>
                         </div>
                     </div>
                 </div>
