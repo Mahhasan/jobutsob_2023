@@ -1,59 +1,48 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-10">
-
             <div class="card" style="box-shadow: 0px 2px #3498db;">
                 <div class="card-header" style="display: flex; justify-content: space-between;">
                     <p class="card-title text-info">[ Total Jobs:  <b class="text-warning">{{ $count }}</b> ]</p>
                     <p class="card-title"><abbr title="Click to create a new job"><a  href="{{ route('jobs.create') }}" style="text-decoration: none;"><i class="fa fa-plus"></i> Create New</a></abbr></p>
                 </div>
-
                 <div class="card-body">
                     <div class="table-responsive">
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
-                                    <th>Sl.</th>
+                                    <th>Job ID</th>
                                     <th>Job Title</th>
                                     <th>Company Logo</th>
                                     <th>Company Name</th>
                                     <th>Last Date</th>
                                     <th>Action</th>
                                     <th>Applied</th>
-                                
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach($jobs as $index=>$value)
-                                
                                 <tr class="odd gradeX">
-                                
-                                    <td>{{++$index}}</td>
+                                    <!-- <td>{{++$index}}</td> -->
+                                    <td>{{$value->id}}</td>
                                     <td><b>{{$value->title}}</b></td>
                                     <td>
                                         <img class="img img-responsive" width="125" 
                                         src="/logo/{{\App\Models\Company::find($value->company)->logo}}" alt="{{$value->logo}}">
                                     </td>
-                                    <td>
-                                        {{
-                                        \App\Models\Company::find($value->company)->name 
-                                    }} 
-                                    </td> 
-                                    
+                                    <td>{{ \App\Models\Company::find($value->company)->name }}</td>
                                     <td>{{$value->last_date}}</td>
                                     <td>
                                         <abbr title="Click to see job details"><a class="text-info" href="" data-toggle="modal" data-target="#example{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a></abbr>
                                         &nbsp; <abbr title="Click to Update this job"><a class="text-success" href="{{ route('jobs.edit',$value->id) }}" class=""><i class="fa fa-edit" aria-hidden="true"></i></a></abbr>
                                         &nbsp; <abbr title="Click to delete this job"><a class="text-danger" onclick="return confirm('Are you sure want to delete? ');" href ="destroy_job/{{ $value->id }}"><i class="fa fa-trash" aria-hidden="true"></i></a></abbr>
                                     </td>
-                                    <td><abbr title="Click to see applied jobseekers"><a href="{{ route('applied',$value->id) }}" class="arrow-button"><?php
-                                    $x = App\Models\Apply::where('job_id',$value->id)->count();
-                                    ?>
-                                    {{ $x }} applied</a></abbr>
-                                    
+                                    <td>
+                                        <abbr title="Click to see applied jobseekers"><a href="{{ route('applied',$value->id) }}" class="arrow-button">
+                                        <?php $x = App\Models\Apply::where('job_id',$value->id)->count(); ?>
+                                        {{ $x }} applied</a></abbr>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -66,7 +55,6 @@
         </div>
     </div>
 </div>
-
 <!-- Modal -->
 @foreach($jobs as $value)
 <div class="modal fade" id="example{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,14 +82,12 @@
 </div>
 @endforeach
 <script src="https://cdn.tiny.cloud/1/knybwr594mznrv6uagt4lxrf191ll7had91pnu370cyt11gg/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
 <script type="text/javascript">
-tinymce.init({
-    selector: "textarea",
-    menubar: false,
-    plugins: "link image code",
-    toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code'
-});
+    tinymce.init({
+        selector: "textarea",
+        menubar: false,
+        plugins: "link image code",
+        toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code'
+    });
 </script>
-
 @endsection

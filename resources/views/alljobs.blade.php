@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -8,7 +7,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                        <p class="card-title text-info">[ Total Job:  <b class="text-warning">{{ $count }}</b> ]</p>
+                            <p class="card-title text-info">[ Total Job:  <b class="text-warning">{{ $count }}</b> ]</p>
                         </div>
                         <div class="col-md-6 mb-4">
                             <form action="{{ route('job_search') }}" method="GET">
@@ -17,12 +16,11 @@
                                     <select name="company" id="input" class="form-control">
                                         <option value="0">Select Company</option>
                                         @foreach($search_jobs as $job)
-                                            <option value="{{$job->company}}">
-                                                {{ \App\Models\Company::find($job->company)->name}}
-                                            </option>
+                                        <option value="{{$job->company}}">
+                                            {{ \App\Models\Company::find($job->company)->name}}
+                                        </option>
                                         @endforeach
                                     </select>
-
                                     </div>
                                     <div class="col-md-5">
                                         <input type="text" name="title" class="form-control" placeholder="Search your favorite job">
@@ -53,18 +51,14 @@
                                         <td>{{++$index}}</td>
                                         <td style="color:#2980b9"><b>{{ $value->title }}</b></td>
                                         <td ><img class="img img-responsive" width="100" 
-                                        src="/logo/{{\App\Models\Company::find($value->company)->logo}}" alt="{{$value->logo}}">
+                                            src="/logo/{{\App\Models\Company::find($value->company)->logo}}" alt="{{$value->logo}}">
                                         </td>
-                                        <td>{{
-                                            
-                                            \App\Models\Company::find($value->company)->name
-                                        
-                                        }}  
+                                        <td>{{\App\Models\Company::find($value->company)->name}}  
                                         </td>
                                         <td>{{$value->last_date}}</td>
                                         <td class="text-center">
                                             <a class="btn btn-sm btn-primary" href="{{ route('jobs.show',$value->id) }}">View & Apply</a>
-                                    </td>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -77,6 +71,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection

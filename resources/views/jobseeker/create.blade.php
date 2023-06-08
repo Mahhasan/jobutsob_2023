@@ -151,7 +151,7 @@
                 <div class="col-md-6">
                     <label for="bachelor_faculty_id">Faculty Name<span class="text-danger"> *</span></label>
                     <select id="bachelor_faculty_id" type="text" class="form-control @error('bachelor_faculty_id') is-invalid @enderror" name="bachelor_faculty_id" required autocomplete="bachelor_faculty_id" autofocus>
-                        <option value="">Select Bachelor Faculty</option>
+                        <option value="">Select</option>
                         @foreach ($faculties as $key=>$value)
                             <option value="{{$key}}">{{$value}}</option>
                         @endforeach
@@ -160,7 +160,7 @@
                 <div class="col-md-6">
                     <label for="bachelor_department_id">Department<span class="text-danger"> *</span></label>
                     <select id="bachelor_department_id" type="text" class="form-control @error('bachelor_department_id') is-invalid @enderror" name="bachelor_department_id" required>
-                        <option value="" selected>Bachelor Department</option>
+                        <option value="" selected></option>
                     </select>
                 </div>
             </div>
@@ -178,18 +178,18 @@
                 </div>
                 <div class="col-md-6">
                     <label id="bachelor_year_label" for="bachelor_year">Passing Year<span class="text-danger"> *</span></label>
-                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}" placeholder="Bachelor Passing Year"  autocomplete="bachelor_year" novalidate>
+                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}" autocomplete="bachelor_year" novalidate>
                 </div>
             </div>
             <div class="form-group row mb-5">
                 <div class="col-md-6">
                     <label id="bachelor_result_label" for="bachelor_result">Enter Result<span class="text-danger"> *</span></label>
-                    <input id="bachelor_result" type="text" class="form-control @error('bachelor_result') is-invalid @enderror" name="bachelor_result" value="{{ old('bachelor_result') }}" placeholder="Bachelor Result" autocomplete="bachelor_result" novalidate>
+                    <input id="bachelor_result" type="text" class="form-control @error('bachelor_result') is-invalid @enderror" name="bachelor_result" value="{{ old('bachelor_result') }}" autocomplete="bachelor_result" novalidate>
                 </div>
                 <div class="col-md-6">
                     <label for="bachelor_institute">University/Institute<span class="text-danger"> *</span></label>
                     <select id="bachelor_institute" type="text" class="form-control @error('bachelor_institute') is-invalid @enderror" name="bachelor_institute" required autocomplete="bachelor_institute" autofocus>
-                        <option value="" selected>Select Bachelor Institute</option>
+                        <option value="" selected>Select</option>
                         <option id = "diu"value="Daffodil International University">Daffodil International University</option>
                         <option id ="diit" value="Daffodil Institute of IT">Daffodil Institute of IT</option>
                     </select>
@@ -202,7 +202,7 @@
                 <div class="col-md-6">
                     <label for="masters_faculty_id">Faculty Name</label>
                     <select id="masters_faculty_id" type="text" class="form-control @error('masters_faculty_id') is-invalid @enderror" name="masters_faculty_id" autocomplete="masters_faculty_id" autofocus>
-                        <option value="">Select Master's Faculty</option>
+                        <option value="">Select</option>
                         @foreach ($faculties as $key=>$value)
                         <option value="{{$key}}">{{$value}}</option>
                         @endforeach
@@ -211,7 +211,7 @@
                 <div class="col-md-6">
                     <label for="masters_department_id">Department</label>
                     <select id="masters_department_id" type="text" class="form-control @error('masters_department_id') is-invalid @enderror" name="masters_department_id" autocomplete="masters_department_id" autofocus>
-                        <option value="" selected>Master's Department</option>
+                        <option value="" selected></option>
                     </select>
                 </div>
             </div>
@@ -229,17 +229,17 @@
                 </div>
                 <div class="col-md-6">
                     <label  id="masters_year_label" for="masters_year">Passing Year</label>
-                    <input id="masters_year" type="text" class="form-control @error('masters_year') is-invalid @enderror" name="masters_year" value="{{ old('masters_year') }}" placeholder="Master's Passing Year"  autocomplete="bachelor_year" novalidate>
+                    <input id="masters_year" type="text" class="form-control @error('masters_year') is-invalid @enderror" name="masters_year" value="{{ old('masters_year') }}"  autocomplete="bachelor_year" novalidate>
                 </div>
             </div>
             <div class="form-group row mb-5">
                 <div class="col-md-6">
                     <label id="masters_result_label" for="masters_result">Enter Result</label>
-                    <input id="masters_result" type="text" class="form-control @error('masters_result') is-invalid @enderror" name="masters_result" value="{{ old('masters_result') }}" placeholder="Master's Result" autocomplete="masters_result" novalidate>
+                    <input id="masters_result" type="text" class="form-control @error('masters_result') is-invalid @enderror" name="masters_result" value="{{ old('masters_result') }}" autocomplete="masters_result" novalidate>
                 </div>
                 <div class="col-md-6">
                     <label for="masters_institute">University/Institute</label>
-                    <input id="masters_institute" type="text" class="form-control @error('masters_institute') is-invalid @enderror" name="masters_institute" value="{{ old('masters_institute') }}" placeholder="Master's Institute" autocomplete="bachelor_institute" autofocus>
+                    <input id="masters_institute" type="text" class="form-control @error('masters_institute') is-invalid @enderror" name="masters_institute" value="{{ old('masters_institute') }}" autocomplete="bachelor_institute" autofocus>
                 </div>
             </div>
             <hr>
@@ -422,7 +422,6 @@
         </form>
     </div>
 </div>
-
 <script type="text/javascript">
     $(document).ready(function() {
         $('select[name="bachelor_faculty_id"]').on('change', function() {
@@ -433,7 +432,6 @@
                     type: "GET",
                     dataType: "json",
                     success:function(data) {
-                        
                         $('select[name="bachelor_department_id"]').empty();
                         $.each(data, function(key, value) {
                             $('select[name="bachelor_department_id"]').append('<option value="'+ key +'">'+ value +'</option>');
@@ -456,7 +454,6 @@ $(document).ready(function() {
                     type: "GET",
                     dataType: "json",
                     success:function(data) {
-                        
                         $('select[name="masters_department_id"]').empty();
                         $.each(data, function(key, value) {
                             $('select[name="masters_department_id"]').append('<option value="'+ key +'">'+ value +'</option>');
@@ -472,21 +469,16 @@ $(document).ready(function() {
 <script>
     const genderButtons = document.querySelectorAll('.gender');
     const genderInput = document.getElementById('gender-input');
-    
     function handleGenderSelection() {
         const selectedGender = this.value;
         genderInput.value = selectedGender;
-        
         genderButtons.forEach(button => {
             button.classList.remove('selected');
         });
-        
         this.classList.add('selected');
     }
-    
     genderButtons.forEach(button => {
         button.addEventListener('click', handleGenderSelection);
     });
 </script>
-
 @endsection

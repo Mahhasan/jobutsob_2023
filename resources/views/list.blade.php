@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -43,12 +42,14 @@
             <div class="card mb-3" style="box-shadow: 0px 2px #3498db;">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="card-body">
+                        <div class="card-body" style="line-height: .9;">
                             <p class="card-text"><b> Job Title: {{$value->title}}</b></p>
                             <p class="card-text">Company: {{ \App\Models\Company::find($value->company)->name }}</p>
                             <p>Last Date:{{$value->last_date}}</p>
                             <a style="text-align: right; color: white;" class="btn btn-sm btn-primary " data-toggle="modal" data-target="#example{{$value->id}}">Job Details</a>
+                            @if(Auth::check() && Auth::user()->status == "user")
                             <a href="{{ route('details',$value->id) }}" class="btn btn-sm btn-primary">Apply</a>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -80,7 +81,6 @@
                 </div>
             </div>
         </div>
-
         @endforeach
     </div>
     <div class="">

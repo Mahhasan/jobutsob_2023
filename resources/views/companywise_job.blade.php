@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -14,7 +13,6 @@
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
-                                    <!-- <th>SL</th> -->
                                     <th>Job ID</th>
                                     <th>Job Title</th>
                                     <th>Salary</th>

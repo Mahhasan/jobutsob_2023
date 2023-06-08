@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -10,48 +9,34 @@
                     <p class="card-title"><a  href="{{ route('create_company') }}" style="text-decoration: none;"><i class="fa fa-plus"></i> Create New</a></p>
                 </div>
                 <div class="card-body">
-                    <!-- @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif -->
                     <div class="table-responsive">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="jobseeker">
-                        <thead>
-                            <tr>
-                                <th>Sl No.</th>
-                                <th>Logo</th>
-                                <th>Company</th>
-                                <th>Contact Info</th>
-                                <th>Location</th>
-                               <!--  <th>Address</th>
-                                <th>Email</th>
-                                <th>Cell</th> -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($companies as $index=>$value)
-                            <tr class="odd gradeX">
-                                <td>{{++$index}}</td>
-                                <td ><img class="img img-responsive p-3" width="125" 
-                                src="/logo/{{$value->logo}}" alt="{{$value->logo}}">
-                               
-                                <td>{{$value->name}}</td>
-                                <td>{{$value->user->name}}<br>
-                                    {{$value->user->designation}}<br>
-                                    <i class="fa fa-phone" aria-hidden="true"></i>{{$value->user->cell}}<br>
-                                    <i class="fa fa-envelope" aria-hidden="true"></i> {{$value->user->email}}
-                                </td>
-                                <td>{{$value->location}}</td>
-                                <!-- <td>{{$value->job_category}}</td>
-                                <td>{{$value->address}}</td>
-                                <td>{{$value->cell}}</td>
-                                <td>{{$value->email}}</td> -->
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="jobseeker">
+                            <thead>
+                                <tr>
+                                    <th>Sl No.</th>
+                                    <th>Logo</th>
+                                    <th>Company</th>
+                                    <th>Contact Info</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($companies as $index=>$value)
+                                <tr class="odd gradeX">
+                                    <td>{{++$index}}</td>
+                                    <td><img class="img img-responsive p-3" width="125" src="/logo/{{$value->logo}}" alt="{{$value->logo}}"></td>
+                                    <td>{{$value->name}}</td>
+                                    <td>{{$value->user->name}}<br>
+                                        {{$value->user->designation}}<br>
+                                        <i class="fa fa-phone" aria-hidden="true"></i>{{$value->user->cell}}<br>
+                                        <i class="fa fa-envelope" aria-hidden="true"></i> {{$value->user->email}}
+                                    </td>
+                                    <td>{{$value->location}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

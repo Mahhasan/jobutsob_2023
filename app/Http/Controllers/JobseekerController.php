@@ -33,7 +33,6 @@ class JobseekerController extends Controller
         $jobs = Job::where('last_date','>=',date('Y-m-d'))->get()->sortBy('company');
         return view('list',compact('jobs'));
     }
-
     public function details($id)
     {
         $job = Job::find($id);
@@ -74,12 +73,11 @@ class JobseekerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-     
+
     //  public function undp(){
     //     $client = new Client([
     //         'verify' => false
     //     ]);
-    
     //     $data = array(
     //         'token' => '5uz$)[1j=3chbr9pz,32f7_1',
     //         'email' => 'youth@gmail.com'
@@ -89,16 +87,10 @@ class JobseekerController extends Controller
     //         'body'    => json_encode($data)
     //     ]); 
     //     print_r(json_decode($response->getBody(), true));
-    
-    
-    
-        
     //     return "a";
     //   }
-      
         public function store(Request $request)
     {
-
         // dd( env('SSO'));
         $request->validate([
             'name'     =>  'required',
@@ -118,7 +110,6 @@ class JobseekerController extends Controller
             'bachelor_department_id' => 'required',
            //'trix'    =>  'required',
         ]);
-
         $request->validate([
             'industry'    =>  'required',
         ]);
@@ -128,21 +119,16 @@ class JobseekerController extends Controller
                 'bachelor_result'    =>  'required',
             ]);
         }
-
-
         // if( $request->masters_status!='yes'){
         //     $request->validate([
         //         'masters_result'    =>  'required',
         //         'masters_year'    =>  'required',
         //     ]);
         // }
-     
        // dd($request);
-
         // $client = new Client([
         //     'verify' => false
         // ]);
-      
         // $response = $client->request('POST', env('SSO').'/ssologin/register.php', ['form_params' => [
         //     'email' => $request->email,
         //     'status' => 'user',
@@ -169,7 +155,6 @@ class JobseekerController extends Controller
             $resume = $request->file('resume');
             $new_resume = rand() . '.' . $resume->getClientOriginalExtension();
             $resume->move(public_path('resume'), $new_resume);
-
             $form_data = array(
                 'name'    =>   $request->name,
                 'address'    =>   $request->address,
@@ -182,39 +167,30 @@ class JobseekerController extends Controller
                 'trix'  =>   $request->trix,
                 'video'  =>   $request->video,
                 'jobseeker_type'  =>   $request->jobseeker_type,
-
                 'bachelor_subject'  =>   $request->bachelor_subject,
                 'bachelor_status'  =>   $request->bachelor_status=='yes'? 'Ongoing':'',
                 'bachelor_year'  =>   $request->bachelor_year,
                 'bachelor_result'  => $request->bachelor_result,
                 'bachelor_institute'  =>   $request->bachelor_institute,
-                
                 'masters_subject'  =>   $request->masters_subject,
                 'masters_status'  =>   $request->masters_status=='yes'? 'Ongoing':'',
                 'masters_year'  =>  $request->masters_year,
                 'masters_result'  =>  $request->masters_result,
                 'masters_institute'  =>   $request->masters_institute,
-
                 'masters_faculty_id' => $request->masters_faculty_id,
                 'masters_department_id' => $request->masters_department_id,
                 'bachelor_faculty_id' => $request->bachelor_faculty_id,
                 'bachelor_department_id' => $request->bachelor_department_id,
-
                 'industry'  =>   implode(',', (array) $request->get('industry')),
-                
                 'skill' => implode(',', (array) $request->get('skill'))
-                
             );
             Jobseeker::create($form_data);
-            
             return redirect('/jobseeker/create')->with('success', 'Registration Successfull.Please login to apply.');
         // }
         // else if ($response->getStatusCode()==400){
-
         //     if(User::where('email',$request->email)->exists()){
         //         return redirect('/jobseeker/create')->with('success', 'Already Registered');
         //     }
-               
         //     $user = new User;
         //     $user->email = $request->email;
         //     $user->status = 'user';
@@ -224,7 +200,6 @@ class JobseekerController extends Controller
         //     $resume = $request->file('resume');
         //     $new_resume = rand() . '.' . $resume->getClientOriginalExtension();
         //     $resume->move(public_path('resume'), $new_resume);
-
         //     $form_data = array(
         //         'name'    =>   $request->name,
         //         'address'    =>   $request->address,
@@ -245,44 +220,32 @@ class JobseekerController extends Controller
         //         'last'  =>   $request->last,
         //         'video'  =>   $request->video,
         //         'club'  =>   $request->club,
-                
         //         'bachelor_subject'  =>   $request->bachelor_subject,
         //         'bachelor_status'  =>   $request->bachelor_status=='yes'? 'Ongoing':'',
         //         'bachelor_year'  =>   $request->bachelor_year,
         //         'bachelor_result'  => $request->bachelor_result,
         //         'bachelor_institute'  =>   $request->bachelor_institute,
-                
         //         'masters_subject'  =>   $request->masters_subject,
         //         'masters_status'  =>   $request->masters_status=='yes'? 'Ongoing':'',
         //         'masters_year'  =>  $request->masters_year,
         //         'masters_result'  =>  $request->masters_result,
         //         'masters_institute'  =>   $request->masters_institute,
-
         //         'certificate'  =>   $request->certificate,
         //         'masters_faculty_id' => $request->masters_faculty_id,
         //         'masters_department_id' => $request->masters_department_id,
         //         'bachelor_faculty_id' => $request->bachelor_faculty_id,
         //         'bachelor_department_id' => $request->bachelor_department_id,
-
         //         'industry'  =>   implode(',', (array) $request->get('industry')),
-
-
-                
         //         'skill' => implode(',', (array) $request->get('skill'))
-                
         //     );
         //     Jobseeker::create($form_data);
-
         //     return redirect('/jobseeker/create')->with('success', 'Registration Successfull.We Will notify  you shorty');
         // }
-
         //dd( $response->getStatusCode().$response->getBody()->getContents());
-
         // //var_dump($form_data);
         // //var_dump($form_data);
         // $data = Jobseeker::create($form_data);
     }
-
     public function update(Request $request){
         // dd($request);
         $request->validate([
@@ -292,10 +255,8 @@ class JobseekerController extends Controller
             'address'    =>  'required',
             'industry'    =>  'required',
         ]);
-
         $user = User::where('email',Auth()->User()->email)->first();
         $jobseeker = Jobseeker::where('email',$user->email)->first();
-  
         $resume = $request->file('resume');
         if($resume){
             $new_resume = rand() . '.' . $resume->getClientOriginalExtension();
@@ -313,37 +274,30 @@ class JobseekerController extends Controller
             'resume'  =>   $new_resume,
             'video'  =>   $request->video,
             'industry'  =>   implode(',', (array) $request->get('industry')),
-
             'bachelor_subject'  =>   $request->bachelor_subject,
             'bachelor_status'  =>   $request->bachelor_status=='yes'? 'Ongoing':'',
             'bachelor_year'  =>   $request->bachelor_year,
             'bachelor_result'  => $request->bachelor_result,
             'bachelor_institute'  =>   $request->bachelor_institute,
-            
             'masters_subject'  =>   $request->masters_subject,
             'masters_status'  =>   $request->masters_status=='yes'? 'Ongoing':'',
             'masters_year'  =>  $request->masters_year,
             'masters_result'  =>  $request->masters_result,
             'masters_institute'  =>   $request->masters_institute,
-            
             'jobseeker_type'  =>   $request->jobseeker_type,
             'bachelor_faculty_id' => $request->bachelor_faculty_id,
             'bachelor_department_id' => $request->bachelor_department_id,
             'masters_faculty_id' => $request->masters_faculty_id,
             'masters_department_id' => $request->masters_department_id,
-            
             'skill' => implode(',', (array) $request->get('skill'))  
         );
         $jobseeker->update($form_data);
-
         $form_data2 = array(
             'name'    =>   $request->name
         );
         $user->update($form_data2);
-
         return redirect('profile')->with('success', 'Profile update successfull.');
     }
-
     public function profile(){
         $user = Auth()->user();
         $data = Jobseeker::where('email',$user->email)->first();
@@ -455,10 +409,8 @@ class JobseekerController extends Controller
             "Travel Jobs",
         );
         $selected = explode(",",$data->industry);
-
         return view('jobseeker.profile',compact('data','user','industries','selected','faculties','departments', 'masters_departments'));     
     }
-
     /**
      * Display the specified resource.
      *
@@ -469,7 +421,6 @@ class JobseekerController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -480,7 +431,6 @@ class JobseekerController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -493,13 +443,11 @@ class JobseekerController extends Controller
         if(Auth()->check() && Auth()->user()->status!="admin"){
             return redirect()->to('/alljobs');
         }
-
         $data = Jobseeker::find($request->id);
         $data->payment_status = $request->payment_status;
         $data->save();
         return redirect()->back()->with('status', 'Payment Status Updated Succesfully');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -514,13 +462,11 @@ class JobseekerController extends Controller
         $data = Jobseeker::find($id);
         return view('approve',compact('data'));
     }
-
     public function payOnline(Request $request)
     { 
         $client = new Client([
             'verify' => false
         ]);
- 
         $response = $client->request('POST', 'https://api.1card.com.bd/odootest/pay', ['form_params' => [
             'user_id' => 55,
             'amount' => 5000,
@@ -541,9 +487,7 @@ class JobseekerController extends Controller
         ],
         'http_errors' => false
         ]);
-
         $data = json_decode($response->getBody()->getContents());
-
         if(isset($data->url)){
             dd($data->url);
         }
@@ -551,13 +495,11 @@ class JobseekerController extends Controller
             dd("error");
         }
     }
-
     public function payCheck(Request $request)
     {
         $client = new Client([
             'verify' => false
         ]);
- 
         $response = $client->request('POST', 'https://api.1card.com.bd/odootest/validationserverapi', ['form_params' => [
             'reff_id' => "4545745",
 
@@ -565,11 +507,8 @@ class JobseekerController extends Controller
         ],
         'http_errors' => false
         ]);
-
         $data = json_decode($response->getBody()->getContents());
-
         dd($data->message);
-
         // if(isset($data->message) && $data->message=="success"){
         //     dd('success');
         // }
@@ -581,10 +520,8 @@ class JobseekerController extends Controller
     public function jobseeker_search(Request $request)
     {
         if(Auth()->user()->status!="admin"){
-            return redirect()->to('/home');
-            
+            return redirect()->to('/home');  
         }
-        
         $data = DB::table('jobseekers');
         if( $request->name){
             $data = $data->where('name', 'LIKE', "%" . $request->name . "%");
@@ -592,12 +529,9 @@ class JobseekerController extends Controller
         if( $request->bachelor_subject){
             $data = $data->where('bachelor_subject', '=', $request->bachelor_subject);
         }
-        
         $q = $request->q;
-       
         $jobseekers = Jobseeker::paginate(50);
         #$jobseekers = Jobseeker::get();
-
         if($q != ""){
         $jobseekers = Jobseeker::where ( 'skill', 'LIKE', '%' . $q . '%' )
         //->whereYear('created_at', 2021)
@@ -611,80 +545,62 @@ class JobseekerController extends Controller
         ->orWhere ( 'email', 'LIKE', '%' . $q . '%' )
         ->paginate (50)->setPath ('');
         }
-       
         $count2 = Jobseeker::get()->count();
-
         return view('jobseeker.jobseeker_info',compact('data', 'jobseekers','count2'));
     }
+    public function downloadResumes(){
+        // Get all the resumes from the jobseekers table
+        $resumes = DB::table('jobseekers')->pluck('resume')->toArray();
+        // Create a new ZIP archive
+        $zip = new ZipArchive;
+        $zipFileName = 'jobseeker_resumes.zip';
 
-    public function downloadResumes()
-{
-    // Get all the resumes from the jobseekers table
-    $resumes = DB::table('jobseekers')->pluck('resume')->toArray();
-
-    // Create a new ZIP archive
-    $zip = new ZipArchive;
-    $zipFileName = 'jobseeker_resumes.zip';
-
-    if ($zip->open(public_path($zipFileName), ZipArchive::CREATE) !== TRUE) {
-        // Handle the case where the ZIP archive could not be created
-        return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
-    }
-
-    // Add each resume to the ZIP archive
-    foreach ($resumes as $resume) {
-        $resumePath = public_path("resume/$resume");
-        if (!file_exists($resumePath)) {
-            // Handle the case where the resume file is not found
-            return back()->withErrors(['error' => "Resume file not found: $resume"]);
+        if ($zip->open(public_path($zipFileName), ZipArchive::CREATE) !== TRUE) {
+            // Handle the case where the ZIP archive could not be created
+            return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
         }
-        $zip->addFile($resumePath, basename($resume));
-    }
-
-    // Close the ZIP archive
-    $zip->close();
-
-    // Send the ZIP file to the user
-    return response()->download(public_path($zipFileName), 'jobseeker_resumes.zip')->deleteFileAfterSend(true);
-}
-
-// for jobwise download
-public function downloadJobResumes($job_id)
-{
-    // Get the job title for the selected job
-    $job_title = Job::findOrFail($job_id)->title;
-
-    // Get all the resumes for the selected job from the applies table
-    $resumes = DB::table('applies')
-                ->where('job_id', $job_id)
-                ->pluck('resume')
-                ->toArray();
-
-    // Create a new ZIP archive
-    $zip = new ZipArchive;
-    $zipFileName = "{$job_title}_resumes.zip";
-
-    if ($zip->open(public_path($zipFileName), ZipArchive::CREATE) !== TRUE) {
-        // Handle the case where the ZIP archive could not be created
-        return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
-    }
-
-    // Add each resume to the ZIP archive
-    foreach ($resumes as $resume) {
-        $resumePath = public_path("resume/$resume");
-        if (!file_exists($resumePath)) {
-            // Handle the case where the resume file is not found
-            return back()->withErrors(['error' => "Resume file not found: $resume"]);
+        // Add each resume to the ZIP archive
+        foreach ($resumes as $resume) {
+            $resumePath = public_path("resume/$resume");
+            if (!file_exists($resumePath)) {
+                // Handle the case where the resume file is not found
+                return back()->withErrors(['error' => "Resume file not found: $resume"]);
+            }
+            $zip->addFile($resumePath, basename($resume));
         }
-        $zip->addFile($resumePath, basename($resume));
+        // Close the ZIP archive
+        $zip->close();
+        // Send the ZIP file to the user
+        return response()->download(public_path($zipFileName), 'jobseeker_resumes.zip')->deleteFileAfterSend(true);
     }
-
-    // Close the ZIP archive
-    $zip->close();
-
-    // Send the ZIP file to the user
-    return response()->download(public_path($zipFileName), $zipFileName)->deleteFileAfterSend(true);
-}
-
-
+    // for jobwise download
+    public function downloadJobResumes($job_id){
+        // Get the job title for the selected job
+        $job_title = Job::findOrFail($job_id)->title;
+        // Get all the resumes for the selected job from the applies table
+        $resumes = DB::table('applies')
+                    ->where('job_id', $job_id)
+                    ->pluck('resume')
+                    ->toArray();
+        // Create a new ZIP archive
+        $zip = new ZipArchive;
+        $zipFileName = "{$job_title}_resumes.zip";
+        if ($zip->open(public_path($zipFileName), ZipArchive::CREATE) !== TRUE) {
+            // Handle the case where the ZIP archive could not be created
+            return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
+        }
+        // Add each resume to the ZIP archive
+        foreach ($resumes as $resume) {
+            $resumePath = public_path("resume/$resume");
+            if (!file_exists($resumePath)) {
+                // Handle the case where the resume file is not found
+                return back()->withErrors(['error' => "Resume file not found: $resume"]);
+            }
+            $zip->addFile($resumePath, basename($resume));
+        }
+        // Close the ZIP archive
+        $zip->close();
+        // Send the ZIP file to the user
+        return response()->download(public_path($zipFileName), $zipFileName)->deleteFileAfterSend(true);
+    }
 }

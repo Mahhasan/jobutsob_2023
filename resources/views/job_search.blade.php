@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -8,22 +7,21 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                        <span class="text-info">Showing Results for:</span> <span class="text-warning">
-                        <b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} {{ $data->total() }} </span></b>
+                            <span class="text-info">Showing Results for:</span> <span class="text-warning">
+                            <b>{{ request()->has('q') ? ucfirst(request()->get('q')) : '' }} {{ $data->total() }} </span></b>
                         </div>
                         <div class="col-md-6 mb-4">
                             <form action="{{ route('job_search') }}" method="GET">
                                 <div class="row">
                                     <div class="col-md-5">
-                                    <select name="company" id="input" class="form-control">
-                                        <option value="0">Select Company</option>
-                                        @foreach($search_jobs as $job)
+                                        <select name="company" id="input" class="form-control">
+                                            <option value="0">Select Company</option>
+                                            @foreach($search_jobs as $job)
                                             <option value="{{$job->company}}">
                                                 {{ \App\Models\Company::find($job->company)->name}}
                                             </option>
-                                        @endforeach
-                                    </select>
-
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col-md-5">
                                         <input type="text" name="title" class="form-control" placeholder="Search your favorite job">
@@ -77,6 +75,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection

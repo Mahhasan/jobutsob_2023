@@ -1,58 +1,50 @@
 
 @extends('frontend.layouts.app')
-
 @section('content')
 @include('frontend.layouts.slider')
 <style>
 	.carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.carousel-slide {
-  display: flex;
-  width: calc(100% / 3 * 12); /* Display five images in the slide */
-  height: 100%; /* Adjust the height as needed */
-  transition: transform 0.3s ease-in-out;
-}
-
-.carousel-slide img {
-  width: calc(100% / 3); /* Display three images at a time */
-  height: 100%;
-  object-fit: cover;
-}
-
-.carousel-prev,
-.carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.carousel-prev {
-  left: 10px;
-}
-
-.carousel-next {
-  right: 10px;
-}
-/* Custom css for archive */
-
-.archive-summary{
-	padding: 10px; 
-	border: #55a479 1px solid; 
-	border-radius: 5px; 
-	margin-bottom: 20px; 
-	height: 134px; color: white; 
-	background-color: #006eb5;
-	font-family: inherit;
-  }
-
+	position: relative;
+	width: 100%;
+	max-width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+	}
+	.carousel-slide {
+	display: flex;
+	width: calc(100% / 3 * 12); /* Display five images in the slide */
+	height: 100%; /* Adjust the height as needed */
+	transition: transform 0.3s ease-in-out;
+	}
+	.carousel-slide img {
+	width: calc(100% / 3); /* Display three images at a time */
+	height: 100%;
+	object-fit: cover;
+	}
+	.carousel-prev,
+	.carousel-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 30px;
+	cursor: pointer;
+	}
+	.carousel-prev {
+	left: 10px;
+	}
+	.carousel-next {
+	right: 10px;
+	}
+	/* Custom css for archive */
+	.archive-summary{
+		padding: 10px; 
+		border: #55a479 1px solid; 
+		border-radius: 5px; 
+		margin-bottom: 20px; 
+		height: 134px; color: white; 
+		background-color: #006eb5;
+		font-family: inherit;
+	}
 </style>
 <!-- Register & Countdown Section Start -->
 <div class="meeta-about-section" style="padding-top: 30px; background-color: azure; box-shadow: 0px 1px #f0f0f0; display:none;">
@@ -82,13 +74,11 @@
 	</div>
 </div>
 <!-- Register & Countdown Section End -->
-	
 <div class="container-fluid latest-blog latest-blog-section">
 		<div class="container section-padding" id="about">
 		    <div class="row">
     			<div class="section-header">
     				<h3>DIU Job Utsob 2023</h3>
-    				<!-- <span>Recent Updates</span> -->
     			</div>
     			<div class="section-body">
     				<P>
@@ -97,16 +87,11 @@
     				<p>
     					The program, with its motivation as the tagline- ‘Connecting Talents: Unlock the Border of Opportunities’, looks forward to having a sustainable impact with the presence of freshers, highly skilled job seekers, interns/learners & experienced alumni network interested to make job transitions, recruiters and corporate Leaders, employers, and institutions.
     				</P>
-    				<!--<p>-->
-    				<!--    For further details of the event, please visit the official page of DIU Job Utsob-2023   http: //jobutsob.daffodilvarsity.edu.bd -->
-
-    				<!--</p>-->
     			</div>
 			</div>
 		</div>
-		<!-- <div class="section-padding"></div> -->
 	</div>
-	<!-- ------------------------------------------------- -->
+	<!-- Event highlights -->
 	<div class="container-fluid no-padding introduction-section">
 		<div class="introduction-carousel">
 			<div style="min-height: 534px;" class="col-md-12 no-padding">
@@ -155,7 +140,7 @@
 		    </div>
 	    </div>
     </div>
-	<!-- ------------MESSAGE FROM DIU MANAGEMENT ----------- -->
+	<!-- MESSAGE FROM DIU MANAGEMENT -->
 	<div class="container-fluid latest-blog latest-blog-section no-padding">
 		<div class="container section-padding">
 			<div class="row">
@@ -197,9 +182,7 @@
 			</div>
 		</div>
 	</div>
-
-	
-	<!-- Hurryup Booking -->
+	<!-- Date -->
 	<div class="container-fluid hurryup-booking-section no-padding">
 		<div class="container">
 			<div class="card">
@@ -225,13 +208,11 @@
 			</div>
 		</div>
 	</div>
-	<!-- Hurryup Booking /- -->
+	<!-- winner list -->
 	<div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>
-
-
 		<div class="carousel-container">
 			<div class="section-header">
 				<h3>Job Winners list of Job Utsob-2022</h3>
@@ -249,42 +230,15 @@
 				<img src="/frontend/assets/images/winners10.jpg" alt="Image 10">
 				<img src="/frontend/assets/images/winners11.jpg" alt="Image 11">
 				<img src="/frontend/assets/images/winners12.jpg" alt="Image 12">
-				<!-- Add more images as needed -->
 			</div>
 			<a class="carousel-prev" onclick="prevSlide()">&#10094;</a>
 			<a class="carousel-next" onclick="nextSlide()">&#10095;</a>
 		</div>
 		<div class="section-padding"></div>
-			<!-- <div class="container">
-				<div class="section-header">
-					<h3>Job Winners list of Job Utsob-2022</h3>
-				</div>
-				<div class="row">
-					<div class="col-lg-4 col-sm-6 ">
-						<div class="text-center">
-							<img src="/frontend/assets/images/winners1.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 ">
-						<div class="text-center">
-							<img src="/frontend/assets/images/winners2.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 ">
-						<div class="text-center">
-							<img src="/frontend/assets/images/winners3.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="section-padding"></div>
-				<div class="text-center"><a class="btn btn-info" href="https://docs.google.com/spreadsheets/d/1mUvd7NZAi4VuF-zD21if7ZDsr-Dn90evasBpgkHwOek/edit#gid=854943840">More list of successfull joseekeer</a></div>
-			</div> -->
-			<div class="section-padding"></div>
-			<div class="section-padding"></div>
-		</div>
+		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 	</div>
 	<div class="section-padding"></div>
-	
 	<!-- video section -->
 	<div class="container-fluid no-padding">
 		<div class="section-padding"></div>
@@ -297,16 +251,15 @@
 				<div class="col-md-6 col-sm-6 col-xs-12 content-center">
 					<video style="box-shadow: 0px 0px 10px 0px #8d8e8e;" width="100%" poster="/frontend/assets/images/poster1.jpg" controls>
 						<source  src="/frontend/assets/video/video1.mp4" type="video/mp4">
-					  </video>
+					</video>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12 content-center">
 					<video style="box-shadow: 0px 0px 10px 0px #8d8e8e;" width="100%" poster="/frontend/assets/images/poster2.jpg"  controls>
 						<source src="/frontend/assets/video/video2.mp4" type="video/mp4">
-					  </video>
+					</video>
 				</div>
 			</div>
 		</div>
 		<div class="section-padding"></div>
 	</div>
-
 @endsection

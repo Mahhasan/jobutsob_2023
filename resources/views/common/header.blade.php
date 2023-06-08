@@ -68,7 +68,7 @@
                     </li>
                     
                     @endif
-                    <li class="nav-item">
+                    <li class="nav-item text-center">
                     <a class="nav-link border border-info rounded" href="/">Visit Website</a>
                     </li>
                 </ul>

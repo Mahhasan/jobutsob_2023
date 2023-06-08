@@ -1,7 +1,5 @@
 @extends('layouts.master')
-
 @section('content')
-
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -30,15 +28,6 @@
                                             <option value="Alumni">Alumni</option>
                                         </select>
                                     </div>
-                                    <!-- <div class="col-md-4">
-                                        <select name="status" id="input" class="form-control" style="font-size: 14px;">
-                                            <option value="">Jobseekers Status</option>
-                                            <option value="Initial">Initial</option>
-                                            <option value="Written">Written</option>
-                                            <option value="Interview">Interview</option>
-                                            <option value="Selected">Selected</option>
-                                        </select>
-                                    </div> -->
                                     <div class="col-md-3">
                                         <input type="text" name="keyword" class="form-control" placeholder="Search by Skill" style="font-size: 14px;">
                                     </div>
@@ -49,8 +38,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
-                
+                </div> 
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -63,7 +51,6 @@
                             <p><abbr title="Download all Resume"><a onclick="return confirm('Are you sure you want to start downloading? ');" href="{{ route('download-resumes') }}" class="text-info">
                             <i class="fa fa-download" aria-hidden="true"></i></a></abbr></p>
                         </div>
-                        
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
                             <thead>
                                 <tr>
@@ -110,18 +97,17 @@
                                             <span class="text-info"><i class="fa fa-edit" aria-hidden="true"></i></span>
                                         </a>
                                     </td>
-                                   
                                     <td class="text-center"><abbr title="Download {{ $value->name }}'s resume"> 
                                         <a class="text-info" href="/resume/{{$value->resume}}" target="_blank">
                                         <i class="fa fa-download" aria-hidden="true"></i></a></abbr>
                                         &nbsp; &nbsp;
                                         <abbr title="click to see {{ $value->name }}'s video resume">
                                         <a href="{{$value->video}}" type="button" target="_blank">
-                                            <i class="fa fa-link" aria-hidden="true"></i></a></abbr>
+                                           <i class="fa fa-link" aria-hidden="true"></i></a></abbr>
                                     </td>
                                     <td class="text-center">
                                         <abbr title="click to see {{ $value->name }}'s full information">
-                                        <a class="text-info" href="" data-toggle="modal" data-target="#JobseekersDetails{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="text-info" href="" data-toggle="modal" data-target="#JobseekersDetails{{$value->id}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                         </abbr>
                                     </td>
                                 </tr>
@@ -150,7 +136,6 @@
                 <p class="card-title">Name:<b> {{ $value->name }}</b></p>
                 <p class="card-text">Email: {{ $value->email }}</p>
                 <p class="card-text">Mobile: {{ $value->cell }}</p>
-
                 <p class="card-text">Bachelor Information: </p>
                     <p class="pl-5" style="font-size: 14px">
                     {{$value->bachelor_faculty->faculty_name ?? ' '}}<br>
@@ -159,7 +144,6 @@
                     Result: {{$value->bachelor_result}} <br>
                     Passing Year/Semester: {{$value->bachelor_year}} <br>
                     Institute: {{$value->bachelor_institute}}</p>
-
                 <p class="card-text">Masters Information: </p>
                     <p class="pl-5" style="font-size: 14px">
                     {{$value->masters_faculty->faculty_name ?? ' '}}<br>
@@ -168,7 +152,6 @@
                     Result: {{$value->masters_result}} <br>
                     Passing Year/Semester: {{$value->masters_year}} <br>
                     Institute: {{$value->masters_institute}}</p>
-
                 <p class="card-text">Experience: {{ $value->experience }} years</p>
                 <p class="card-text">Video Resume: 
                     <abbr title="click to see {{ $value->name }}'s video resume">
@@ -192,7 +175,6 @@
             <div class="modal-footer" style="border-top: 1px solid rgb(52, 144, 220);">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
-            
         </div>
     </div>
 </div>  
