@@ -1,7 +1,6 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-
     <!-- PageBanner -->
 	<div class="container-fluid page-banner blogpost no-padding">
 		<div class="section-padding"></div>
@@ -19,7 +18,6 @@
 		<div class="section-padding"></div>
 	</div>
     <!-- PageBanner /- -->
-
 	<div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
 		<div class="container">

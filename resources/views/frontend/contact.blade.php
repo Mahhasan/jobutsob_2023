@@ -17,17 +17,9 @@
 			</div>
 		<div class="section-padding"></div>
 	</div><!-- PageBanner /- -->
-<div class="container-fluid testimonial-section no-padding" style="background-color: ##FFF;">
+<div class="container-fluid testimonial-section no-padding" style="background-color: #FFF;">
 	<div class="section-padding"></div>
 		<div class="container" >
-	   <!--<div class="text-center" style="background-color: #fbfbfb; box-shadow: 0px 0px 6px 0px #b5b5b5; padding: 50px 0px;">-->
-				<!--<p>-->
-				<!--	Career Development Center, DIU<br>-->
-				<!--	Daffodil Smart City (DSC), Ashulia, Dhaka<br>-->
-				<!--	Email: cdc@daffodilvarsity.edu.bd<br>-->
-				<!--	Cell: 01847334705, 01847334706, 01847334707-->
-				<!--</p>-->
-		  <!--</div>-->
 		    <div class="row">
 			    <div class="col-md-4"></div>
 			    <div class="col-md-4 m-5" style="box-shadow: 0px 0px 5px 0px #c1c1c1; padding: 100px 0px;">
@@ -50,7 +42,6 @@
 		</div>
 		<div class="section-padding"></div>
 	</div>
-	
 </div>
 <div class="text-center">
 	<iframe  scrolling="no" height="400px" width="100%"

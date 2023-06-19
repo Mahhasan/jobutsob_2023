@@ -1,5 +1,4 @@
 @extends('frontend.layouts.app')
-
 @section('content')
 <style>
 	.carousel-container {
@@ -9,20 +8,17 @@
   margin: 0 auto;
   overflow: hidden;
 }
-
 .carousel-slide {
   display: flex;
   width: calc(100% / 3 * 12); /* Display five images in the slide */
   height: 100%; /* Adjust the height as needed */
   transition: transform 0.3s ease-in-out;
 }
-
 .carousel-slide img {
   width: calc(100% / 3); /* Display three images at a time */
   height: 100%;
   object-fit: cover;
 }
-
 .carousel-prev,
 .carousel-next {
   position: absolute;
@@ -31,16 +27,13 @@
   font-size: 30px;
   cursor: pointer;
 }
-
 .carousel-prev {
   left: 10px;
 }
-
 .carousel-next {
   right: 10px;
 }
 /* Custom css for archive */
-
 .archive-summary{
 	padding: 10px; 
 	border: #55a479 1px solid; 
@@ -50,27 +43,25 @@
 	background-color: #006eb5;
 	font-family: inherit;
   }
-
 </style>
 <!-- PageBanner -->
 	<div class="container-fluid page-banner blogpost no-padding">
 		<div class="section-padding"></div>
-			<div class="container">
-				<div class="banner-content-block">
-					<div class="banner-content">
-						<h3>Archive</h3>
-						<ol class="breadcrumb">
-							<li><a href="/">Home</a></li>
-							<li class="active">Job Utsob 2022</li>
-						</ol>
-					</div>
+		<div class="container">
+			<div class="banner-content-block">
+				<div class="banner-content">
+					<h3>Archive</h3>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">Job Utsob 2022</li>
+					</ol>
 				</div>
 			</div>
+		</div>
 	</div>
 	<div class="section-padding"></div>
 	<div class="section-padding"></div>
 	<!-- PageBanner /- -->
-
     <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
 			<div class="container">
@@ -78,7 +69,6 @@
 					<h3>Summary about DIU Job Utsob-2022</h3>
 				</div>
 				<table>
-
 				</table>
 				<div class="text-center">	
 					<div class="row">
@@ -166,7 +156,6 @@
 	<div class="section-padding"></div>
 	<div class="section-padding"></div>
 	<div class="section-padding"></div>
-
     <!-- --------------Photo------------------ -->
     <div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
 		<div class="section-padding"></div>
@@ -207,7 +196,6 @@
 			<div class="section-padding"></div>
 		</div>
 	</div>
-
 	<!-- -------------video------------------- -->
     <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
@@ -243,14 +231,11 @@
 	<div class="section-padding"></div>
 	<div class="section-padding"></div>
 	<div class="section-padding"></div>
-
 	<!-- --------------Photo------------------ -->
     <div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>
-
-
 		<div class="carousel-container">
 			<div class="section-header">
 				<h3>Job Winners list of Job Utsob-2022</h3>
@@ -274,37 +259,11 @@
 			<a class="carousel-next" onclick="nextSlide()">&#10095;</a>
 		</div>
 		<div class="section-padding"></div>
-			<!-- <div class="container">
-				<div class="section-header">
-					<h3>Job Winners list of Job Utsob-2022</h3>
-				</div>
-				<div class="row">
-					<div class="col-lg-4 col-sm-6 ">
-						<div class="text-center">
-							<img src="/frontend/assets/images/winners1.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 ">
-						<div class="text-center">
-							<img src="/frontend/assets/images/winners2.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 ">
-						<div class="text-center">
-							<img src="/frontend/assets/images/winners3.jpg" style="height: 100%; width: 100%; margin: 20px 0px 10px 0px;" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="section-padding"></div>
-				<div class="text-center"><a class="btn btn-info" href="https://docs.google.com/spreadsheets/d/1mUvd7NZAi4VuF-zD21if7ZDsr-Dn90evasBpgkHwOek/edit#gid=854943840">More list of successfull joseekeer</a></div>
-			</div> -->
-			<div class="section-padding"></div>
-			<div class="section-padding"></div>
+		<div class="section-padding"></div>
+		<div class="section-padding"></div>
 		</div>
 	</div>
 	<div class="section-padding"></div>
-
-
 	<!-- --------------PDF------------------ -->
     <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
@@ -336,9 +295,6 @@
 			<div class="section-padding"></div>
 		</div>
 	</div>
-
-
-	<!-- /////////////////////// -->
 	<div class="container-fluid testimonial-section no-padding" style="background-color: #eff0f0;">
 		<div class="section-padding"></div>
 		<div class="section-padding"></div>
@@ -356,9 +312,6 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	
 	<!-- --------------PDF------------------ -->
     <div class="container-fluid testimonial-section no-padding">
 		<div class="section-padding"></div>
@@ -371,16 +324,6 @@
 				<div class="row">
 					<h4 class="text-center"><b>Electronic Media Coverage</b></h4>
 					<p class="text-center"><a class="btn btn-info" href="https://drive.google.com/drive/folders/1Qkb-91u6ie-h_wZ1bf6_m2stxB7JrtEg?usp=share_link">Link</a></p>
-					<!-- <div class="col-lg-6 col-sm-6 ">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe src="https://drive.google.com/file/d/1FDkfCx3c5WJQiWWawKAovWobLbIxz7eV/preview" width="640" height="480" allow="autoplay"></iframe>
-						</div>
-					</div>
-					<div class="col-lg-6 col-sm-6 ">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe src="https://drive.google.com/file/d/1tb9Is9VYJkl1OCGkjyrqok8BuKYB25zh/preview" width="640" height="480" allow="autoplay"></iframe>
-						</div>
-					</div> -->
 				</div>
 				<div class="row">
 					<h4 class="text-center"><b>Online News</b></h4>
@@ -418,8 +361,6 @@
 						<a class="btn btn-info" style="margin-bottom: 20px" href="https://www.facebook.com/19910327202/posts/10159447517292203/?app=fbl">Link 7</a>
 					</div>
 				</div>
-				<!-- <div class="section-padding"></div> -->
-				<!-- <div class="text-center"><a class="btn btn-info" href="https://drive.google.com/drive/folders/1Qkb-91u6ie-h_wZ1bf6_m2stxB7JrtEg?usp=share_link">More list of successfull joseekeer</a></div> -->
 			</div>
 			<div class="section-padding"></div>
 			<div class="section-padding"></div>

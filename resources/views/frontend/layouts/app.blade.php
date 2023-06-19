@@ -11,77 +11,60 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<title>Job Utsob 2023</title>
-
 	<!-- Standard Favicon -->
 	<link rel="icon" type="image/x-icon" href="{{asset('frontend/assets/images/favicon.ico')}}" />
-	
 	<!-- For iPhone 4 Retina display: -->
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('frontend/assets/images/apple-icon-114x114.png')}}">
-	
 	<!-- For iPad: -->
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('frontend/assets/images/apple-icon-72x72.png')}}">
-	
 	<!-- For iPhone: -->
 	<link rel="apple-touch-icon-precomposed" href="{{asset('frontend/assets/images/apple-icon-57x57.png')}}">
+	
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<!-- Library - Bootstrap v3.3.5 -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/libraries/lib.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/libraries/Stroke-Gap-Icon/stroke-gap-icon.css')}}">
-	
 	<!-- Custom - Common CSS -->
 	<link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/plugins.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/navigation-menu.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/libraries/lightslider-master/lightslider.css')}}">
-	
 	<!-- Custom - Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/shortcode.css')}}">
 	<!--[if lt IE 9]>		
 		<script src="js/html5/respond.min.js"></script>
-
     <![endif]-->
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-82MK1FNXH0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-82MK1FNXH0');
-</script>
-
-	
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-82MK1FNXH0"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-82MK1FNXH0');
+	</script>
 </head>
-
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
     <!-- Loader -->
     @include('frontend.layouts.loader')
     <!-- Loader -->
-    
 	<!-- Header -->
 	@include('frontend.layouts.header')
     <!-- Header /- -->	
-	
 	<!-- Slider Section -->
-    
 	<!-- Slider Section /- -->
-	
-	
 	@yield('content')
-	
-	
 	<!-- Footer Main -->
     @include('frontend.layouts.footer')
 	<!-- Footer Main /- -->
-	
 	<!-- JQuery v1.11.3 -->
 	<script src="{{asset('frontend/assets/js/jquery.min.js')}}"></script>
-	
 	<!-- Library - Js -->
 	<script src="{{asset('frontend/assets/libraries/lib.js')}}"></script><!-- Bootstrap JS File v3.3.5 -->
 	<script src="{{asset('frontend/assets/libraries/jquery.countdown.min.js')}}"></script>
-	
 	<script src="{{asset('frontend/assets/libraries/lightslider-master/lightslider.js')}}"></script>
 	<!-- Library - Google Map API -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn3Z6i1AYolP3Y2SGis5qhbhRwmxxo1wU"></script>
@@ -91,31 +74,25 @@
 	<!-- Script for job winer slider -->
 	<script>
 		var slideIndex = 0;
-	var slides = document.getElementsByClassName("carousel-slide")[0].getElementsByTagName("img");
-
-	function showSlide() {
-	if (slideIndex < 0) {
-		slideIndex = 0;
-	} else if (slideIndex >= slides.length - 3) {
-		slideIndex = slides.length - 3;
-	}
-
-	var slideWidth = slides[0].width;
-	document.getElementsByClassName("carousel-slide")[0].style.transform = "translateX(-" + slideIndex * slideWidth + "px)";
-	}
-
-	function prevSlide() {
-	slideIndex--;
-	showSlide();
-	}
-
-	function nextSlide() {
-	slideIndex++;
-	showSlide();
-	}
-
-	showSlide();
-
+		var slides = document.getElementsByClassName("carousel-slide")[0].getElementsByTagName("img");
+		function showSlide() {
+			if (slideIndex < 0) {
+				slideIndex = 0;
+			} else if (slideIndex >= slides.length - 3) {
+				slideIndex = slides.length - 3;
+			}
+			var slideWidth = slides[0].width;
+			document.getElementsByClassName("carousel-slide")[0].style.transform = "translateX(-" + slideIndex * slideWidth + "px)";
+		}
+		function prevSlide() {
+			slideIndex--;
+			showSlide();
+		}
+		function nextSlide() {
+			slideIndex++;
+			showSlide();
+		}
+		showSlide();
 	</script>
 </body>
 </html>

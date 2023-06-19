@@ -125,6 +125,5 @@
 <!--			</li>-->
 <!--		</ul>-->
 <!--	</div>-->
-
 <h1 style="text-align: center; padding: 100px 100px;">Coming Soon</h1>
 @endsection

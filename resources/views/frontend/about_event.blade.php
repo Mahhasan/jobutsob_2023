@@ -27,12 +27,6 @@
 				<h3>ABOUT THE FLAGSHIP EVENT OF ‘DIU JOB UTSOB-2023’</h3>
 				<span>With a tremendously successful track record of ‘On-Campus Spot Recruitment’ events, it is our privilege hosting ‘DIU job Utsob’ for the year 2023.</span>
 			</div>
-			<!-- <div class="">
-				<P style="font-family: 'Lora'; font-size: 20px;">
-					<i></i>
-				</p>
-				
-			</div> -->
 			<div class="row section-body">
 				<div class="col-lg-6 col-sm-6 ">
 					<div class="">
@@ -113,7 +107,6 @@
 						<b>Because- you will enter a world of mutual benefit.</b><br>
 						Employers, trainers, educators, consultants, career services, and government services 
 						shall gather to meet the candidates and discover mutual benefits in the labor market.
-
 					<div class="row">
 						<div class="col-lg-7 col-sm-6">
 							</p>
@@ -145,7 +138,6 @@
 		</div>
 	</div>
 	<div class="section-padding"></div>
-
 	<!-- showcase -->
 	<div class="container-fluid latest-blog latest-blog-section no-padding" style="background-color: #19AAF8;">
 		<div class="section-padding"></div>
@@ -221,21 +213,4 @@
 		</div>
 	</div>
 	<div class="section-padding"></div>
-    <!-- ------------------------------------------------------- -->
-	<!--<div class="container-fluid testimonial-section no-padding">-->
-	<!--	<div class="section-padding"></div>-->
-	<!--		<div class="container">-->
-	<!--			<div class="section-body">-->
-	<!--				<div class="section-header">-->
-	<!--					<h3>INTERACTION/RECRUITMENT PROCEDURE</h3>-->
-	<!--					<span>General Guidelines: The further interaction/recruitment procedure will be as follows:</span>-->
-	<!--				</div>-->
-	<!--				<div class="text-center img112">-->
-	<!--					<img src="/frontend/assets/images/img112.png" alt="">-->
-	<!--				</div>-->
-	<!--			</div>-->
-	<!--		</div>-->
-	<!--	</div>-->
-	<!--</div>-->
-	<!-- ------------------------------------------------------- -->
 @endsection
