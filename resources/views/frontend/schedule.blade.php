@@ -18,11 +18,10 @@
 	<div class="section-padding"></div>
 </div>
 <!-- PageBanner /- -->
-<div class="container-fluid no-padding schedule-section" id="schedule">
+<!-- <div class="container-fluid no-padding schedule-section" id="schedule">
 	<div class="container">
 		<div class="section-padding"></div>
 		<div class="section-header">
-			<!--<h3>Schedule</h3>-->
 			<span>Our Schedule table</span>
 		</div>	
 		<div class="schedule-block">
@@ -65,9 +64,6 @@
 										<div class="author-box">
 											<div class="author-content" style="margin: -28px 0px 0px 0px;">
 												<h3><b>Speaker: </b>Mr. Ejajur Rahman</h3>
-												<!-- <span style="margin-left: 80px;">Public Speaker</span> -->
-												<!-- <a href="#" title="11:30 AM - 01:00 AM">11:30 AM - 01:00 AM</a>
-												<a class="btn-event" href="#" title="About The Events">About the events</a> -->
 												<p><b>Venue:</b> International Conference Hall </p>
 											</div>
 										</div>
@@ -195,9 +191,9 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- Schedule-2 -->
-					<div role="tabpanel" class="tab-pane fade" id="schedule_2">
+					<!-- <div role="tabpanel" class="tab-pane fade" id="schedule_2">
 						<div class="panel-group schedule-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 							<div class="panel panel-default">
 								<div class="panel-heading" role="tab" id="schedule_accrodion_heading_21">
@@ -340,9 +336,9 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- Schedule-3-->
-					<div role="tabpanel" class="tab-pane fade" id="schedule_3">
+					<!-- <div role="tabpanel" class="tab-pane fade" id="schedule_3">
 						<div class="panel-group schedule-accordion" id="accordion" role="tablist" aria-multiselectable="true">
 							<div class="panel panel-default">
 								<div class="panel-heading" role="tab" id="schedule_accrodion_heading_31">
@@ -491,5 +487,6 @@
 		</div>
 	</div>
 	<div class="section-padding"></div>
-</div>
+</div> -->
+<h1 style="text-align: center; padding: 100px 100px;">Coming Soon</h1>
 @endsection

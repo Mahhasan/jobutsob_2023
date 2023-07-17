@@ -193,7 +193,7 @@
 								<div class="timer-box">
 									<h3>DIU JOB UTSOB-2023 </h3>
 									<div class="content-center">
-										<p><b>Date: November 23-25, 2023 (Thursday-Friday-Saturday).</b></p>
+										<p><b>Date: November 24-25, 2023 (Friday-Saturday).</b></p>
 									</div>
 									<div class="content-center">
 										<p><b>Venue: Daffodil Smart City, Birulia, Savar, Dhaka – 1216</b></p>

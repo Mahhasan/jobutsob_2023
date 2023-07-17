@@ -8,7 +8,7 @@
 				</div>	
 				<div class="footer-about-content">
 					
-					<p>Second half of November for 3 days:  November 23 to 25, 2023 (Thursday to Saturday)
+					<p>Second half of November for 2 days:  November 24 to 25, 2023 (Friday to Saturday)
 						Multi-dimensional Human Resource &  Recruitment Initiative
 						</p>
 				</div>
@@ -47,7 +47,7 @@
 					<div class="contactinfo-box">
 						<i class="fa fa-map-marker"></i>
 						<!-- <p>DIU Job Utshob-2023</p> -->
-							<a title="DIU, Ashulia, Dhaka" href="https://goo.gl/maps/uoEkBMHkUkAcPAqy7" target="blank"><p>Daffodil Smart City, Savar, Dhaka-1216</p></a>
+							<a title="DIU, Ashulia, Dhaka" href="https://goo.gl/maps/uoEkBMHkUkAcPAqy7" target="blank"><p>Daffodil Smart City, Birulia, Savar, Dhaka – 1216</p></a>
 					</div>
 					<div class="contactinfo-box">
 						<i class="fa fa-phone"></i>
@@ -57,7 +57,11 @@
 						</p>
 						<i class="fa fa-phone"></i>
 						<p>
-							<a title="01713493162" href="tel:01713493162">01847334706</a>
+							<a title="01847334706" href="tel:01847334706">01847334706</a>
+						</p>
+						<i class="fa fa-phone"></i>
+						<p>
+							<a title="01713493162" href="tel:01713493162">01713493162 <span style="font-size: 12px;">(Employer Contact)</span></a>
 						</p>
 					</div>
 					<div class="contactinfo-box">
