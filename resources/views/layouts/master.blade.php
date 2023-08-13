@@ -132,21 +132,47 @@
     <script defer>
         $(document).ready(function() {
             $(".js-example-basic-multiple").select2();
-            $(document).on('change', 'input[Id="bachelor_status"]', function (e) {
-                //  alert($(this).val());
-                if($(this).val()=='yes'){
-                    // $(".bachelor_result").hide();
-                    // $(".bachelor_semester").show();
-                    $("#bachelor_result_label").html("Enter Result Till Now ");
-                    $("#bachelor_year_label").html("Semester (Ex: 5th Semester)"); 
-                }
-                else {
-                    // $(".bachelor_result").show();
-                    // $(".bachelor_semester").hide();
-                    $("#bachelor_result_label").html("Enter Result ");
-                    $("#bachelor_year_label").html("Enter Passing Year ");
-                }
-            });
+
+        function updateOptions() {
+            const selectedValue = $('input[name="bachelor_status"]:checked').val();
+            if (selectedValue === 'yes') {
+                // Change options to semesters
+                $("#bachelor_year").replaceWith('<select id="bachelor_year" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year"></select>');
+                const semesterSelect = $("#bachelor_year");
+                const semesters = ["1st Semester", "2nd Semester", "3rd Semester", "4th Semester", "5th Semester", "6th Semester", "7th Semester", "8th Semester"];
+                semesters.forEach(semester => {
+                    semesterSelect.append(new Option(semester, semester));
+                });
+                $("#bachelor_year_label").html("Semester");
+                $("#bachelor_result_label").html("Enter Result Till Now ");
+            } else {
+                // Change options to years in descending order
+                $("#bachelor_year").replaceWith('<select id="bachelor_year" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year"></select>');
+                const yearSelect = $("#bachelor_year");
+                const years = ["2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005"];
+                years.forEach(year => {
+                    yearSelect.append(new Option(year, year));
+                });
+                $("#bachelor_year_label").html("Enter Passing Year ");
+                $("#bachelor_result_label").html("Enter Result ");
+            }
+
+            // Automatically select jobseeker_type based on bachelor_year
+            const bachelorYear = parseInt($("#bachelor_year").val());
+            const jobseekerType = (bachelorYear < 2022) ? "Alumni" : "Student";
+            $("#certificate").val(jobseekerType).trigger("change");
+        }
+
+        // Trigger the change event on page load
+        updateOptions();
+
+        $(document).on('change', 'input[Id="bachelor_status"]', function (e) {
+            updateOptions();
+        });
+
+
+        
+
             $(document).on('change', 'input[Id="masters_status"]', function (e) {
                 //alert($(this).val());
                 if($(this).val()=='yes'){
@@ -164,7 +190,7 @@
             });
         });
     </script>
-    <script>
+    <!-- <script>
         function amount() {
             let cpu = document.getElementById("certificate").value;
             var student = document.getElementById("student").value;
@@ -182,6 +208,68 @@
             document.getElementById("output").innerHTML = cpuPrice;
             document.getElementById("test_payment").innerHTML = cpuPrice;
         }
-    </script>
+    </script> -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Auto-fill Jobseeker Type based on bachelor_year and bachelor_status
+        const bachelorYearInput = document.getElementById('bachelor_year');
+        const bachelorStatusInput = document.getElementsByName('bachelor_status');
+        const jobseekerTypeInput = document.getElementById('jobseeker_type');
+
+        const student = "Student";
+        const alumni = "Alumni";
+
+        function updateJobseekerType() {
+            const currentYear = new Date().getFullYear();
+            const bachelorYear = parseInt(bachelorYearInput.value);
+            let selectedBachelorStatus = '';
+
+            for (let i = 0; i < bachelorStatusInput.length; i++) {
+                if (bachelorStatusInput[i].checked) {
+                    selectedBachelorStatus = bachelorStatusInput[i].value;
+                    
+                }
+            }
+
+            // if (selectedBachelorStatus === 'yes') {
+            //     jobseekerTypeInput.value = student;
+            // }
+            // else if (selectedBachelorStatus === 'no' && bachelorYear > 2021){
+            //     jobseekerTypeInput.value = student;
+            // }
+            // else if(selectedBachelorStatus === 'no' && bachelorYear < 2022){
+            //     jobseekerTypeInput.value = alumni;
+            // }
+
+            // Update amount whenever jobseeker_type changes
+            updateAmount();
+        }
+        
+        // Initialize event listeners
+        bachelorYearInput.addEventListener('input', updateJobseekerType);
+
+        for (let i = 0; i < bachelorStatusInput.length; i++) {
+            bachelorStatusInput[i].addEventListener('change', updateJobseekerType);
+        }
+
+        function updateAmount() {
+            const jobseekerType = jobseekerTypeInput.value;
+            let cpuPrice = 0;
+
+            if (jobseekerType === student) {
+                cpuPrice = 200;
+            } else if (jobseekerType === alumni) {
+                cpuPrice = 300;
+            }
+            document.getElementById("output").innerHTML = cpuPrice;
+            document.getElementById("test_payment").innerHTML = cpuPrice;
+        }
+
+        // Initial update of the amount based on the default Jobseeker Type
+        updateJobseekerType();
+    });
+</script>
+
+
 </body>
 </html>

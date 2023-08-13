@@ -130,13 +130,10 @@
                     @enderror
                 </div>
                 <div class="col-md-4">
-                    <label for="name">Jobseeker Type<span class="text-danger"> *</span></label>
-                    <select id="certificate" type="text" onclick="amount()" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" autofocus>
-                        <option value="" selected>Select</option>
-                        <option id = "student"value="Student">Student</option>
-                        <option id ="alumni" value="Alumni">Alumni</option>
-                    </select>
+                    <label for="name">Jobseeker Type</label>
+                    <input id="jobseeker_type" type="text" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" readonly>
                     <small> <i>application fee: BDT. <span id="output"></span></i></small><br>
+                    <p><span class="font-italic small">(This field will take auto input depending on the passing year of the bachelor)</span></p>
                     @error('jobseeker_type')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -412,6 +409,7 @@
                 </div>
             </div>
             <hr>
+            <p class="text-center text-danger font-italic">Please make sure you have filled all the fields correctly before submitting</p>
             <div class="form-group row">
                 <div class="col-md-6 offset-md-3 mb-3">
                     <button type="submit" class="btn btn-primary btn-block">
@@ -481,4 +479,5 @@ $(document).ready(function() {
         button.addEventListener('click', handleGenderSelection);
     });
 </script>
+
 @endsection
