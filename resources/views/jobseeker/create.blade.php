@@ -175,9 +175,11 @@
                 </div>
                 <div class="col-md-6">
                     <label id="bachelor_year_label" for="bachelor_year">Passing Year<span class="text-danger"> *</span></label>
-                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}" autocomplete="bachelor_year" novalidate>
+                    <p class="small" id="errorMessage" style="color: red; display: none;">Incorrect value. Please enter the specific value.</p>
+                    <input id="bachelor_year" type="text" class="form-control @error('bachelor_year') is-invalid @enderror" name="bachelor_year" value="{{ old('bachelor_year') }}" autocomplete="bachelor_year" novalidate required>
                 </div>
             </div>
+            
             <div class="form-group row mb-5">
                 <div class="col-md-6">
                     <label id="bachelor_result_label" for="bachelor_result">Enter Result<span class="text-danger"> *</span></label>
