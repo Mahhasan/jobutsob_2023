@@ -161,6 +161,7 @@
                     </select>
                 </div>
             </div>
+            
             <div class="form-group row">
                 <div class="col-md-6">
                     <div class="form-group row mt-4">
@@ -445,7 +446,7 @@
     });
 </script>
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
         $('select[name="masters_faculty_id"]').on('change', function() {
             var mfacultyID = $(this).val();
             if(mfacultyID) {
@@ -466,6 +467,7 @@ $(document).ready(function() {
         });
     });
 </script>
+<!-- Script for gender selection -->
 <script>
     const genderButtons = document.querySelectorAll('.gender');
     const genderInput = document.getElementById('gender-input');

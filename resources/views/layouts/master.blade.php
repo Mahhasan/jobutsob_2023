@@ -205,8 +205,6 @@
 
         }
        
-
-
         });
         $(document).on('change', 'input[Id="masters_status"]', function (e) {
           //alert($(this).val());

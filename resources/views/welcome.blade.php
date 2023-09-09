@@ -45,40 +45,48 @@
 		background-color: #006eb5;
 		font-family: inherit;
 	}
+	.centered-content {
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 </style>
 <!-- Register & Countdown Section Start -->
-<div class="meeta-about-section" style="padding-top: 30px; background-color: azure; box-shadow: 0px 1px #f0f0f0; display:none;">
-	<div class="meeta-register-countdown-wrapper">
-		<div class="row gy-5 align-items-center">
-			<div class="col-md-12">
-				<div class="meeta-countdown countdown" data-countdown="2023/11/23" data-format="short">
-					<div class="single-countdown">
-						<span class="count countdown__time daysLeft"></span>
-						<span class="value countdown__time daysText"></span>
-					</div>
-					<div class="single-countdown">
-						<span class="count countdown__time hoursLeft"></span>
-						<span class="value countdown__time hoursText"></span>
-					</div>
-					<div class="single-countdown">
-						<span class="count countdown__time minsLeft"></span>
-						<span class="value countdown__time minsText"></span>
-					</div>
-					<div class="single-countdown">
-						<span class="count countdown__time secsLeft"></span>
-						<span class="value countdown__time secsText"></span>
+<div class="meeta-about-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-offset-3 col-sm-6 text-center">
+				<div class="centered-content" style="margin-top: 48px; margin-bottom: 48px">
+					<!-- Your countdown content goes here -->
+					<div class="meeta-countdown countdown" data-countdown="2023/11/24" data-format="short">
+						<div class="single-countdown">
+							<span class="count countdown__time daysLeft"></span>
+							<span class="value countdown__time daysText"></span>
+						</div>
+						<div class="single-countdown">
+							<span class="count countdown__time hoursLeft"></span>
+							<span class="value countdown__time hoursText"></span>
+						</div>
+						<div class="single-countdown">
+							<span class="count countdown__time minsLeft"></span>
+							<span class="value countdown__time minsText"></span>
+						</div>
+						<div class="single-countdown">
+							<span class="count countdown__time secsLeft"></span>
+							<span class="value countdown__time secsText"></span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- Register & Countdown Section End -->
+	<!-- Register & Countdown Section End -->
 <div class="container-fluid latest-blog latest-blog-section">
 		<div class="container section-padding" id="about">
 		    <div class="row">
     			<div class="section-header">
-    				<h3>DIU Job Utsob 2023</h3>
+    				<h3 style="padding-bottom: 0px;">DIU Job Utsob 2023</h3>
     			</div>
     			<div class="section-body">
     				<P>
