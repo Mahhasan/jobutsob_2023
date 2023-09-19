@@ -58,7 +58,7 @@
 			<div class="col-sm-offset-3 col-sm-6 text-center">
 				<div class="centered-content" style="margin-top: 48px; margin-bottom: 48px">
 					<!-- Your countdown content goes here -->
-					<div class="meeta-countdown countdown" data-countdown="2023/11/24" data-format="short">
+					<div class="meeta-countdown countdown" data-countdown="2023/11/10" data-format="short">
 						<div class="single-countdown">
 							<span class="count countdown__time daysLeft"></span>
 							<span class="value countdown__time daysText"></span>
@@ -81,12 +81,11 @@
 		</div>
 	</div>
 </div>
-	<!-- Register & Countdown Section End -->
 <div class="container-fluid latest-blog latest-blog-section">
 		<div class="container section-padding" id="about">
 		    <div class="row">
     			<div class="section-header">
-    				<h3 style="padding-bottom: 0px;">DIU Job Utsob 2023</h3>
+    				<h3>DIU Job Utsob 2023</h3>
     			</div>
     			<div class="section-body">
     				<P>
@@ -201,7 +200,7 @@
 								<div class="timer-box">
 									<h3>DIU JOB UTSOB-2023 </h3>
 									<div class="content-center">
-										<p><b>Date: November 24-25, 2023 (Friday-Saturday).</b></p>
+										<p><b>Date: November 10-11, 2023 (Friday-Saturday).</b></p>
 									</div>
 									<div class="content-center">
 										<p><b>Venue: Daffodil Smart City, Birulia, Savar, Dhaka – 1216</b></p>

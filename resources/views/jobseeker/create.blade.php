@@ -132,7 +132,7 @@
                 <div class="col-md-4">
                     <label for="name">Jobseeker Type</label>
                     <input id="jobseeker_type" type="text" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" readonly>
-                    <small> <i>application fee: BDT. <span id="output"></span></i></small><br>
+                    <!--<small> <i>application fee: BDT. <span id="output"></span></i></small><br>-->
                     <p><span class="font-italic small">(This field will take auto input depending on the passing year of the bachelor)</span></p>
                     @error('jobseeker_type')
                         <span class="invalid-feedback" role="alert">
@@ -161,7 +161,6 @@
                     </select>
                 </div>
             </div>
-            
             <div class="form-group row">
                 <div class="col-md-6">
                     <div class="form-group row mt-4">
@@ -403,7 +402,8 @@
                 </div>
             </div>
             <hr>
-            <h5 class="text-center mt-4" style="color: DodgerBlue;">Your Registration Fee BDT. <span id="test_payment"></span></h5>
+            <!--<h5 class="text-center mt-4" style="color: DodgerBlue;">Your Registration Fee BDT. <span id="test_payment"></span></h5>-->
+            <p class="text-center mt-4" style="color: DodgerBlue;">Registration Fee: Tk 200/participant (for Food Coupon)</p>
             <h5 class="text-center" style="color: #FF647F">Make bKash Payment To 01811458885</h5>
             <div class="form-group row mb-5">
                 <label for="trix" class="col-md-3 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}<span class="text-danger"> *</span></label>
@@ -446,7 +446,7 @@
     });
 </script>
 <script>
-    $(document).ready(function() {
+$(document).ready(function() {
         $('select[name="masters_faculty_id"]').on('change', function() {
             var mfacultyID = $(this).val();
             if(mfacultyID) {
@@ -467,7 +467,6 @@
         });
     });
 </script>
-<!-- Script for gender selection -->
 <script>
     const genderButtons = document.querySelectorAll('.gender');
     const genderInput = document.getElementById('gender-input');

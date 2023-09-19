@@ -8,7 +8,7 @@
 				</div>	
 				<div class="footer-about-content">
 					
-					<p>Second half of November for 2 days:  November 24 to 25, 2023 (Friday to Saturday)
+					<p>Second half of November for 2 days:  November 10 to 11, 2023 (Friday to Saturday)
 						Multi-dimensional Human Resource &  Recruitment Initiative
 						</p>
 				</div>
