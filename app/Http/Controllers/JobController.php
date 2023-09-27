@@ -31,7 +31,7 @@ class JobController extends Controller
             return redirect()->to('/home');
         }
         $data = DB::table('jobs');
-        $jobs = Job::paginate(50);
+        $jobs = Job::paginate(10000);
         $index = $jobs->perPage() * ($jobs->currentPage() - 1);
         $count = Job::get()->count();
         return view('jobs',compact('jobs', 'data', 'count', 'index'));
@@ -79,8 +79,8 @@ class JobController extends Controller
     }
     public function all_jobs(){
         $data = DB::table('jobs');        
-         // $companies = Company::limit(50)->get();
-        $jobs = Job::where('last_date','>=',date('Y-m-d'))->paginate(20);
+         // $companies = Company::limit(10000)->get();
+        $jobs = Job::where('last_date','>=',date('Y-m-d'))->paginate(10000);
         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
         ->select('company')
         ->distinct()
@@ -284,7 +284,7 @@ class JobController extends Controller
          }
          $data = DB::table('jobs');
          // $jobs = Job::where('last_date','>=',date('Y-m-d'))->get()->sortBy('company');
-         $jobs = Job::where('last_date','>=',date('Y-m-d'))->paginate(50);
+         $jobs = Job::where('last_date','>=',date('Y-m-d'))->paginate(10000);
         //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
         ->select('company')
@@ -398,7 +398,7 @@ class JobController extends Controller
          if( $request->company){
              $data = $data->where('company', '=', $request->company);
          }
-         $data = $data->paginate(20);
+         $data = $data->paginate(10000);
         //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
                    ->select('id', 'company')
@@ -415,7 +415,7 @@ class JobController extends Controller
          if( $request->company){
              $data = $data->where('company', '=', $request->company);
          }
-         $data = $data->paginate(50);
+         $data = $data->paginate(10000);
         //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
         ->select('company')

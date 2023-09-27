@@ -39,14 +39,14 @@ class HomeController extends Controller
         $dept_id = $request->bachelor_department_id;
         $keyword = $request->keyword;
         $type = $request->type;
-        $jobseekers = Jobseeker::paginate(50);
+        $jobseekers = Jobseeker::paginate(10000);
         $index = $jobseekers->perPage() * ($jobseekers->currentPage() - 1);
         // if all not keyword
         if(isset($dept_id) && isset($type) && !isset($keyword)){
             //dd("dept_id");
             $jobseekers = Jobseeker::where ('bachelor_department_id', $dept_id)
             ->where ('jobseeker_type', $type)
-            ->paginate (50)->setPath ( '' );
+            ->paginate (10000)->setPath ( '' );
             $pagination = $jobseekers->appends ( 
                     array (
                     'bachelor_department_id' => $dept_id, 
@@ -59,7 +59,7 @@ class HomeController extends Controller
             $jobseekers = Jobseeker::where ('bachelor_department_id', $dept_id)
             ->where ('jobseeker_type', $type)
             ->where ( 'skill', 'LIKE', '%' . $keyword . '%' )
-            ->paginate (50)->setPath ( '' );
+            ->paginate (10000)->setPath ( '' );
             $pagination = $jobseekers->appends ( 
                     array (
                     'keyword' => $keyword, 
@@ -72,7 +72,7 @@ class HomeController extends Controller
         else if(isset($dept_id)){
                    //dd("dept_id");
                    $jobseekers = Jobseeker::where ('bachelor_department_id', $dept_id)
-                   ->paginate (50)->setPath ( '' );
+                   ->paginate (10000)->setPath ( '' );
                    $pagination = $jobseekers->appends ( 
                            array (
                            'bachelor_department_id' => $dept_id 
@@ -81,7 +81,7 @@ class HomeController extends Controller
         }
         else if(isset($type)){
             $jobseekers = Jobseeker::where ('jobseeker_type', $type)
-            ->paginate (50)->setPath ( '' );
+            ->paginate (10000)->setPath ( '' );
             $pagination = $jobseekers->appends ( 
                     array (
                     'type' => $type,   
@@ -90,12 +90,12 @@ class HomeController extends Controller
         }
         else if(isset($keyword)){
             $jobseekers = Jobseeker::where('skill', 'LIKE', '%' . $keyword . '%')
-                ->paginate(50)
+                ->paginate(10000)
                 ->setPath('');
             $pagination = $jobseekers->appends(['keyword' => $keyword]);
         }
         // else if(isset($keyword)){
-        //     $jobseekers = Jobseeker::where ('skill', $keyword)->paginate (50)->setPath ( '' );
+        //     $jobseekers = Jobseeker::where ('skill', $keyword)->paginate (10000)->setPath ( '' );
         //     $pagination = $jobseekers->appends ( 
         //             array (
         //             'keyword' => $keyword, 

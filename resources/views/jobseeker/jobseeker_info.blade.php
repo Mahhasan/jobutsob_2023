@@ -115,7 +115,7 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $jobseekers->links() }}
+                    <!-- {{ $jobseekers->links() }} -->
                 </div>
             </div>
         </div>
