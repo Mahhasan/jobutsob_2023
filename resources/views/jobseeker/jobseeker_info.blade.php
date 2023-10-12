@@ -48,7 +48,7 @@
                     <div class="table-responsive">
                         <div style="display: flex; justify-content: space-between;">
                             <p class="text-info">Total Jobseekers: <b class="text-warning">{{ $count2 }}</b></p>
-                            <p><abbr title="Download all Resume"><a onclick="return confirm('Are you sure you want to start downloading? ');" href="{{ route('download-resumes') }}" class="text-info">
+                            <p><abbr title="Download all Resume"><a href="{{ route('download-resumes') }}" class="text-info">
                             <i class="fa fa-download" aria-hidden="true"></i></a></abbr></p>
                         </div>
                         <table  width="100%" class="table table-striped table-sm table-bordered table-hover" id="jobseeker">
@@ -124,7 +124,7 @@
 <!-- Modal -->
 @foreach($jobseekers as $value)
 <div class="modal fade" id="JobseekersDetails{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header" style="border-bottom: 2px solid #3490dc;">
                 <h5 class="modal-title" style="color: #3490dc;" id="exampleModalLabel"><b>{{ $value->name }}'s Details</b></h5><br>

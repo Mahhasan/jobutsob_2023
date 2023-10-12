@@ -60,7 +60,7 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="example{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="border-bottom: 2px solid #3490dc;">
                         <h5 class="modal-title" style="color: #3490dc;" id="exampleModalLabel"><b>Job Description </b></h5><br>
@@ -83,8 +83,8 @@
         </div>
         @endforeach
     </div>
-    <div class="">
-    {{ $jobs->appends(request()->except('page'))->links() }}
+    <div class="row p-2 float-right">
+        {!! $jobs->withQueryString()->links('pagination::bootstrap-5') !!}
     </div>
 </div>
 @endsection

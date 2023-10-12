@@ -40,12 +40,14 @@
             <div class="card mb-3" style="box-shadow: 0px 2px #3498db;">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Job Title:<b> {{$value->title}}</b></h5>
-                            <p class="card-text">Company:<b> {{ \App\Models\Company::find($value->company)->name }}</b></p>
+                        <div class="card-body" style="line-height: .9;">
+                            <p class="card-text">Job Title:<b> {{$value->title}}</b></p>
+                            <p class="card-text">Company: {{ \App\Models\Company::find($value->company)->name }}</p>
                             <p>Last Date:<b> {{$value->last_date}}</b></p>
-                            <a style="text-align: right; color: white;" class="btn btn-primary " data-toggle="modal" data-target="#example{{$value->id}}">Job Details</a>
-                            <a href="{{ route('details',$value->id) }}" class="btn btn-primary">Apply</a>
+                            <a style="text-align: right; color: white;" class="btn btn-sm btn-primary " data-toggle="modal" data-target="#example{{$value->id}}">Job Details</a>
+                            @if(Auth::check() && Auth::user()->status == "user")
+                            <a href="{{ route('details',$value->id) }}" class="btn btn-sm btn-primary">Apply</a>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -56,7 +58,7 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="example{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="border-bottom: 2px solid #3490dc;">
                         <h5 class="modal-title" style="color: #3490dc;" id="exampleModalLabel"><b>Job Description </b></h5><br>
@@ -81,8 +83,8 @@
         <h1 class="center m-5" style="color: #bc1d1a !important;">No Job Found</h1>
         @endforelse
     </div>
-    <div class="row p-4">
-    {{ $data->appends(request()->except('page'))->links() }}
+    <div class="row p-2 float-right">
+    {!! $data->withQueryString()->links('pagination::bootstrap-5') !!}
     </div>
 </div>
 @endsection

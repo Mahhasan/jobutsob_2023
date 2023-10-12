@@ -78,16 +78,16 @@ class JobController extends Controller
          return view('company_jobs',compact('company','jobs'));
     }
     public function all_jobs(){
-        $data = DB::table('jobs');        
-         // $companies = Company::limit(10000)->get();
-        $jobs = Job::where('last_date','>=',date('Y-m-d'))->paginate(10000);
+        $data = DB::table('jobs');
+        $jobs = Job::where('last_date', '>=', date('Y-m-d'))->paginate(20);
         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
-        ->select('company')
-        ->distinct()
-        ->get();
-          //$companies = Company::whereIn('id',$jobs)->get();
-         return view('list',compact('jobs','search_jobs','data'));
+            ->select('company')
+            ->distinct()
+            ->get();
+        
+        return view('list', compact('jobs', 'search_jobs', 'data'));
     }
+    
      /**
       * Store a newly created resource in storage.
       *
@@ -398,12 +398,16 @@ class JobController extends Controller
          if( $request->company){
              $data = $data->where('company', '=', $request->company);
          }
-         $data = $data->paginate(10000);
+         $data = $data->paginate(20);
         //  $search_jobs = Job::where('last_date','>=',date('Y-m-d'))->groupBy('company')->get();
+        // $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
+        //            ->select('id', 'company')
+        //            ->groupBy('id', 'company')
+        //            ->get();
         $search_jobs = Job::where('last_date', '>=', date('Y-m-d'))
-                   ->select('id', 'company')
-                   ->groupBy('id', 'company')
-                   ->get();
+            ->select('company')
+            ->distinct()
+            ->get();
          return view('search', compact('data','search_jobs'));
      }
      public function search_job(Request $request)

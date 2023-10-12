@@ -57,13 +57,13 @@
                     @enderror
                 </div>
                 <div class="col-md-4">
-                    <label for="gender">Gender Information<span class="text-danger"> *</span></label>
+                    <label for="gender">Gender Information<span class="text-danger"> *</span> <small>(Please make your selection)</small></label>
                     <div class="gender-container">
                         <button type="button" class="gender gender1" value="Male"><i class="fa fa-male" aria-hidden="true"></i> Male</button>
                         <button type="button" class="gender gender2" value="Female"><i class="fa fa-female" aria-hidden="true"></i> Female</button>
                         <button type="button" class="gender gender3" value="Other">Other</button>
                     </div>
-                    <input type="hidden" name="gender" id="gender-input">
+                    <input type="hidden" name="gender" id="gender-input" required>
                     @error('gender')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -284,7 +284,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="industry">Select Prefered Industry<span class="text-danger"> *</span></label>
-                        <select class="js-example-basic-multiple js-states form-control" name="industry[]" multiple="multiple">
+                        <select class="js-example-basic-multiple js-states form-control" name="industry[]" required multiple="multiple">
                             <option value="Accounting/Finance" >Accounting/Finance</option>
                             <option value="Audit/Tax Services" >Audit/Tax Services</option>
                             <option value="Arts/Design/Fashion" >Arts/Design/Fashion</option>

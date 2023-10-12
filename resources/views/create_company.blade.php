@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mb-5">
             <div class="card" style="box-shadow: 0px 2px #3498db; background: #dfe6e9;">
                 <div class="card-header" style="display: flex; justify-content: space-between;">
                     <p>Create Company </p>

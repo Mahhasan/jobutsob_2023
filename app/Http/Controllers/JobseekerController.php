@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use ZipArchive;
+use Illuminate\Support\Facades\File;
 class JobseekerController extends Controller
 {
     /**
@@ -548,31 +549,39 @@ class JobseekerController extends Controller
         $count2 = Jobseeker::get()->count();
         return view('jobseeker.jobseeker_info',compact('data', 'jobseekers','count2'));
     }
-    public function downloadResumes(){
+    public function downloadResumes()
+    {
         // Get all the resumes from the jobseekers table
         $resumes = DB::table('jobseekers')->pluck('resume')->toArray();
+
+        
         // Create a new ZIP archive
         $zip = new ZipArchive;
-        $zipFileName = 'jobseeker_resumes.zip';
+        $zipFileName = 'all_resumes.zip';
 
         if ($zip->open(public_path($zipFileName), ZipArchive::CREATE) !== TRUE) {
             // Handle the case where the ZIP archive could not be created
             return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
         }
-        // Add each resume to the ZIP archive
+
+        // Add each resume to the ZIP archive, skipping missing files
         foreach ($resumes as $resume) {
             $resumePath = public_path("resume/$resume");
-            if (!file_exists($resumePath)) {
-                // Handle the case where the resume file is not found
-                return back()->withErrors(['error' => "Resume file not found: $resume"]);
+            
+            if (file_exists($resumePath)) {
+                $zip->addFile($resumePath, basename($resume));
+            } else {
+                // Log or record that this file is missing
             }
-            $zip->addFile($resumePath, basename($resume));
         }
+
         // Close the ZIP archive
         $zip->close();
+
         // Send the ZIP file to the user
-        return response()->download(public_path($zipFileName), 'jobseeker_resumes.zip')->deleteFileAfterSend(true);
+        return response()->download(public_path($zipFileName), 'all_resumes.zip')->deleteFileAfterSend(true);
     }
+    
     // for jobwise download
     public function downloadJobResumes($job_id){
         // Get the job title for the selected job
@@ -582,6 +591,7 @@ class JobseekerController extends Controller
                     ->where('job_id', $job_id)
                     ->pluck('resume')
                     ->toArray();
+                    
         // Create a new ZIP archive
         $zip = new ZipArchive;
         $zipFileName = "{$job_title}_resumes.zip";
@@ -592,11 +602,11 @@ class JobseekerController extends Controller
         // Add each resume to the ZIP archive
         foreach ($resumes as $resume) {
             $resumePath = public_path("resume/$resume");
-            if (!file_exists($resumePath)) {
-                // Handle the case where the resume file is not found
-                return back()->withErrors(['error' => "Resume file not found: $resume"]);
+            if (file_exists($resumePath)) {
+                $zip->addFile($resumePath, basename($resume));
+            } else {
+                // Log or record that this file is missing
             }
-            $zip->addFile($resumePath, basename($resume));
         }
         // Close the ZIP archive
         $zip->close();

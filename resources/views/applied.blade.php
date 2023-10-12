@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -53,6 +54,7 @@
                             </form>   -->
                         </div>
                     </div><br>
+                    
                     <hr>
                     <div class="table-responsive">
                         <div style="display: flex; justify-content: space-between;">
@@ -136,7 +138,7 @@
 <!-- Modal -->
 @foreach($data as $value)
 <div class="modal fade" id="JobseekerDetails{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <?php
                 $user = App\Models\User::where('id',$value->user_id)->first();
