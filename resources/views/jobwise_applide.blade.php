@@ -14,7 +14,7 @@
                             </small>
                             &nbsp; &nbsp;Job ID #{{ $job->id }} 
                         </div>
-                        <div class="col-7">
+                        <div class="col-7 font-weight-bold">
                             {{ $job->title}} 
                         </div>
                     </div>
@@ -126,7 +126,7 @@
 <!-- Modal -->
 @foreach($data as $value)
 <div class="modal fade" id="JobseekerDetails{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <?php
                 $user = App\Models\User::where('id',$value->user_id)->first();

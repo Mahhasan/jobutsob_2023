@@ -1691,5 +1691,11 @@ a {
       line-height: 55px;
       font-size: 30px;
     }
+	.embed-responsive {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
   }
 

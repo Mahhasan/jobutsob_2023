@@ -254,18 +254,36 @@
 				<h3>Latest news from events</h3>
 				<span>Recent Updates</span>
 			</div> -->
-			<div class="row">
-				<div class="col-md-6 col-sm-6 col-xs-12 content-center">
+			<!-- <div class="row">
+				<div class="col-md-6 content-center">
 					<video style="box-shadow: 0px 0px 10px 0px #8d8e8e;" width="100%" poster="/frontend/assets/images/poster1.jpg" controls>
 						<source  src="/frontend/assets/video/video1.mp4" type="video/mp4">
 					</video>
 				</div>
-				<div class="col-md-6 col-sm-6 col-xs-12 content-center">
+				<div class="col-md-6 content-center">
 					<video style="box-shadow: 0px 0px 10px 0px #8d8e8e;" width="100%" poster="/frontend/assets/images/poster2.jpg"  controls>
 						<source src="/frontend/assets/video/video2.mp4" type="video/mp4">
 					</video>
 				</div>
+			</div> -->
+			<div class="row justify-content-center">
+				<div class="col-md-6" style="margin-bottom: 32px;">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item mb-5" src="https://www.youtube.com/embed/HU5OFF5k4iY?si=I_w1IzR8YXHZnUMc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="col-md-6" style="margin-bottom: 32px;">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OPFdpq0JlxQ?si=XrrjuSacuEbYDWwr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="col-md-6" style="margin-bottom: 32px;">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vbBLE_jc6bM?si=ybrBxa9p_o37GaHK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+				</div>
 			</div>
+
 		</div>
 		<div class="section-padding"></div>
 	</div>

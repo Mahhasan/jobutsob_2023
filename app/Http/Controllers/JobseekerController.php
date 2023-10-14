@@ -96,6 +96,7 @@ class JobseekerController extends Controller
         $request->validate([
             'name'     =>  'required',
             'cell'  =>  'required',
+            'gender'     =>  'required',
             'email'   =>  'required',
             'password' => [
                 'required',
@@ -150,6 +151,7 @@ class JobseekerController extends Controller
             $user->email = $request->email;
             $user->name = $request->name;
             $user->cell = $request->cell;
+            $user->gender = $request->gender;
             $user->status = 'user';
             $user->password = Hash::make($request->password);
             $user->save();
@@ -583,34 +585,58 @@ class JobseekerController extends Controller
     }
     
     // for jobwise download
-    public function downloadJobResumes($job_id){
+    public function downloadJobResumes($job_id) {
         // Get the job title for the selected job
-        $job_title = Job::findOrFail($job_id)->title;
+        $job = Job::findOrFail($job_id);
+        $job_title = $job->title;
+    
         // Get all the resumes for the selected job from the applies table
         $resumes = DB::table('applies')
                     ->where('job_id', $job_id)
                     ->pluck('resume')
                     ->toArray();
-                    
+    
         // Create a new ZIP archive
         $zip = new ZipArchive;
         $zipFileName = "{$job_title}_resumes.zip";
-        if ($zip->open(public_path($zipFileName), ZipArchive::CREATE) !== TRUE) {
-            // Handle the case where the ZIP archive could not be created
-            return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
-        }
-        // Add each resume to the ZIP archive
-        foreach ($resumes as $resume) {
-            $resumePath = public_path("resume/$resume");
-            if (file_exists($resumePath)) {
-                $zip->addFile($resumePath, basename($resume));
-            } else {
-                // Log or record that this file is missing
+        $zipFilePath = public_path($zipFileName);
+    
+        if (empty($resumes)) {
+            // If no resumes are found, create a null ZIP file and check if it exists
+            $nullZipFileContent = '';
+            file_put_contents($zipFilePath, $nullZipFileContent);
+    
+            // Check if the null ZIP file exists
+            if (!file_exists($zipFilePath)) {
+                return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
             }
+        } else {
+            if ($zip->open($zipFilePath, ZipArchive::CREATE) !== TRUE) {
+                // Handle the case where the ZIP archive could not be created
+                return back()->withErrors(['error' => 'Failed to create ZIP archive.']);
+            }
+    
+            // Add each resume to the ZIP archive
+            foreach ($resumes as $resume) {
+                $resumePath = public_path("resume/$resume");
+                if (file_exists($resumePath)) {
+                    $zip->addFile($resumePath, basename($resume));
+                } else {
+                    // Log or record that this file is missing
+                    \Log::warning("Resume file not found for job ID {$job_id}: $resume");
+                }
+            }
+    
+            // Close the ZIP archive
+            $zip->close();
         }
-        // Close the ZIP archive
-        $zip->close();
-        // Send the ZIP file to the user
-        return response()->download(public_path($zipFileName), $zipFileName)->deleteFileAfterSend(true);
+    
+        // Check if the ZIP file exists before attempting to download
+        if (file_exists($zipFilePath)) {
+            return response()->download($zipFilePath, $zipFileName)->deleteFileAfterSend(true);
+        } else {
+            return back()->withErrors(['error' => 'ZIP archive not found.']);
+        }
     }
+    
 }

@@ -56,7 +56,7 @@
                         </span>
                     @enderror
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <label for="gender">Gender Information<span class="text-danger"> *</span> <small>(Please make your selection)</small></label>
                     <div class="gender-container">
                         <button type="button" class="gender gender1" value="Male"><i class="fa fa-male" aria-hidden="true"></i> Male</button>
@@ -69,7 +69,18 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                </div> -->
+                <div class="col-md-4">
+                    <label for="gender">Gender Information<span class="text-danger"> *</span> <small>(Please make your selection)</small></label>
+                    <div class="gender-container">
+                        <button type="button" class="gender gender1" value="Male"><i class="fa fa-male" aria-hidden="true"></i> Male</button>
+                        <button type="button" class="gender gender2" value="Female"><i class="fa fa-female" aria-hidden="true"></i> Female</button>
+                        <button type="button" class="gender gender3" value="Other">Other</button>
+                    </div>
+                    <input type="hidden" name="gender" id="gender-input" required>
                 </div>
+                <div id="gender-warning" class="col-md-4 text-danger" style="display: none;">Please select your gender.</div>
+                
                 <div class="col-md-4">
                     <label for="name">Years of Experience<span class="text-danger"> *</span></label>
                     <input id="experience" type="text" class="form-control @error('experience') is-invalid @enderror" name="experience" value="{{ old('experience') }}" required autocomplete="experience" placeholder="Your Experience" autofocus>
@@ -102,7 +113,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="name">Address<span class="text-danger"> *</span></label>
-                    <input id="address" type="text" class="form-control" name="address" required autocomplete="address" placeholder="Your Address">
+                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" placeholder="Your Address">
                     @error('address')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -408,7 +419,7 @@
             <div class="form-group row mb-5">
                 <label for="trix" class="col-md-3 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}<span class="text-danger"> *</span></label>
                 <div class="col-md-6">
-                    <input id="trix" type="text" class="form-control" name="trix" required autocomplete="trix">
+                    <input id="trix" type="text" class="form-control  @error('trix') is-invalid @enderror" name="trix" value="{{ old('trix') }}" required autocomplete="trix">
                 </div>
             </div>
             <hr>
@@ -482,5 +493,15 @@ $(document).ready(function() {
         button.addEventListener('click', handleGenderSelection);
     });
 </script>
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        var genderInput = document.getElementById("gender-input");
+        if (genderInput.value === "") {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById("warning-message").style.display = "block"; // Display warning message
+        }
+    });
+</script>
+
 
 @endsection
