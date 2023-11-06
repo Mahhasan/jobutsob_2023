@@ -71,7 +71,7 @@
                     @enderror
                 </div> -->
                 <div class="col-md-4">
-                    <label for="gender">Gender Information<span class="text-danger"> *</span> <small>(Please make your selection)</small></label>
+                    <label for="gender">Gender Information<span class="text-danger"> *</span> <small class="text-primary">(Please make your selection)</small></label>
                     <div class="gender-container">
                         <button type="button" class="gender gender1" value="Male"><i class="fa fa-male" aria-hidden="true"></i> Male</button>
                         <button type="button" class="gender gender2" value="Female"><i class="fa fa-female" aria-hidden="true"></i> Female</button>
@@ -141,10 +141,16 @@
                     @enderror
                 </div>
                 <div class="col-md-4">
-                    <label for="name">Jobseeker Type</label>
-                    <input id="jobseeker_type" type="text" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required autocomplete="jobseeker_type" readonly>
+                    <label for="jobseeker_type">Jobseeker Type<span class="text-danger"> *</span></label>
+                    <select id="jobseeker_type" type="text" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required>
+                        <option value="" selected disabled>---Select Jobseeker Type---</option>
+                        <option id ="student"value="Student">Student</option>
+                        <option id ="alumni" value="Alumni">Alumni</option>
+                        <option id ="employability360" value="Employability360 Students-2023">Employability360 Students-2023</option>
+                    </select>
+                    <!-- <input id="jobseeker_type" type="text" class="form-control @error('jobseeker_type') is-invalid @enderror" name="jobseeker_type" required> -->
                     <!--<small> <i>application fee: BDT. <span id="output"></span></i></small><br>-->
-                    <p><span class="font-italic small">(This field will take auto input depending on the passing year of the bachelor)</span></p>
+                    <!-- <p><span class="font-italic small">(This field will take auto input depending on the passing year of the bachelor)</span></p> -->
                     @error('jobseeker_type')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -199,9 +205,10 @@
                 <div class="col-md-6">
                     <label for="bachelor_institute">University/Institute<span class="text-danger"> *</span></label>
                     <select id="bachelor_institute" type="text" class="form-control @error('bachelor_institute') is-invalid @enderror" name="bachelor_institute" required autocomplete="bachelor_institute" autofocus>
-                        <option value="" selected>Select</option>
-                        <option id = "diu"value="Daffodil International University">Daffodil International University</option>
+                        <option value="" selected disabled>---Select University/Institute---</option>
+                        <option id ="diu"value="Daffodil International University">Daffodil International University</option>
                         <option id ="diit" value="Daffodil Institute of IT">Daffodil Institute of IT</option>
+                        <option id ="others" value="Others">Others</option>
                     </select>
                 </div>
             </div>
@@ -407,14 +414,14 @@
                     </div>
                     <div class="form-group mb-5">
                         <label for="video">Enter video resume link</label>
-                        <input id="video" type="text" class="form-control @error('video') is-invalid @enderror" name="video" value="{{ old('video') }}" autocomplete="video" autofocus>
+                        <input id="video" type="url" class="form-control @error('video') is-invalid @enderror" name="video" value="{{ old('video') }}" autocomplete="video" autofocus>
                         <small> <i> Example: https://youtube.com/ABCD or https://drive.google.com/ABCD</i></small>
                     </div>
                 </div>
             </div>
             <hr>
             <!--<h5 class="text-center mt-4" style="color: DodgerBlue;">Your Registration Fee BDT. <span id="test_payment"></span></h5>-->
-            <p class="text-center mt-4" style="color: DodgerBlue;">Registration Fee: Tk 200/participant (for Food Coupon)</p>
+            <p class="text-center mt-4" style="color: DodgerBlue;">Registration Fee: BDT 200/Participant (For Food Coupon)</p>
             <h5 class="text-center" style="color: #FF647F">Make bKash Payment To 01811458885</h5>
             <div class="form-group row mb-5">
                 <label for="trix" class="col-md-3 col-form-label text-md-right">{{ __('Enter bKash Transaction ID') }}<span class="text-danger"> *</span></label>

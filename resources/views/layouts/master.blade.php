@@ -25,7 +25,7 @@
     
     <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> -->
-<link rel="stylesheet" href="{{asset('admin/vendor/datatables/buttons.dataTables.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/vendor/datatables/buttons.dataTables.min.css')}}">
 
 
 
@@ -143,17 +143,17 @@
 
 <!-- DataTables Buttons -->
  <!-- Page level plugins -->
- <script src="{{asset('admin/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+ <!-- <script src="{{asset('admin/vendor/datatables/jquery.dataTables.min.js')}}"></script> -->
+    <!-- <script src="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script> -->
 
     <!-- Page level custom scripts -->
     <script src="{{asset('admin/js/demo/datatables-demo.js')}}"></script>
 
 <!-- <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
-<script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script> -->
 
-<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script> -->
+<!-- <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script> -->
 
 <!-- JSZip and FileSaver.js for Excel export -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
@@ -164,12 +164,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
 
 <!-- for print -->
-<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script> -->
 
 
 
 
-<script>
+<!-- <script>
     $(document).ready(function() {
   $('#jobseeker').DataTable({
     dom: 'Bfrtip',
@@ -179,7 +179,7 @@
         "order": [[ 0, "desc" ]]
   });
 });
-</script>
+</script> -->
 
 
     <script defer>
@@ -225,9 +225,9 @@
     });
     </script>
 
-    <script>
+    <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Auto-fill Jobseeker Type based on bachelor_year
+        Auto-fill Jobseeker Type based on bachelor_year
         const bachelorYearInput = document.getElementById('bachelor_year');
         const jobseekerTypeInput = document.getElementById('jobseeker_type');
         
@@ -245,7 +245,7 @@
             }
         }
 
-        updateJobseekerType(); // Initial update of Jobseeker Type
+        updateJobseekerType();  Initial update of Jobseeker Type
 
         bachelorYearInput.addEventListener('input', function() {
             updateJobseekerType();
@@ -266,10 +266,10 @@
             document.getElementById("test_payment").innerHTML = cpuPrice;
         }
 
-        // Initial update of the amount based on the default Jobseeker Type
+         Initial update of the amount based on the default Jobseeker Type
         updateAmount();
     });
-</script>
+</script> -->
 
 <script>
     const inputField = document.getElementById("bachelor_year");

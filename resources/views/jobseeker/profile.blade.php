@@ -58,6 +58,7 @@
                                     <option value="{{ $data->jobseeker_type }}">{{ $data->jobseeker_type ?? ' '}}</option>
                                     <option id = "student"value="Student">Student</option>
                                     <option id ="alumni" value="Alumni">Alumni</option>
+                                    <option id ="employability360" value="Employability360 Students-2023">Employability360 Students-2023</option>
                                     </select>
                                     <!--<small> <i>application fee: BDT. <span id="output"></span></i></small><br>-->
                                 </div>
@@ -145,6 +146,7 @@
                                             <option value="{{ $data->bachelor_institute }}">{{ $data->bachelor_institute ?? ' '}}</option>
                                             <option id = "diu"value="Daffodil International University">Daffodil International University</option>
                                             <option id ="diit" value="Daffodil Institute of IT">Daffodil Institute of IT</option>
+                                            <option id ="others" value="Others">Others</option>
                                         </select>
                                     </div>
                                 </div>
