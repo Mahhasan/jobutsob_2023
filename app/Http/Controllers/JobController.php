@@ -59,6 +59,7 @@ class JobController extends Controller
             'designation' => $request->designation,
             'cell' => $request->cell,
             'status' => 'company',
+            'gender' => 'N/A',
             'password' => Hash::make('jobutsob2023'),
         ]);
         $obj = new Company;
